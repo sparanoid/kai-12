@@ -16,4 +16,4 @@ Template: twentytwelve
 @import url("../twentytwelve/style.css");
 
 /* Basic style for Twenty Twelve Kai. */
-@import url("core.css") screen;
+@import url("core.css");

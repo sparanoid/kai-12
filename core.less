@@ -32,6 +32,15 @@ img.no-shadow {
   box-shadow: none;
 }
 
+// Better form style
+input, textarea {
+  -webkit-appearance: none;
+  outline: none;
+  &:focus {
+    border-color: #999;
+  }
+}
+
 // Jetpack comments subscription checkbox fix
 #respond .comment-subscription-form label {
   display: inline-block;

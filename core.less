@@ -34,11 +34,13 @@ img.no-shadow {
 
 // Better form style
 input, textarea {
-  -webkit-appearance: none;
   outline: none;
   &:focus {
     border-color: #999;
   }
+}
+input[type=text] {
+  -webkit-appearance: none;
 }
 
 // Jetpack comments subscription checkbox fix

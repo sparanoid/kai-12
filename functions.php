@@ -24,9 +24,6 @@ add_action('twentytwelve_credits', 'add_twentytwelve_credits');
  * @since Twenty Twelve Kai 1.1
  */
 function twentytwelve_scripts_styles_override() {
- 	/*
- 	 * Loads our main stylesheet.
- 	 */
    wp_enqueue_style( 'twentytwelve-style', get_template_directory_uri() . '/style.css' );
    wp_enqueue_style( 'twentytwelve-kai-style', get_stylesheet_directory_uri() . '/core.css' );
  }

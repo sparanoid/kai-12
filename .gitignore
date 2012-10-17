@@ -2,17 +2,8 @@
 .DS_Store
 profile
 
-# xcode noise
-build/*
-*.mode1
-*.mode1v3
-*.mode2v3
-*.perspective
-*.perspectivev3
-*.pbxuser
-*.xcworkspace
-xcuserdata
+# project noise
+Rakefile
 
-# svn & cvs
-.svn
-CVS
+# .github-upload-token stores OAuth token, used by github_downloads gem
+.github-upload-token

@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles_override' );
 /**
  * Initialize the update checker
  *
- * @since Twenty Twelve Kai 1.1
+ * @since Twenty Twelve Kai 1.1.1
  */
 require 'includes/theme-update-checker.php';
 $twentytwelve_kai_update_checker = new ThemeUpdateChecker(

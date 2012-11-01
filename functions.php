@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles_override' );
  * @since Twenty Twelve Kai 1.1.2
  */
 function twentytwelve_kai_custom_excerpt_length( $length ) {
-	return 360;
+  return 360;
 }
 
 add_filter( 'excerpt_length', 'twentytwelve_kai_custom_excerpt_length', 999 );
@@ -61,7 +61,7 @@ function twenty_twelve_kai_infinite_scroll_init() {
   add_theme_support( 'infinite-scroll', array(
     'container'      => 'content',
     'footer_widgets' => false
-	) );
+) );
 }
 add_action( 'after_setup_theme', 'twenty_twelve_kai_infinite_scroll_init' );
 ?>

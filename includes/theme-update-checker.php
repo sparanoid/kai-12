@@ -148,7 +148,8 @@ class ThemeUpdateChecker {
 		$state->checkedVersion = $this->getInstalledVersion();
 		update_option($this->optionName, $state); //Save before checking in case something goes wrong
 
-		$state->update = $this->requestUpdate();
+		$update = $this->requestUpdate();
+		$state->update = ($update instanceof ThemeUpdate) ? $update->toJson() : $update;
 		update_option($this->optionName, $state);
 	}
 
@@ -178,7 +179,11 @@ class ThemeUpdateChecker {
 
 		//Is there an update to insert?
 		if ( !empty($state) && isset($state->update) && !empty($state->update) ){
-			$updates->response[$this->theme] = $state->update->toWpFormat();
+			$update = $state->update;
+			if ( is_string($state->update) ) {
+				$update = ThemeUpdate::fromJson($state->update);
+			}
+			$updates->response[$this->theme] = $update->toWpFormat();
 		}
 
 		return $updates;
@@ -247,7 +252,7 @@ if ( !class_exists('ThemeUpdate') ):
  *
  * @author Janis Elsts
  * @copyright 2012
- * @version 1.0
+ * @version 1.1
  * @access public
  */
 class ThemeUpdate {
@@ -279,6 +284,15 @@ class ThemeUpdate {
 		}
 
 		return $update;
+	}
+
+	/**
+	 * Serialize update information as JSON.
+	 *
+	 * @return string
+	 */
+	public function toJson() {
+		return json_encode($this);
 	}
 
 	/**

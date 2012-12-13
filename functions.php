@@ -44,7 +44,7 @@ add_filter( 'excerpt_length', 'twentytwelve_kai_custom_excerpt_length', 999 );
 /**
  * Override default Jetpack Infinite Scroll footer
  *
- * @since Twenty Twelve Kai 1.1.5
+ * @since Twenty Twelve Kai 1.1.6
  */
 function twentytwelve_kai_infinite_scroll_credit() {
   return '<a href="http://postholic.com/rsrc/twentytwelve-kai/">Twenty Twelve Kai</a>';

@@ -51,15 +51,4 @@ function twentytwelve_kai_infinite_scroll_credit() {
 }
 
 add_filter( 'infinite_scroll_credit', 'twentytwelve_kai_infinite_scroll_credit' );
-
-/**
- * Initialize the update checker
- *
- * @since Twenty Twelve Kai 1.1.1
- */
-require 'includes/theme-update-checker.php';
-$twentytwelve_kai_update_checker = new ThemeUpdateChecker(
-  'twentytwelve-kai',
-  'http://sparanoid.com/lab/wordpress/twentytwelve-kai.json'
-);
 ?>

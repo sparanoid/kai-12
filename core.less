@@ -11,9 +11,10 @@ body {
   font-family: Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   text-rendering: optimizeLegibility;
   color: #444;
-}
-body.custom-font-enabled {
-  font-family: "Open Sans", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  &.custom-font-enabled {
+    font-family: "Open Sans", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
 }
 
 // Remove stupid text underline for links
@@ -21,10 +22,45 @@ a {
   text-decoration: none;
 }
 
+// Remove box shadow for main container
+body .site {
+  box-shadow: none;
+}
+
+// Remove box shadow for header image
+img.header-image {
+  box-shadow: none;
+}
+
 // Double border -> solid border
 .site-content article {
   border-bottom-width: 1px;
   border-bottom-style: solid;
+}
+
+// Better navigation width
+.main-navigation {
+  margin-left: -40px;
+  margin-right: -40px;
+
+  .nav-menu > ul {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  // Centered menu style, disabled by default
+  // ul {
+  //   text-align: center !important;
+  //
+  //   li {
+  //     margin: 0; // Reset margin value, use padding here.
+  //     padding: 0 20px;
+  //
+  //     &:hover {
+  //       background: #f4f4f4;
+  //     }
+  //   }
+  // }
 }
 
 // No shadow class
@@ -35,6 +71,7 @@ img.no-shadow {
 // Better form style
 input, textarea {
   outline: none;
+
   &:focus {
     border-color: #999;
   }
@@ -53,14 +90,12 @@ img.latex {
   box-shadow: none;
 }
 
-// Override WP Colored Coding Plugin styles
-.wp-cc {
-  pre {
-    word-wrap: normal;
-    code {
-      word-break: normal;
-      word-wrap: normal;
-    }
+// Fix GitHub Gist styles
+.gist {
+
+  table {
+    line-height: inherit;
+    margin: 0;
   }
 }
 
@@ -77,9 +112,11 @@ img.latex {
   background-image:         linear-gradient(top, rgb(34, 34, 34), rgb(51, 51, 51));
   border-radius: 4px;
   box-shadow: inset rgba(0, 0, 0, .5) 0 1px 1px;
+
   a {
     color: #ddd;
     border-bottom: 1px dotted rgba(255, 255, 255, .2);
+
     &:hover {
       color: #fff;
       border-bottom-color: rgba(255, 255, 255, 1)

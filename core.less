@@ -27,23 +27,32 @@ body .site {
   box-shadow: none;
 }
 
+// Unset top padding when there's no text header
+.site-header {
+  padding-top: 0;
+
+  // Re-apply padding for text header here
+  hgroup {
+    padding: 24px 0;
+    padding: 1.714285714rem 0;
+  }
+}
+
 // Remove box shadow for header image
 img.header-image {
   box-shadow: none;
 }
 
-// Double border -> solid border
-.site-content article {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-}
-
 // Better navigation width
 .main-navigation {
+  margin-top: 0;
   margin-left: -40px;
   margin-right: -40px;
 
-  .nav-menu > ul {
+
+  div.nav-menu > ul, // Default menu DOM structure
+  ul.nav-menu // Custom menu DOM structure
+  {
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -61,6 +70,12 @@ img.header-image {
   //     }
   //   }
   // }
+}
+
+// Double border -> solid border
+.site-content article {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 // No shadow class

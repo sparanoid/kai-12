@@ -44,17 +44,18 @@ img.header-image {
 }
 
 // Better navigation width
+@navSpace: 40px;
 .main-navigation {
   margin-top: 0;
-  margin-left: -40px;
-  margin-right: -40px;
+  margin-left: -@navSpace;
+  margin-right: -@navSpace;
 
 
   div.nav-menu > ul, // Default menu DOM structure
   ul.nav-menu // Custom menu DOM structure
   {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: @navSpace;
+    padding-right: @navSpace;
   }
 
   // Centered menu style, disabled by default

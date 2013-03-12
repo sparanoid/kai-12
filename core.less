@@ -116,6 +116,14 @@ input[type=text] {
   display: inline-block;
 }
 
+// Jetpack blog subscription checkbox fix
+#subscribe-field {
+  width: 100% !important;
+  padding: 6px !important;
+  padding: 0.428571429rem !important;
+  box-sizing: border-box;
+}
+
 // Remove box shadow for LaTeX syntax
 img.latex {
   box-shadow: none;
@@ -152,5 +160,16 @@ img.latex {
       color: #fff;
       border-bottom-color: rgba(255, 255, 255, 1)
     }
+  }
+}
+
+// Inline list
+.inline-list {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
   }
 }

@@ -1,4 +1,217 @@
 /*!
   Kai 12 by Tunghsiao Liu
-*//*!
-*/body{font-size:14px;font-size:1rem;font-family:Helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif;text-rendering:optimizeLegibility;color:#444}body.custom-font-enabled{font-family:"Open Sans",Helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif}a{text-decoration:none}body .site{box-shadow:none}.site-header{padding-top:0}.site-header hgroup{padding:24px 0;padding:1.714285714rem 0}img.header-image{box-shadow:none}.main-navigation{margin-top:0;margin-left:-40px;margin-right:-40px}.main-navigation div.nav-menu>ul,.main-navigation ul.nav-menu{padding-left:40px;padding-right:40px}.site-content article{border-bottom-width:1px;border-bottom-style:solid}article.format-link .entry-content p:last-child a{font-size:22px;font-size:1.571428571rem;line-height:1.090909091}article.format-link .entry-content a{font-size:100%;line-height:1.714285714}img.no-shadow{box-shadow:none}input,textarea{outline:0}input:focus,textarea:focus{border-color:#999}input[type=text]{-webkit-appearance:none}#respond .comment-subscription-form label{display:inline-block}#subscribe-field{width:100%!important;padding:6px!important;padding:.428571429rem!important;box-sizing:border-box}img.latex{box-shadow:none}.gist table{line-height:inherit;margin:0}.well{margin-bottom:20px;padding:19px;min-height:20px;color:#ddd;text-shadow:rgba(0,0,0,0.7) 0 1px 1px;background-color:#2a2a2a;background-image:-webkit-linear-gradient(top,#222,#333);background-image:-moz-linear-gradient(top,#222,#333);background-image:linear-gradient(top,#222,#333);border-radius:4px;box-shadow:inset rgba(0,0,0,0.5) 0 1px 1px}.well a{color:#ddd;border-bottom:1px dotted rgba(255,255,255,0.2)}.well a:hover{color:#fff;border-bottom-color:#fff}.inline-list{list-style:none}.inline-list li{display:inline-block;margin-left:0;margin-right:10px}
+*/
+/*!
+*/
+.cf:before,
+.cf:after {
+  content: "";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.cf:after {
+  clear: both;
+}
+body {
+  font-size: 14px;
+  font-size: 1rem;
+  font-family: Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #444;
+}
+body.custom-font-enabled {
+  font-family: "Open Sans", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+body .site {
+  box-shadow: none;
+}
+.site-header {
+  padding-top: 0;
+}
+.site-header hgroup {
+  padding: 24px 0;
+  padding: 1.714285714rem 0;
+}
+img.header-image {
+  box-shadow: none;
+}
+input,
+textarea {
+  background: #f1f1f1;
+  border: 1px solid #f1f1f1;
+}
+input:active,
+textarea:active {
+  background: #d5d5d5;
+  border: 1px solid #d5d5d5;
+  box-shadow: none;
+}
+input:focus,
+textarea:focus {
+  background: #f7f7f7 !important;
+  border: 1px solid #f7f7f7 !important;
+}
+.menu-toggle,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+article.post-password-required input[type=submit],
+.bypostauthor cite span {
+  background: #dddddd;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+}
+.menu-toggle:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+article.post-password-required input[type=submit]:hover,
+.bypostauthor cite span:hover {
+  background: #e5e5e5;
+  border: 1px solid #e5e5e5;
+}
+.menu-toggle:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+article.post-password-required input[type=submit]:active,
+.bypostauthor cite span:active {
+  background: #d5d5d5;
+  border: 1px solid #d5d5d5;
+  box-shadow: none;
+}
+.menu-toggle:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+article.post-password-required input[type=submit]:focus,
+.bypostauthor cite span:focus {
+  background: #eaeaea !important;
+  border: 1px solid #eaeaea !important;
+}
+.menu-toggle:active {
+  border: 1px solid #d5d5d5;
+}
+.menu-toggle.toggled-on {
+  background: #dddddd;
+  box-shadow: none !important;
+}
+.main-navigation {
+  margin-top: 0;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+.main-navigation div.nav-menu > ul,
+.main-navigation ul.nav-menu {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.site-content article {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+article.format-link .entry-content p:last-child a {
+  font-size: 22px;
+  font-size: 1.571428571rem;
+  line-height: 1.090909091;
+}
+article.format-link .entry-content a {
+  font-size: 100%;
+  line-height: 1.714285714;
+}
+img.no-shadow {
+  box-shadow: none;
+}
+input,
+textarea {
+  outline: none;
+}
+input:focus,
+textarea:focus {
+  border-color: #999;
+}
+input[type=text] {
+  -webkit-appearance: none;
+}
+.widget_search:before,
+.widget_search:after {
+  content: "";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.widget_search:after {
+  clear: both;
+}
+.widget_search input#s {
+  float: left;
+  box-sizing: border-box;
+  width: 65%;
+  border-radius: 3px 0 0 3px;
+}
+.widget_search input[type="submit"] {
+  width: 35%;
+  box-sizing: border-box;
+  border-radius: 0 3px 3px 0;
+  float: left;
+}
+.jetpack_subscription_widget #subscribe-field {
+  float: left;
+  width: 60% !important;
+  padding: 6px !important;
+  padding: 0.428571429rem !important;
+  box-sizing: border-box;
+  border-radius: 3px 0 0 3px;
+}
+.jetpack_subscription_widget input[type="submit"] {
+  width: 40%;
+  box-sizing: border-box;
+  border-radius: 0 3px 3px 0;
+}
+#respond .comment-subscription-form label {
+  display: inline-block;
+}
+img.latex {
+  box-shadow: none;
+}
+.gist table {
+  line-height: inherit;
+  margin: 0;
+}
+.well {
+  margin-bottom: 20px;
+  padding: 19px;
+  min-height: 20px;
+  color: #ddd;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 1px 1px;
+  background-color: #2a2a2a;
+  background-image: -webkit-linear-gradient(top, #222222, #333333);
+  background-image: -moz-linear-gradient(top, #222222, #333333);
+  background-image: linear-gradient(top, #222222, #333333);
+  border-radius: 4px;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 1px;
+}
+.well a {
+  color: #ddd;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+.well a:hover {
+  color: #fff;
+  border-bottom-color: #ffffff;
+}
+.inline-list {
+  list-style: none;
+}
+.inline-list li {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 10px;
+}

@@ -4,6 +4,22 @@
 /*!
 */
 
+// http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The original space content hack is removed here. No need to support Opera on my personal site.
+// 2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
+.cf {
+  &:before,
+  &:after {
+    content: ""; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 // Fix font stack
 body {
   font-size: 14px;
@@ -41,6 +57,57 @@ body .site {
 // Remove box shadow for header image
 img.header-image {
   box-shadow: none;
+}
+
+// Better form style with flat design
+@formBaseColor: #ddd;
+
+input, textarea {
+  background: lighten(@formBaseColor, 8%);
+  border: 1px solid lighten(@formBaseColor, 8%);
+
+  &:active {
+    background: darken(@formBaseColor, 3%);
+    border: 1px solid darken(@formBaseColor, 3%);
+    box-shadow: none;
+  }
+
+  &:focus {
+    background: lighten(@formBaseColor, 10%) !important;
+    border: 1px solid lighten(@formBaseColor, 10%) !important;
+  }
+}
+
+.menu-toggle, input[type="submit"], input[type="button"], input[type="reset"], article.post-password-required input[type=submit], .bypostauthor cite span {
+  background: @formBaseColor;
+  border: 1px solid @formBaseColor;
+  box-shadow: none;
+
+  &:hover {
+    background: lighten(@formBaseColor, 3%);
+    border: 1px solid lighten(@formBaseColor, 3%);
+  }
+
+  &:active {
+    background: darken(@formBaseColor, 3%);
+    border: 1px solid darken(@formBaseColor, 3%);
+    box-shadow: none;
+  }
+
+  &:focus {
+    background: lighten(@formBaseColor, 5%) !important;
+    border: 1px solid lighten(@formBaseColor, 5%) !important;
+  }
+}
+
+// Menu toggle fix, since we modified form style, we need this fix to make menu toggle work
+.menu-toggle:active {
+  border: 1px solid darken(@formBaseColor, 3%);
+}
+
+.menu-toggle.toggled-on {
+  background: @formBaseColor;
+  box-shadow: none !important;
 }
 
 // Better navigation width
@@ -111,17 +178,47 @@ input[type=text] {
   -webkit-appearance: none;
 }
 
+// Better search widget with flat design
+.widget_search {
+  .cf;
+
+  input#s {
+    float: left;
+    box-sizing: border-box;
+    width: 65%;
+    border-radius: 3px 0 0 3px;
+  }
+
+  input[type="submit"] {
+    width: 35%;
+    box-sizing: border-box;
+    border-radius: 0 3px 3px 0;
+    float: left;
+  }
+}
+
+// Jetpack blog subscription checkbox fix and better style with flat design
+.jetpack_subscription_widget {
+
+  #subscribe-field {
+    float: left;
+    width: 60% !important; // Override Jatpack default values
+    padding: 6px !important; // Override Jatpack default values
+    padding: 0.428571429rem !important; // Override Jatpack default values
+    box-sizing: border-box;
+    border-radius: 3px 0 0 3px;
+  }
+
+  input[type="submit"] {
+    width: 40%;
+    box-sizing: border-box;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
 // Jetpack comments subscription checkbox fix
 #respond .comment-subscription-form label {
   display: inline-block;
-}
-
-// Jetpack blog subscription checkbox fix
-#subscribe-field {
-  width: 100% !important;
-  padding: 6px !important;
-  padding: 0.428571429rem !important;
-  box-sizing: border-box;
 }
 
 // Remove box shadow for LaTeX syntax

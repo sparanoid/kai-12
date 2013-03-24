@@ -163,6 +163,25 @@ input[type=text] {
   border-radius: 0 3px 3px 0;
   float: left;
 }
+select {
+  position: relative;
+  width: 100%;
+  padding: 6px;
+  padding: 0.428571429rem;
+  background-color: #f1f1f1;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='27.713px' height='24px'><polygon fill='#BBBDBF' points='27.713,0 13.856,24 0,0 '/></svg>");
+  background-repeat: no-repeat;
+  background-position: 95%;
+  background-size: 8px 8px;
+  border: 1px solid #f1f1f1;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+select:focus {
+  background-color: #e5e5e5;
+  border-color: #e5e5e5;
+}
 .jetpack_subscription_widget #subscribe-field {
   float: left;
   width: 60% !important;

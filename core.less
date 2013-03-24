@@ -197,6 +197,43 @@ input[type=text] {
   }
 }
 
+// Better select element style with flat design
+select {
+  position: relative;
+  width: 100%;
+  padding: 6px;
+  padding: 0.428571429rem;
+  background-color: lighten(@formBaseColor, 8%);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='27.713px' height='24px'><polygon fill='#BBBDBF' points='27.713,0 13.856,24 0,0 '/></svg>");
+  background-repeat: no-repeat;
+  background-position: 95%;
+  background-size: 8px 8px;
+  border: 1px solid lighten(@formBaseColor, 8%);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    background-color: lighten(@formBaseColor, 3%);
+    border-color: lighten(@formBaseColor, 3%);
+  }
+
+  // &:after {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   display: block;
+  //   content: ' ';
+  //   width: 50px;
+  //   height: 50px;
+  //   background-color: red;
+  //   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='27.713px' height='24px' enable-background='new 0 0 27.713 24'><polygon fill='#929497' points='27.713,0 13.856,24 0,0 '/></svg>");
+  //   background-repeat: no-repeat;
+  //   background-position: right center;
+  //   background-size: 20% 20%;
+  // }
+}
+
 // Jetpack blog subscription checkbox fix and better style with flat design
 .jetpack_subscription_widget {
 

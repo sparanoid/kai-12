@@ -2,8 +2,5 @@
 .DS_Store
 profile
 
-# project noise
-Rakefile
-
-# .github-upload-token stores OAuth token, used by github_downloads gem
-.github-upload-token
+# CodeKit
+codekit-config.json

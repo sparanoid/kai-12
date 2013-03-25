@@ -51,4 +51,15 @@ function kai_12_infinite_scroll_credit() {
 }
 
 add_filter( 'infinite_scroll_credit', 'kai_12_infinite_scroll_credit' );
+
+/**
+ * Initialize the update checker
+ *
+ * @since Kai 12 1.2.1
+ */
+require 'includes/theme-update-checker.php';
+$kai_12_update_checker = new ThemeUpdateChecker(
+  'kai-12',
+  'http://sparanoid.com/lab/wordpress/kai-12.json'
+);
 ?>

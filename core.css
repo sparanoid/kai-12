@@ -163,9 +163,11 @@ input[type=text] {
   border-radius: 0 3px 3px 0;
   float: left;
 }
-select {
-  position: relative;
+.widget_archive select {
   width: 100%;
+}
+select {
+  min-width: 50%;
   padding: 6px;
   padding: 0.428571429rem;
   background-color: #f1f1f1;

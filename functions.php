@@ -35,20 +35,20 @@ add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles_override' );
  *
  * @since Kai 12 1.1.2
  */
-function twentytwelve_kai_custom_excerpt_length( $length ) {
+function kai_12_custom_excerpt_length( $length ) {
   return 360;
 }
 
-add_filter( 'excerpt_length', 'twentytwelve_kai_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'kai_12_custom_excerpt_length', 999 );
 
 /**
  * Override default Jetpack Infinite Scroll footer
  *
  * @since Kai 12 1.1.6
  */
-function twentytwelve_kai_infinite_scroll_credit() {
+function kai_12_infinite_scroll_credit() {
   return '<a href="http://sparanoid.com/work/kai/">Kai 12</a>';
 }
 
-add_filter( 'infinite_scroll_credit', 'twentytwelve_kai_infinite_scroll_credit' );
+add_filter( 'infinite_scroll_credit', 'kai_12_infinite_scroll_credit' );
 ?>

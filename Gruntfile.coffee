@@ -86,9 +86,10 @@ module.exports = (grunt) ->
       dist:
         options:
           banner: "<%= core.banner %>"
+          report: "gzip"
 
         files:
-          "<%= core.dist %>/core.css": ["<%= recess.test.files.src %>"]
+          "<%= core.dist %>/core.css": ["<%= core.dist %>/*.css"]
 
     compress:
       dist:

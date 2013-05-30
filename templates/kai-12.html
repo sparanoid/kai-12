@@ -1,28 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head><title>Example Theme 2.0 Details</title></head>
+<head><title>Theme Update Details</title></head>
 <style>
 body {
-	font-size: 1.2em;
-	padding-top: 2em;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  padding-top: 2em;
+  line-height: 1.6;
 }
-p {
-	max-width: 600px;
-	margin: auto;
-	margin-bottom: 1em;
+
+.main {
+  max-width: 600px;
+  margin: auto;
 }
+
+.logo {
+  margin: 0 auto 50px;
+  max-width: 300px;
+}
+
+.logo img {
+  width: 100%;
+}
+
 </style>
 <body>
 
-<p>
-This is the page specified in the <code>details_url</code> field of the theme metadata file.
-It shows up when the user clicks the "View version 2.0 details" link for Example Theme 1.0.
-</p>
+<div class="main">
+  <div class="logo">
+    <img src="//d349cztnlupsuf.cloudfront.net/kai-series.png">
+  </div>
 
-<p>
-For a real theme, you will probably want to point <code>details_url</code> to the theme homepage,
-or a "What's New" page of some kind.
-</p>
+  <p>Changelog is not available here, you can read the changelog at <a href="https://github.com/sparanoid/kai-12">GitHub</a>.</p>
+</div>
 
 </body>
 </html>

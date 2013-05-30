@@ -110,6 +110,11 @@ module.exports = (grunt) ->
           cwd: ".tmp/"
           src: ["<%= core.pkg.name %>*.zip"]
           dest: "/Users/sparanoid/Dropbox/Sites/static.sparanoid.com/download/"
+        ,
+          expand: true
+          cwd: "templates/"
+          src: ["<%= core.pkg.name %>.html"]
+          dest: "/Users/sparanoid/Dropbox/Sites/sparanoid.com/lab/wordpress/"
         ]
 
     # TODO: `cwd` doesn't work here.

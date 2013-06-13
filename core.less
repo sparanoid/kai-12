@@ -1,13 +1,13 @@
 // http://nicolasgallagher.com/micro-clearfix-hack/
 //
 // For modern browsers
-// 1. The original space content hack is removed here. No need to support Opera on my personal site.
-// 2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
+// 1. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
+// 2. The original space content hack is removed here. No need to support Opera on my personal site.
 .cf {
   &:before,
   &:after {
-    display: table; /* 2 */
-    content: ""; /* 1 */
+    display: table; // 1
+    content: ""; // 2
   }
   &:after {
     clear: both;

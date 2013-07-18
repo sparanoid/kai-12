@@ -1,6 +1,6 @@
 # Kai 12 [![Build Status](https://travis-ci.org/sparanoid/kai-12.png)](https://travis-ci.org/sparanoid/kai-12) [![devDependency Status](https://david-dm.org/sparanoid/kai-12/dev-status.png)](https://david-dm.org/sparanoid/kai-12#info=devDependencies)
 
-The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve, No need to change the default theme, no database option strings will be created. Install and go. You can have a look at the [demo][demo] first.
+The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve, No need to change the default theme, no database option strings will be created. Install and go.
 
 ## Download
 
@@ -21,5 +21,4 @@ Answer: Their theme reviewer thinks my theme “just offer a few minor CSS tweak
 
 GPLv2
 
-[demo]: http://postholic.com/kai-12-demo/
 [dl]: http://rsrc.sparanoid.com/download/kai-12.zip

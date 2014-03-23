@@ -37,20 +37,17 @@ module.exports = (grunt) ->
         files:
           src: ["Gruntfile.coffee"]
 
+    csslint:
+      options:
+        csslintrc: "<%= core.app %>/assets/less/.csslintrc"
+
+      test:
+        src: ["<%= core.app %>/app.css"]
+
     phplint:
       test:
         files:
           src: ["<%= core.app %>/{,*/}*.php"]
-
-    recess:
-      options:
-        noIDs: false
-        noOverqualifying: false
-        noUnderscores: false
-
-      test:
-        files:
-          src: ["<%= core.app %>/{,*/}*.less"]
 
     watch:
       coffee:
@@ -62,25 +59,37 @@ module.exports = (grunt) ->
         tasks: ["phplint"]
 
       less:
-        files: ["<%= recess.test.files.src %>"]
-        tasks: ["less:server", "recess"]
+        files: ["<%= core.app %>/assets/less/**/*.less"]
+        tasks: ["less:server", "autoprefixer", "csslint"]
 
     less:
       server:
         options:
-          paths: ["<%= core.app %>"]
-          dumpLineNumbers: "all"
+          strictMath: true
+          sourceMap: true
+          outputSourceFiles: true
+          sourceMapURL: "app.css.map"
+          sourceMapFilename: "<%= core.app %>/assets/css/app.css.map"
 
-        files:
-          "<%= core.app %>/core.css": ["<%= recess.test.files.src %>"]
+        src: ["<%= core.app %>/assets/less/app.less"]
+        dest: "<%= core.dist %>/app.css"
 
       dist:
-        options:
-          paths: ["<%= core.app %>"]
-          # yuicompress: true
+        src: ["<%= less.server.src %>"]
+        dest: "<%= less.server.dest %>"
 
-        files:
-          "<%= core.app %>/core.css": ["<%= recess.test.files.src %>"]
+    autoprefixer:
+      dist:
+        src: ["<%= less.server.dest %>"]
+        dest: "<%= less.server.dest %>"
+
+    csscomb:
+      options:
+        config: "<%= core.app %>/assets/less/.csscomb.json"
+
+      dist:
+        src: ["<%= less.server.dest %>"]
+        dest: "<%= less.server.dest %>"
 
     cssmin:
       dist:
@@ -89,7 +98,7 @@ module.exports = (grunt) ->
           report: "gzip"
 
         files:
-          "<%= core.dist %>/core.css": ["<%= core.dist %>/*.css"]
+          "<%= core.dist %>/app.css": ["<%= core.dist %>/app.css"]
 
     compress:
       dist:
@@ -99,7 +108,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: "<%= core.app %>/"
-          src: ["**", "!node_modules/**", "!templates/**", "!*.coffee", "!*.json", "!*.less"]
+          src: ["**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.less"]
           dest: "<%= core.pkg.name %>"
         ]
 
@@ -144,6 +153,6 @@ module.exports = (grunt) ->
     clean: [".tmp"]
 
   grunt.registerTask "server", ["watch"]
-  grunt.registerTask "test", ["coffeelint", "recess"]
-  grunt.registerTask "build", ["clean", "test", "less:dist", "cssmin", "compress", "copy", "rename", "copy", "replace", "clean"]
+  grunt.registerTask "test", ["coffeelint", "csslint"]
+  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "csscomb", "cssmin", "compress", "copy", "rename", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

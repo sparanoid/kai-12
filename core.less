@@ -198,8 +198,9 @@ input[type=text] {
   }
 }
 
-// Better .widget_archive select width
-.widget_archive {
+// Better widgets select width
+.widget_archive,
+.widget_categories {
 
   select {
     width: 100%;
@@ -208,14 +209,15 @@ input[type=text] {
 
 // Better select element style with flat design
 select {
-  min-width: 50%;
+  min-width: 20%;
   padding: 6px;
   padding: 0.428571429rem;
   background-color: lighten(@formBaseColor, 8%);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='27.713px' height='24px'><polygon fill='#BBBDBF' points='27.713,0 13.856,24 0,0 '/></svg>");
+  background-image: data-uri('./assets/svg/arrow.svg');
   background-position: 95%;
+  background-position: calc(~"100% - 8px");
   background-repeat: no-repeat;
-  background-size: 8px 8px;
+  background-size: 10px 10px;
   border: 1px solid lighten(@formBaseColor, 8%);
   border-radius: 3px;
   outline: none;

@@ -25,7 +25,7 @@ add_action('twentytwelve_credits', 'add_kai_12_credits');
  */
 function twentytwelve_scripts_styles_override() {
   wp_enqueue_style( 'twentytwelve-style', get_template_directory_uri() . '/style.css' );
-  wp_enqueue_style( 'kai-12-style', get_stylesheet_directory_uri() . '/core.css' );
+  wp_enqueue_style( 'kai-12-style', get_stylesheet_directory_uri() . '/app.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles_override' );

@@ -53,6 +53,30 @@ function kai_12_infinite_scroll_credit() {
 add_filter( 'infinite_scroll_credit', 'kai_12_infinite_scroll_credit' );
 
 /**
+ * Override default header settings when header text is hidden
+ *
+ * @since Kai 12 1.2.5
+ */
+function kai_12_custom_header_setup() {
+	$args = array(
+		'wp-head-callback' => 'kai_12_header_style',
+	);
+
+	add_theme_support( 'custom-header', $args );
+}
+add_action( 'after_setup_theme', 'kai_12_custom_header_setup' );
+
+function kai_12_header_style() {
+  if ( ! display_header_text() ) : ?>
+	<style type="text/css" id="kai-12-header-css">
+		.site-header hgroup {
+			display: none;
+		}
+	</style>
+	<?php endif; ?>
+<?php }
+
+/**
  * Initialize the update checker
  *
  * @since Kai 12 1.2.1

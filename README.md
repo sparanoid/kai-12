@@ -1,6 +1,17 @@
-# Kai 12 [![Build Status](https://travis-ci.org/sparanoid/kai-12.png)](https://travis-ci.org/sparanoid/kai-12) [![devDependency Status](https://david-dm.org/sparanoid/kai-12/dev-status.png)](https://david-dm.org/sparanoid/kai-12#info=devDependencies)
+# Kai 12
+[![Build Status](https://travis-ci.org/sparanoid/kai-12.svg)](https://travis-ci.org/sparanoid/kai-12)
+[![devDependency Status](https://david-dm.org/sparanoid/kai-12/dev-status.svg)](https://david-dm.org/sparanoid/kai-12#info=devDependencies)
 
 The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve, No need to change the default theme, no database option strings will be created. Install and go.
+
+## Demo
+
+I haven't setup a demo for it yet, but you can see these sites are using Kai 12:
+
+- [AVOS Cloud Blog](http://blog.avoscloud.com/)
+- [Delicious Blog](http://blog.delicious.com/)
+
+What your site get listed? [Open an issue](https://github.com/sparanoid/kai-12/issues) and tell me.
 
 ## Download
 
@@ -10,8 +21,10 @@ You can get the latest version [here][dl]. It has a custom theme update checker 
 
 - Better, flat navigation style
 - Better form, dropdown list style
-- `.well` class borrowed from Bootstrap
-- Many minor tweaks
+- `.well` and `.well.dark` class borrowed from Bootstrap
+- `.download-btn` - refined download link for posts
+- Compatible with Jetpack for WordPress, and many style fixes for it
+- Many other minor tweaks
 
 ## “Why not submit these themes to WordPress.org official repository?”
 

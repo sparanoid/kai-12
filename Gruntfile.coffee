@@ -1,8 +1,8 @@
+"use strict"
 module.exports = (grunt) ->
 
   # Load all grunt tasks
-  matchdep = require("matchdep")
-  matchdep.filterDev("grunt-*").forEach grunt.loadNpmTasks
+  require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
 
   # Configurable paths
   coreConfig =
@@ -66,10 +66,7 @@ module.exports = (grunt) ->
       server:
         options:
           strictMath: true
-          sourceMap: true
-          outputSourceFiles: true
-          sourceMapURL: "app.css.map"
-          sourceMapFilename: "<%= core.app %>/assets/css/app.css.map"
+          dumpLineNumbers: "comments"
 
         src: ["<%= core.app %>/assets/less/app.less"]
         dest: "<%= core.dist %>/app.css"
@@ -152,7 +149,8 @@ module.exports = (grunt) ->
 
     clean: [".tmp"]
 
-  grunt.registerTask "server", ["watch"]
+  grunt.registerTask "serve", ["clean", "test", "less:server", "autoprefixer", "watch"]
   grunt.registerTask "test", ["coffeelint", "csslint"]
-  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "csscomb", "cssmin", "compress", "copy", "rename", "copy", "replace", "clean"]
+  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "csscomb", "cssmin"]
+  grunt.registerTask "deploy", ["clean", "test", "less:dist", "autoprefixer", "csscomb", "cssmin", "compress", "copy", "rename", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

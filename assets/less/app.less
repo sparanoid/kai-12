@@ -16,14 +16,14 @@
 
 // Fix font stack
 body {
-  font-family: Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   font-size: 1rem;
   color: #444;
   text-rendering: optimizeLegibility;
 
   &.custom-font-enabled {
-    font-family: "Open Sans", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   }
 }
 
@@ -113,16 +113,19 @@ input, textarea {
 // Better navigation width
 @navSpace: 40px;
 .main-navigation {
-  margin-top: 0;
-  margin-right: -@navSpace;
-  margin-left: -@navSpace;
+
+  @media (min-width: 600px) {
+    margin-top: 0;
+    margin-right: -@navSpace;
+    margin-left: -@navSpace;
 
 
-  div.nav-menu > ul, // Default menu DOM structure
-  ul.nav-menu // Custom menu DOM structure
-  {
-    padding-right: @navSpace;
-    padding-left: @navSpace;
+    div.nav-menu > ul, // Default menu DOM structure
+    ul.nav-menu // Custom menu DOM structure
+    {
+      padding-right: @navSpace;
+      padding-left: @navSpace;
+    }
   }
 
   // Centered menu style, disabled by default
@@ -167,6 +170,12 @@ img.shadow {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
 }
 
+// Fix <hr> line inside .entry-content
+.entry-content hr {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 // Better form style
 input, textarea {
   outline: none;
@@ -175,36 +184,16 @@ input, textarea {
     border-color: #999;
   }
 }
+
+// Search box / Jetpack Subscription box height fix (when custom font face is disabled)
 input[type=text] {
+	line-height: 1.428571429;
   -webkit-appearance: none;
 }
 
-// Better search widget with flat design
-.widget_search {
-  .cf;
-
-  input#s {
-    float: left;
-    width: 65%;
-    border-radius: 3px 0 0 3px;
-    box-sizing: border-box;
-  }
-
-  input[type="submit"] {
-    float: left;
-    width: 35%;
-    border-radius: 0 3px 3px 0;
-    box-sizing: border-box;
-  }
-}
-
-// Better widgets select width
-.widget_archive,
-.widget_categories {
-
-  select {
-    width: 100%;
-  }
+// Better blockquote
+blockquote {
+  border-left: 1px solid #ddd;
 }
 
 // Better select element style with flat design
@@ -229,12 +218,43 @@ select {
   }
 }
 
+// Better widgets select width
+.widget_archive,
+.widget_categories {
+
+  select {
+    width: 100%;
+  }
+}
+
+// Better search widget with flat design
+.widget_search {
+  .cf;
+
+  input#s {
+    float: left;
+    width: 65%;
+    width: calc(~"100% - 90px");
+    border-radius: 3px 0 0 3px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    float: left;
+    width: 35%;
+    width: calc(90px);
+    border-radius: 0 3px 3px 0;
+    box-sizing: border-box;
+  }
+}
+
 // Jetpack blog subscription checkbox fix and better style with flat design
 .jetpack_subscription_widget {
 
   #subscribe-field {
     float: left;
     width: 60% !important; // Override Jatpack default values
+    width: calc(~"100% - 90px"); // Override Jatpack default values
     padding: 6px !important; // Override Jatpack default values
     padding: 0.428571429rem !important; // Override Jatpack default values
     border-radius: 3px 0 0 3px;
@@ -243,6 +263,7 @@ select {
 
   input[type="submit"] {
     width: 40%;
+    width: calc(90px);
     border-radius: 0 3px 3px 0;
     box-sizing: border-box;
   }
@@ -251,6 +272,14 @@ select {
 // Jetpack comments subscription checkbox fix
 #respond .comment-subscription-form label {
   display: inline-block;
+}
+
+// Jetpack Infinite Scroll link makeover
+#infinite-handle span {
+  .more-link;
+  color: inherit;
+  background: transparent;
+  line-height: 1.714285714;
 }
 
 // Remove box shadow for LaTeX syntax
@@ -272,22 +301,29 @@ img.latex {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  color: #ddd;
-  text-shadow: rgba(0, 0, 0, .7) 0 1px 1px;
-  background-color: #2a2a2a;
-  background-image: -webkit-linear-gradient(top, rgb(34, 34, 34), rgb(51, 51, 51));
-  background-image:    -moz-linear-gradient(top, rgb(34, 34, 34), rgb(51, 51, 51));
-  background-image:         linear-gradient(top, rgb(34, 34, 34), rgb(51, 51, 51));
   border-radius: 4px;
-  box-shadow: inset rgba(0, 0, 0, .5) 0 1px 1px;
+  border: 1px solid #ddd;
 
   a {
-    color: #ddd;
-    border-bottom: 1px dotted rgba(255, 255, 255, .2);
+    font-weight: bold;
+  }
 
-    &:hover {
+  &.dark {
+    color: #ddd;
+    text-shadow: rgba(0, 0, 0, .7) 0 1px 1px;
+    background-color: #2a2a2a;
+    background-image: linear-gradient(to bottom, rgb(34, 34, 34), rgb(51, 51, 51));
+    box-shadow: inset rgba(0, 0, 0, .5) 0 1px 1px;
+    border: none;
+
+    a {
       color: #fff;
-      border-bottom-color: rgba(255, 255, 255, 1)
+
+      &:hover,
+      &:focus,
+      &:visited {
+        color: #fff;
+      }
     }
   }
 }
@@ -301,4 +337,23 @@ img.latex {
     margin-right: 10px;
     margin-left: 0;
   }
+}
+
+// A better continue reading / download button
+.more-link,
+.download-btn {
+	display: inline-block;
+	border: 1px solid;
+	border-radius: 1000px;
+	padding: 4px 20px;
+	margin: 4px 0;
+}
+
+.download-btn {
+	color: #f38814;
+
+	&:hover,
+	&:focus {
+    color: #CA4100;
+	}
 }

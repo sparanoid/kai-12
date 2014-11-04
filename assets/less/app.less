@@ -166,8 +166,8 @@ article.format-link .entry-content {
 
 // Stupid shadow class
 img.shadow {
-	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
 }
 
 // Fix <hr> line inside .entry-content
@@ -187,7 +187,7 @@ input, textarea {
 
 // Search box / Jetpack Subscription box height fix (when custom font face is disabled)
 input[type=text] {
-	line-height: 1.428571429;
+  line-height: 1.428571429;
   -webkit-appearance: none;
 }
 
@@ -257,6 +257,7 @@ select {
     width: calc(~"100% - 90px"); // Override Jatpack default values
     padding: 6px !important; // Override Jatpack default values
     padding: 0.428571429rem !important; // Override Jatpack default values
+    line-height: 1.428571429;
     border-radius: 3px 0 0 3px;
     box-sizing: border-box;
   }
@@ -266,6 +267,10 @@ select {
     width: calc(90px);
     border-radius: 0 3px 3px 0;
     box-sizing: border-box;
+  }
+
+  label {
+    display: none;
   }
 }
 
@@ -342,18 +347,67 @@ img.latex {
 // A better continue reading / download button
 .more-link,
 .download-btn {
-	display: inline-block;
-	border: 1px solid;
-	border-radius: 1000px;
-	padding: 4px 20px;
-	margin: 4px 0;
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 1000px;
+  padding: 4px 20px;
+  margin: 4px 0;
 }
 
 .download-btn {
-	color: #f38814;
+  color: #f38814;
 
-	&:hover,
-	&:focus {
+  &:hover,
+  &:focus {
     color: #CA4100;
-	}
+  }
+}
+
+// Fix shitty comment list
+.comments-area article {
+  position: relative;
+  padding-bottom: 0;
+
+  header {
+    margin-bottom: 16px;
+
+    cite,
+    time {
+      margin-left: 56px;
+      margin-left: (56px / 12)rem
+    }
+  }
+
+  .reply {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @media (min-width: 600px) {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  .edit-link {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    @media (min-width: 600px) {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+
+    .reply,
+    .edit-link {
+      display: block;
+    }
+  }
 }

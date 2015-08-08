@@ -94,12 +94,16 @@ module.exports = (grunt) ->
         options:
           report: "gzip"
 
-        files:
-          "<%= core.dist %>/app.css": ["<%= core.dist %>/app.css"]
+        files: [
+          expand: true
+          cwd: "<%= core.dist %>"
+          src: ["app*.css", "!*.min.css"]
+          dest: "<%= core.dist %>/"
+        ]
 
     usebanner:
       options:
-        position: "bottom"
+        position: "top"
         banner: "<%= core.banner %>"
 
       dist:

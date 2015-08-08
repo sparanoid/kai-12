@@ -1,6 +1,6 @@
 {
   "name": "kai-12",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve, No need to change the default theme, no database option strings will be created. Install and go.",
   "main": "style.css",
   "scripts": {

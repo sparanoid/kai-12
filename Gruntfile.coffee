@@ -157,7 +157,7 @@ module.exports = (grunt) ->
           flatten: true
           cwd: "<%= core.app %>/"
           src: ["templates/<%= core.pkg.name %>.json"]
-          dest: "/Users/sparanoid/Dropbox/Sites/sparanoid.com/lab/wordpress/"
+          dest: "/Users/sparanoid/Workspace/Sites/sparanoid.com/lab/wordpress/"
         ]
 
     clean: [".tmp"]

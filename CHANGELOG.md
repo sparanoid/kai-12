@@ -1,3 +1,15 @@
+<a name"1.2.8"></a>
+### 1.2.8 (2015-08-08)
+
+
+#### Bug Fixes
+
+* **grunt:**
+  * outdated `cssmin` task ([5bae61c7](https://github.com/sparanoid/kai-12/commit/5bae61c7))
+  * replace `csslint` with `lesslint` ([b7cccff2](https://github.com/sparanoid/kai-12/commit/b7cccff2))
+* **style:** wrong button appearance on iOS ([cdb237ee](https://github.com/sparanoid/kai-12/commit/cdb237ee))
+
+
 <a name="1.2.6"></a>
 ### 1.2.6 (2014-06-07)
 

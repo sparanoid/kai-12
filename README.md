@@ -8,7 +8,7 @@ The missing child theme of Twenty Twelve, A better interface based on Twenty Twe
 
 I haven't setup a demo for it yet, but you can see these sites are using Kai 12:
 
-- [AVOS Cloud Blog](http://blog.avoscloud.com/)
+- [LeanCloud Blog](http://blog.leancloud.cn/)
 - [Delicious Blog](http://blog.delicious.com/)
 
 What your site get listed? [Open an issue](https://github.com/sparanoid/kai-12/issues) and tell me.

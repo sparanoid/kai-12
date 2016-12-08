@@ -121,12 +121,12 @@ module.exports = (grunt) ->
           expand: true
           cwd: ".tmp/"
           src: ["<%= core.pkg.name %>*.zip"]
-          dest: "/Users/sparanoid/Workspace/Sites/static.sparanoid.com/download/"
+          dest: "/Users/sparanoid/Git/sparanoid.com-prod/rsrc/download/"
         ,
           expand: true
           cwd: "templates/"
           src: ["<%= core.pkg.name %>.html"]
-          dest: "/Users/sparanoid/Workspace/Sites/sparanoid.com/lab/wordpress/"
+          dest: "/Users/sparanoid/Git/sparanoid.com-prod/site/lab/wordpress/"
         ]
 
     # TODO: `cwd` doesn't work here.
@@ -150,7 +150,7 @@ module.exports = (grunt) ->
           flatten: true
           cwd: "<%= core.app %>/"
           src: ["templates/<%= core.pkg.name %>.json"]
-          dest: "/Users/sparanoid/Workspace/Sites/sparanoid.com/lab/wordpress/"
+          dest: "/Users/sparanoid/Git/sparanoid.com-prod/site/lab/wordpress/"
         ]
 
     clean: [".tmp"]

@@ -94,6 +94,6 @@ function kai_12_header_style() {
 require 'includes/theme-update-checker.php';
 $kai_12_update_checker = new ThemeUpdateChecker(
   'kai-12',
-  'http://sparanoid.com/lab/wordpress/kai-12.json'
+  'https://sparanoid.com/lab/wordpress/kai-12.json'
 );
 ?>

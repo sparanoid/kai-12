@@ -34,4 +34,4 @@ Answer: Their theme reviewer thinks my theme “just offer a few minor CSS tweak
 
 GPLv2
 
-[dl]: http://rsrc.sparanoid.com/download/kai-12.zip
+[dl]: https://github.com/sparanoid/kai-12/releases

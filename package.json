@@ -12,10 +12,7 @@
   },
   "author": "Tunghsiao Liu",
   "homepage": "http://sparanoid.com/work/kai/",
-  "license": {
-    "type": "GPLv2",
-    "url": "http://wordpress.org/about/gpl/"
-  },
+  "license": "GPL-2.0",
   "readmeFilename": "README.md",
   "devDependencies": {
     "grunt": "^0.4.5",

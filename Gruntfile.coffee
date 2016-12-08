@@ -10,14 +10,7 @@ module.exports = (grunt) ->
     assets: "."
     dist: "."
     pkg: grunt.file.readJSON("package.json")
-    banner: do ->
-      banner = "/*\n"
-      banner += " * (c) <%= core.pkg.author %>.\n *\n"
-      banner += " * <%= core.pkg.name %> - v<%= core.pkg.version %> (<%= grunt.template.today('mm-dd-yyyy') %>)\n"
-      banner += " * <%= core.pkg.homepage %>\n"
-      banner += " * <%= core.pkg.license.type %> - <%= core.pkg.license.url %>\n"
-      banner += " */"
-      banner
+    banner: "/* <%= core.pkg.name %> v<%= core.pkg.version %> | © <%= core.pkg.author %> | <%= core.pkg.license %> */"
 
   # Project configurations
   grunt.initConfig

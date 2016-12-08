@@ -1,5 +1,5 @@
 {
   "version" : "@@version",
-  "details_url" : "http://sparanoid.com/lab/wordpress/@@package.html",
-  "download_url" : "http://rsrc.sparanoid.com/download/@@package.zip"
+  "details_url" : "https://sparanoid.com/lab/wordpress/@@package.html",
+  "download_url" : "https://d349cztnlupsuf.cloudfront.net/download/@@package.zip"
 }

@@ -1,6 +1,6 @@
 {
   "name": "kai-12",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve, No need to change the default theme, no database option strings will be created. Install and go.",
   "main": "style.css",
   "scripts": {
@@ -25,7 +25,6 @@
     "grunt-contrib-cssmin": "^0.13.0",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-conventional-changelog": "^1.2.2",
     "grunt-csscomb": "^3.0.1",
     "grunt-lesslint": "^1.1.14",
     "grunt-phplint": "^0.0.5",

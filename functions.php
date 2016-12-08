@@ -23,12 +23,22 @@ add_action('twentytwelve_credits', 'add_kai_12_credits');
  *
  * @since Kai 12 1.1
  */
-function twentytwelve_scripts_styles_override() {
+function kai_12_scripts_styles_override() {
   wp_enqueue_style( 'twentytwelve-style', get_template_directory_uri() . '/style.css' );
   wp_enqueue_style( 'kai-12-style', get_stylesheet_directory_uri() . '/app.css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles_override' );
+add_action( 'wp_enqueue_scripts', 'kai_12_scripts_styles_override' );
+
+/**
+ * Disable custom web font from Google, it's slow and it sucks
+ *
+ * @since Kai 12 1.2.9
+ */
+function kai_12_remove_custom_fonts() {
+  wp_dequeue_style( 'twentytwelve-fonts' );
+}
+add_action( 'wp_enqueue_scripts', 'kai_12_remove_custom_fonts', 11 );
 
 /**
  * Override default excerpt length

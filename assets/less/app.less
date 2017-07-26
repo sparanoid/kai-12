@@ -234,22 +234,20 @@ select {
 
 // Better search widget with flat design
 .widget_search {
-  .cf;
+
+  form > * {
+    display: flex;
+  }
 
   input#s {
-    float: left;
-    width: 65%;
-    width: calc(~"100% - 90px");
+    flex: 1;
     border-radius: 3px 0 0 3px;
-    box-sizing: border-box;
   }
 
   input[type="submit"] {
-    float: left;
-    width: 35%;
-    width: calc(90px);
+    padding-left: 16px;
+    padding-right: 16px;
     border-radius: 0 3px 3px 0;
-    box-sizing: border-box;
   }
 }
 

@@ -15,7 +15,7 @@ What your site get listed? [Open an issue](https://github.com/sparanoid/kai-12/i
 
 ## Download
 
-You can get the latest version [here][dl]. It has a custom theme update checker to keep it update to date as long as you activate it.
+You can get the latest version [here][dl]. Then upload it via WordPress built-in theme uploader. This theme has a custom theme update checker to keep it update to date as long as you activate it.
 
 ## What's the Difference?
 
@@ -34,4 +34,4 @@ Answer: Their theme reviewer thinks my theme “just offer a few minor CSS tweak
 
 GPLv2
 
-[dl]: https://github.com/sparanoid/kai-12/releases
+[dl]: https://rsrc.sparanoid.com/download/kai-12.zip

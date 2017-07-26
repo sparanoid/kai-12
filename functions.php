@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'kai_12_scripts_styles_override' );
 /**
  * Disable custom web font from Google, it's slow and it sucks
  *
- * @since Kai 12 1.2.9
+ * @since Kai 12 1.2.10
  */
 function kai_12_remove_custom_fonts() {
   wp_dequeue_style( 'twentytwelve-fonts' );

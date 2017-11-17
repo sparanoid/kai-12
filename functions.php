@@ -87,6 +87,18 @@ function kai_12_header_style() {
 <?php }
 
 /**
+ * Initialize the Infinite Scroll for Jetpack
+ *
+ * @since Kai 12 1.2.11
+ */
+function kai_12_infinite_scroll_init() {
+  add_theme_support( 'infinite-scroll', array(
+    'container'      => 'content',
+  ) );
+}
+add_action( 'after_setup_theme', 'kai_12_infinite_scroll_init' );
+
+/**
  * Initialize the update checker
  *
  * @since Kai 12 1.2.1
@@ -96,4 +108,5 @@ $kai_12_update_checker = new ThemeUpdateChecker(
   'kai-12',
   'https://sparanoid.com/lab/wordpress/kai-12.json'
 );
+
 ?>

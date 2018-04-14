@@ -89,7 +89,7 @@ function kai_12_header_style() {
 /**
  * Initialize the Infinite Scroll for Jetpack
  *
- * @since Kai 12 1.2.12
+ * @since Kai 12 1.2.13
  */
 function kai_12_infinite_scroll_init() {
   add_theme_support( 'infinite-scroll', array(

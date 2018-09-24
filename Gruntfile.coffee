@@ -38,26 +38,9 @@ module.exports = (grunt) ->
         files: ["<%= coffeelint.test.files.src %>"]
         tasks: ["coffeelint"]
 
-      less:
-        files: ["<%= core.app %>/assets/less/**/*.less"]
-        tasks: ["less:serve"]
-
       sass:
         files: ["<%= core.app %>/assets/scss/**/*.scss"]
         tasks: ["sass:serve"]
-
-    less:
-      serve:
-        options:
-          strictMath: true
-          dumpLineNumbers: "comments"
-
-        src: ["<%= core.app %>/assets/less/app.less"]
-        dest: "<%= core.dist %>/app.css"
-
-      dist:
-        src: ["<%= less.serve.src %>"]
-        dest: "<%= less.serve.dest %>"
 
     sass:
       options:
@@ -104,7 +87,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: "<%= core.app %>/"
-          src: ["**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.scss", "!*.less"]
+          src: ["**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.scss"]
           dest: "<%= core.pkg.name %>"
         ]
 

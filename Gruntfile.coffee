@@ -69,15 +69,6 @@ module.exports = (grunt) ->
           dest: "<%= core.dist %>/"
         ]
 
-    usebanner:
-      options:
-        position: "top"
-        banner: "<%= core.banner %>"
-
-      dist:
-        files:
-          src: ["<%= core.dist %>/app.css"]
-
     compress:
       dist:
         options:
@@ -132,6 +123,6 @@ module.exports = (grunt) ->
 
   grunt.registerTask "serve", ["clean", "test", "less:server", "autoprefixer", "watch"]
   grunt.registerTask "test", ["coffeelint"]
-  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "cssmin", "usebanner"]
+  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "cssmin"]
   grunt.registerTask "deploy", ["build", "compress", "copy", "rename", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

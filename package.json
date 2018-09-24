@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sparanoid/kai-12.git"
+    "url": "git+https://github.com/sparanoid/kai-12.git"
   },
   "author": "Tunghsiao Liu",
-  "homepage": "http://sparanoid.com/work/kai/",
+  "homepage": "https://sparanoid.com/work/kai/",
   "license": "GPL-2.0",
   "readmeFilename": "README.md",
   "devDependencies": {
@@ -25,6 +25,8 @@
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-replace": "^1.0.1",
-    "matchdep": "^2.0.0"
+    "grunt-sass": "^3.0.1",
+    "matchdep": "^2.0.0",
+    "node-sass": "^4.9.3"
   }
 }

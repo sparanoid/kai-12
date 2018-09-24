@@ -3,8 +3,12 @@ body {
   background: var(--text-color-5);
   padding: var(--gutter) 0;
 
+  @media (max-width: $breakpoint-md) {
+    --gutter: calc(var(--space-sm) / 1.25);
+  }
+
   @media (max-width: $breakpoint-sm) {
-    --gutter: var(--space-xs);
+    --gutter: 12px;
   }
 }
 
@@ -42,21 +46,36 @@ button {
   display: block;
   appearance: none;
   -webkit-appearance: none;
-  background: #f1f1f1;
+  background: var(--text-color-5);
   outline: none;
   border: none;
   padding: .4em .6em;
   border-radius: 4px;
 
   &:focus {
-    background: #f5f5f5;
+    background: var(--text-color-3);
   }
 }
 
 button,
 input[type=submit] {
-  background: #eee;
+  background: var(--text-color-10);
   cursor: pointer;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+
+  &:hover,
+  &:focus {
+    background: var(--text-color-5);
+  }
+}
+
+select {
+  position: relative;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.7 12" enable-background="new 0 0 27.7 12"><polygon fill="#BBBDBF" points="27.7,0 13.9,12 0,0"/></svg>');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 12px;
 }
 
 label {
@@ -129,7 +148,7 @@ label {
         a {
           display: block;
           padding: 1em 0;
-          color: var(--text-color-50);
+          color: var(--text-color-60);
           text-transform: uppercase;
 
           &:hover,
@@ -259,10 +278,6 @@ label {
   width: var(--sidebar-width);
   padding: var(--space-xs) var(--gutter);
 
-  @media (max-width: $breakpoint-md) {
-    --sidebar-width: 40%;
-  }
-
   @media (max-width: $breakpoint-sm) {
     width: 100%;
   }
@@ -272,6 +287,16 @@ label {
 #colophon {
   padding: var(--space-xs) var(--gutter);
   border-top: 1px solid var(--border-color);
+  color: var(--text-color-30);
+
+  a {
+    color: var(--text-color-50);
+
+    &:hover,
+    &:focus {
+      color: var(--text-color);
+    }
+  }
 }
 
 // Post content appearance
@@ -319,10 +344,6 @@ article {
     &:hover,
     &:focus {
       color: var(--link-color-70);
-    }
-
-    &:visited {
-      color: var(--text-color-5);
     }
   }
 }
@@ -604,6 +625,7 @@ article {
   }
 
   code {
+    font-size: .92em;
     overflow-wrap: break-word;
   }
 
@@ -817,11 +839,24 @@ a {
 
   header {
     display: inline-block;
-    background: var(--text-color-10);
+    color: var(--link-color);
+    background: var(--link-color-10);
     border-radius: 4px;
     padding: 4px 10px;
     margin-bottom: 1em;
     font-weight: bold;
+  }
+
+  .entry-content > p > a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--text-color);
+
+    &:hover,
+    &:focus {
+      color: var(--link-color);
+    }
   }
 }
 
@@ -928,6 +963,16 @@ a {
 
       .edit-link {
         font-size: .9rem;
+
+        // Reset link color back to black, overitten by .comment-content
+        a {
+          color: var(--text-color-50);
+
+          &:hover,
+          &:focus {
+            color: var(--text-color);
+          }
+        }
       }
     }
 
@@ -954,6 +999,10 @@ a {
 .comment-respond {
   padding: var(--space-xs) var(--gutter);
   line-height: calc(var(--line-height) * 1.2);
+
+  #cancel-comment-reply-link {
+    float: right;
+  }
 
   form {
 

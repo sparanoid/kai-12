@@ -40,14 +40,14 @@ module.exports = (grunt) ->
 
       less:
         files: ["<%= core.app %>/assets/less/**/*.less"]
-        tasks: ["less:server", "autoprefixer"]
+        tasks: ["less:serve"]
 
       sass:
         files: ["<%= core.app %>/assets/scss/**/*.scss"]
-        tasks: ["sass:server", "autoprefixer"]
+        tasks: ["sass:serve"]
 
     less:
-      server:
+      serve:
         options:
           strictMath: true
           dumpLineNumbers: "comments"
@@ -56,8 +56,8 @@ module.exports = (grunt) ->
         dest: "<%= core.dist %>/app.css"
 
       dist:
-        src: ["<%= less.server.src %>"]
-        dest: "<%= less.server.dest %>"
+        src: ["<%= less.serve.src %>"]
+        dest: "<%= less.serve.dest %>"
 
     sass:
       options:
@@ -83,11 +83,6 @@ module.exports = (grunt) ->
           outputStyle: "compressed"
 
         files: "<%= sass.serve.files %>"
-
-    autoprefixer:
-      dist:
-        src: ["<%= less.server.dest %>"]
-        dest: "<%= less.server.dest %>"
 
     cssmin:
       dist:
@@ -151,8 +146,8 @@ module.exports = (grunt) ->
 
     clean: [".tmp"]
 
-  grunt.registerTask "serve", ["clean", "test", "sass:server", "autoprefixer", "watch"]
+  grunt.registerTask "serve", ["clean", "test", "sass:serve", "watch"]
   grunt.registerTask "test", ["coffeelint"]
-  grunt.registerTask "build", ["clean", "test", "sass:dist", "autoprefixer", "cssmin"]
+  grunt.registerTask "build", ["clean", "test", "sass:dist", "cssmin"]
   grunt.registerTask "deploy", ["build", "compress", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

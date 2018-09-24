@@ -1,0 +1,1023 @@
+body {
+  --gutter: var(--space-sm);
+  background: var(--text-color-5);
+  padding: var(--gutter) 0;
+
+  @media (max-width: $breakpoint-sm) {
+    --gutter: var(--space-xs);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fontstack-heading);
+  font-weight: bold;
+}
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1.1em; }
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+}
+
+input,
+textarea,
+select,
+button {
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #f1f1f1;
+  outline: none;
+  border: none;
+  padding: .4em .6em;
+  border-radius: 4px;
+
+  &:focus {
+    background: #f5f5f5;
+  }
+}
+
+button,
+input[type=submit] {
+  background: #eee;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+
+  .required {
+    opacity: .5;
+    font-feature-settings: "case";
+  }
+}
+
+// Global wrapper
+.site {
+  margin: 0 auto;
+  max-width: var(--breakpoint-md);
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+// Header
+.site-header {
+
+  // Header text
+  hgroup {
+    padding: var(--space-xs) var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+
+    .site-title {
+
+    }
+
+    .site-description {
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--text-color-50);
+    }
+  }
+
+  // Site navigation
+  .main-navigation {
+    padding: 0 var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+
+    // Menu toggle for mobile
+    .menu-toggle {
+      display: none;
+    }
+
+    // Menu list
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      list-style: none;
+
+      li {
+        position: relative;
+        font-size: .8rem;
+        margin-right: 2.6em;
+        font-weight: bold;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: block;
+          padding: 1em 0;
+          color: var(--text-color-50);
+          text-transform: uppercase;
+
+          &:hover,
+          &:focus {
+            color: var(--text-color);
+          }
+        }
+
+        // Submenus
+        ul {
+          display: block;
+          position: absolute;
+          top: 100%;
+          z-index: 1;
+          clip: rect(1px, 1px, 1px, 1px);
+          overflow: hidden;
+          height: 1px;
+          width: 1px;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 8px 20px 0 rgba(0, 0, 0, .1);
+
+          li {
+            background: var(--background-color);
+            margin-right: 0;
+            font-weight: normal;
+
+            a {
+              display: block;
+              min-width: 140px;
+              max-width: 220px;
+              padding: 10px 20px;
+            }
+          }
+
+          // submenu inside submenu
+          ul {
+            top: 0;
+            left: 100%;
+          }
+        }
+
+        &:hover,
+        &:focus {
+
+          > ul {
+            clip: inherit;
+            overflow: inherit;
+            height: inherit;
+            width: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  // Header image link
+  > a {
+    display: block;
+    padding: var(--space-sm) var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1;
+
+    .header-image {
+      max-width: 100%;
+    }
+  }
+}
+
+// Navigation (page navigator)
+.navigation {
+  padding: var(--space-xs) var(--gutter);
+}
+
+#nav-above {
+  display: none;
+
+  .paged & {
+    display: block;
+  }
+}
+
+// Content wrapper (main structure only, elemtn appearance are defined below)
+#main {
+  display: flex;
+
+  @media (max-width: $breakpoint-sm) {
+    display: block;
+  }
+}
+
+// Left main content (#primary.site-content)
+#primary {
+  width: calc(100% - var(--sidebar-width));
+
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
+
+  // Archive/page header (heading)
+  .archive-header,
+  .page-header {
+    padding: var(--space-xs) var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+
+    h1 {
+      opacity: .5;
+      font-size: .8rem;
+      text-transform: uppercase;
+      font-weight: normal;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+
+  // Post nav (next, prev)
+  .nav-single {
+    padding: var(--space-xs) var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+// Right sidebar content
+#secondary {
+  flex: 1;
+  width: var(--sidebar-width);
+  padding: var(--space-xs) var(--gutter);
+
+  @media (max-width: $breakpoint-md) {
+    --sidebar-width: 40%;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
+}
+
+// Footer
+#colophon {
+  padding: var(--space-xs) var(--gutter);
+  border-top: 1px solid var(--border-color);
+}
+
+// Post content appearance
+// Mainly copied from my AMSF project
+// I moved this out of the #main above to avoid deep nesting
+article {
+  padding: var(--space-xs) var(--gutter);
+  border-bottom: 1px solid var(--border-color);
+}
+
+// Post content
+.entry-header {
+
+  .entry-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+    margin-bottom: .4em;
+  }
+
+  .comments-link {
+    color: var(--text-color-50);
+    margin-bottom: .8em;
+
+    a {
+      color: var(--text-color-50);
+
+      &:hover,
+      &:focus {
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+.entry-content,
+.entry-summary,
+.comment-content {
+
+  a {
+    color: var(--link-color);
+
+    &:hover,
+    &:focus {
+      color: var(--link-color-70);
+    }
+
+    &:visited {
+      color: var(--text-color-5);
+    }
+  }
+}
+
+.entry-header,
+.entry-content,
+.entry-summary,
+.comment-content,
+.widget {
+
+  p {
+    margin-bottom: 1rem;
+    line-height: calc(var(--line-height) * 1.2);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.6em;
+    margin-bottom: .6em;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 1.8rem;
+    list-style: none;
+    counter-reset: list;
+
+    @media (max-width: $breakpoint-sm) {
+      margin-left: 1em;
+    }
+
+    li {
+      line-height: calc(var(--line-height) * 1.2);
+
+      &::before {
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        width: 4em;
+        margin-top: 0;
+        margin-left: -4em;
+        text-align: right;
+        opacity: .4;
+        pointer-events: none;
+      }
+
+      > ul,
+      > ol {
+        margin-left: 1em;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul li::before {
+    content: "-";
+    padding-right: .6em;
+  }
+
+  ol li::before {
+    counter-increment: list;
+    content: counter(list) ".";
+    padding-right: .3em;
+  }
+
+  dl {
+    line-height: calc(var(--line-height) * 1.2);
+
+    @media (max-width: $breakpoint-sm) {
+      margin-left: 1em;
+    }
+
+    dt {
+
+      &::before {
+        position: absolute;
+        width: 1em;
+        margin-left: -1em;
+        content: "-";
+        opacity: .6;
+        pointer-events: none;
+      }
+    }
+
+    dd {
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  img:not(.avatar),
+  video,
+  iframe,
+  .browser {
+    --space-deco: var(--gutter);
+    display: block;
+    width: calc(100% + var(--space-deco) * 2);
+    height: auto;
+    @include margin-offset(calc(var(--space-deco) * -1));
+    margin-bottom: 1.8rem;
+
+    // Avoid images with `.no-enlarge` stretched by global img styles
+    &.size-fit,
+    &.no-enlarge {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
+      width: auto;
+    }
+
+    // Full width image
+    &.size-large {
+      --space-deco: var(--space-lg);
+
+      @media (max-width: $breakpoint-md) {
+        --space-deco: var(--space-md);
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        --space-deco: var(--space-sm);
+      }
+    }
+
+    &.size-small {
+      --space-deco: var(--space-xs);
+
+      @media (max-width: $breakpoint-md) {
+        --space-deco: var(--space-md);
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        --space-deco: var(--space-sm);
+      }
+    }
+
+    &.size-left {
+      float: left;
+      max-width: 36vw;
+      margin-top: calc(var(--space-xs) / 2);
+      margin-right: var(--space-xs);
+      margin-bottom: calc(var(--space-xs) / 2);
+
+      @media (max-width: $breakpoint-md) {
+        float: none;
+        max-width: none;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+      }
+    }
+
+    &.size-right {
+      float: right;
+      max-width: 36vw;
+      margin-top: calc(var(--space-xs) / 2);
+      margin-left: var(--space-xs);
+      margin-bottom: calc(var(--space-xs) / 2);
+
+      @media (max-width: $breakpoint-md) {
+        float: none;
+        max-width: none;
+        margin-top: auto;
+        margin-left: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  blockquote {
+    position: relative;
+    margin-bottom: 2rem;
+    margin-left: calc(var(--gutter) * -1);
+
+    @media (max-width: $breakpoint-sm) {
+      margin-left: 0;
+    }
+
+    > p {
+      padding-left: var(--gutter);
+      border-left: var(--border-md) solid var(--link-color);
+
+      // TODO: Need better solution
+      // We will reset the common margin-bottom to get gapless borders for
+      // blockquotes. This could help fix
+      // https://github.com/amsf/amsf-curtana/issues/4
+      padding-bottom: 1.6em;
+
+      // Now reset default margin button from global define
+      margin-bottom: 0;
+      opacity: .6;
+
+      // Remove extra padding for the last element, re-apply margin
+      &:last-of-type {
+        padding-bottom: 0;
+        margin-bottom: .4em;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        @include padding-offset(calc(var(--gutter) - var(--border-md)), var(--gutter));
+        @include margin-offset(calc(var(--gutter) * -1));
+      }
+    }
+
+    footer {
+      @include cf;
+    }
+
+    cite {
+      float: right;
+      font-style: normal;
+
+      &::before {
+        // https://www.fileformat.info/info/unicode/char/2500/index.htm
+        content: "\2500\2500\00a0"
+      }
+    }
+  }
+
+  details {
+    margin-bottom: 1.8rem;
+
+    summary {
+      position: relative;
+      list-style: none;
+      line-height: calc(var(--line-height) * 1.2);
+      outline: none;
+      cursor: pointer;
+
+      @media (max-width: $breakpoint-sm) {
+        margin-left: 1em;
+      }
+
+      &::-webkit-details-marker {
+        display: none
+      }
+
+      &::before {
+        content: "+";
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 1em;
+        left: -.3em;
+        margin-top: 0;
+        margin-left: -1em;
+        text-align: right;
+        opacity: .4;
+        transition: opacity .2s ease, transform .2s ease;
+        transform-origin: center center;
+        font-feature-settings: "case";
+      }
+    }
+
+    &[open] summary::before {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+  }
+
+  hr {
+    @include spliter();
+  }
+
+  sup {
+    font-size: 75%;
+  }
+
+  pre,
+  code {
+    font-family: var(--fontstack-monospace);
+    color: var(--code-color);
+  }
+
+  pre {
+    background: var(--code-color-5);
+  }
+
+  code {
+    overflow-wrap: break-word;
+  }
+
+  pre,
+  .highlight > pre,
+  .highlighter-rouge pre.highlight {
+    --space-code: var(--gutter);
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+    @include padding-offset(var(--space-code));
+    @include margin-offset(calc(var(--space-code) * -1));
+    margin-bottom: 1.8rem;
+    overflow-x: auto;
+    line-height: calc(var(--line-height) * 1.2);
+
+    // Bouncing scroll fix for iOS
+    -webkit-overflow-scrolling: touch;
+
+    // @media (max-width: $breakpoint-md) {
+    //   --space-code: var(--space-md);
+    // }
+
+    // @media (max-width: $breakpoint-sm) {
+    //   --space-code: var(--space-sm);
+    // }
+
+    // Reset overflow for code in code blocks
+    code {
+      overflow-wrap: normal;
+    }
+  }
+
+  table {
+    --space-table: var(--space-xs);
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 90%;
+    width: 100%;
+    @include margin-offset(calc(var(--space-table) * -1));
+    margin-bottom: 1.8rem;
+
+    // TODO: responsive table support
+    // display: inline-block;
+    // overflow-x: auto;
+    // white-space: nowrap;
+
+    // TODO: responsive table support
+    @media (max-width: $breakpoint-md) {
+      --space-table: var(--space-md);
+      width: calc(100% + var(--space-table) * 2);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      --space-table: var(--space-sm);
+      width: calc(100% + var(--space-table) * 2);
+    }
+
+    th,
+    td {
+      --space-table-cell: var(--space-xs);
+      padding: .6em var(--space-xs);
+
+      &:first-child {
+        padding-left: var(--space-table-cell);
+      }
+
+      &:last-child {
+        padding-right: var(--space-table-cell);
+      }
+
+      @media (max-width: $breakpoint-md) {
+        --space-table-cell: var(--space-md);
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        --space-table-cell: var(--space-sm);
+      }
+    }
+
+    th {
+      border-bottom: var(--border-md) solid var(--border-color); // Override default user agent stylesheet
+      text-align: left;
+    }
+
+    td {
+      border-top: var(--border-sm) solid var(--border-color);
+    }
+  }
+}
+
+// Authoer info block
+.author-info {
+  display: flex;
+  line-height: calc(var(--line-height) * 1.2);
+
+  .author-avatar {
+    margin-right: 10px;
+  }
+
+  .author-description {
+    color: var(--text-color);
+  }
+
+  #content > & {
+    padding: var(--space-xs) var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+// Authoer info after every post, .author-info is also nested in this container
+.entry-meta {
+  line-height: calc(var(--line-height) * 1.2);
+  color: var(--text-color-50);
+
+  a {
+    color: var(--text-color-50);
+
+    &:hover,
+    &:focus {
+      color: var(--text-color);
+    }
+  }
+
+  .author-info {
+    padding-top: var(--space-xs);
+  }
+}
+
+// Post navigator (prev/next) in post.php
+.nav-single {
+  overflow: auto;
+
+  .nav-previous {
+    float: left;
+  }
+
+  .nav-next {
+    float: right;
+  }
+
+}
+
+// General meta nav arrow animation
+a {
+
+  .meta-nav {
+    opacity: .5;
+    transition: opacity .2s ease;
+  }
+
+  &:hover,
+  &:focus {
+
+    .meta-nav {
+      opacity: 1;
+    }
+  }
+}
+
+// Post type: aside
+.format-aside {
+
+  .aside {
+    background: var(--link-color-5);
+    padding: 20px;
+    margin: 1rem 0;
+    border-right: 1em solid var(--link-color);
+  }
+}
+
+// Post type: image
+.format-image {
+
+  .entry-content {
+
+    p:last-child {
+
+      a img {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .entry-meta {
+
+    > a {
+
+      // Reapply heading color since it's overitten by global .entry-meta
+      h1 {
+        color: var(--text-color);
+      }
+
+      h2 {
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      &:hover,
+      &:focus {
+
+        h1 {
+          color: var(--link-color);
+        }
+      }
+    }
+  }
+}
+
+// Post type: link
+.format-link {
+
+  header {
+    display: inline-block;
+    background: var(--text-color-10);
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+}
+
+// Post type: quote
+.format-quote {
+
+}
+
+// Post type: status
+.format-status {
+
+  .entry-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+
+    header {
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: normal;
+
+      a {
+        color: var(--text-color-50);
+
+        &:hover,
+        &:focus {
+          color: var(--text-color);
+        }
+      }
+    }
+
+    > img {
+      margin-right: 10px;
+      order: -1;
+    }
+  }
+}
+
+// Comments (#comments)
+.comments-area {
+
+  .comments-title {
+    padding: var(--space-xs) var(--gutter) 0;
+  }
+
+  .commentlist {
+    list-style: none;
+
+    .children {
+
+      .depth-2 article { padding-left: calc(2em + var(--gutter)); }
+      .depth-3 article { padding-left: calc(4em + var(--gutter)); }
+      .depth-4 article { padding-left: calc(6em + var(--gutter)); }
+      .depth-5 article { padding-left: calc(8em + var(--gutter)); }
+      .depth-6 article { padding-left: calc(10em + var(--gutter)); }
+      .depth-7 article { padding-left: calc(12em + var(--gutter)); }
+      .depth-8 article { padding-left: calc(14em + var(--gutter)); }
+      .depth-9 article { padding-left: calc(16em + var(--gutter)); }
+      .depth-10 article { padding-left: calc(18em + var(--gutter)); }
+      .depth-11 article { padding-left: calc(20em + var(--gutter)); }
+    }
+  }
+
+  article {
+    position: relative;
+
+    .comment-meta {
+      clear: both;
+      margin-bottom: 1em;
+
+      .avatar {
+        float: left;
+        margin-right: 10px;
+      }
+
+      cite,
+      time {
+        display: block;
+        font-style: normal;
+      }
+
+      time {
+        font-size: .9rem;
+        color: var(--text-color-50);
+      }
+    }
+
+    .comment-content {
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .edit-link {
+        font-size: .9rem;
+      }
+    }
+
+    .reply {
+      display: none;
+      position: absolute;
+      top: var(--space-xs);
+      right: var(--gutter);
+      font-size: .9rem;
+      color: var(--text-color-50);
+    }
+
+    &:hover,
+    &:focus {
+
+      .reply {
+        display: block;
+      }
+    }
+  }
+}
+
+// Comment reply (#respond)
+.comment-respond {
+  padding: var(--space-xs) var(--gutter);
+  line-height: calc(var(--line-height) * 1.2);
+
+  form {
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      min-height: 5em;
+    }
+  }
+}
+
+// Sidebar (#secondary)
+.widget-area {
+  font-size: .9rem;
+  color: var(--text-color-60);
+
+  a {
+    color: var(--text-color-60);
+
+    &:hover,
+    &:focus {
+      color: var(--text-color);
+    }
+  }
+
+  .widget {
+    margin-bottom: 3.5rem;
+
+    h3 {
+      color: var(--text-color-30);
+      font-size: .8rem;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .searchform {
+      margin-top: 1rem;
+
+      > div {
+        display: flex;
+
+        input[type=text] {
+          border-radius: 4px 0 0 4px;
+          min-width: 0;
+        }
+
+        input[type=submit] {
+          border-radius: 0 4px 4px 0;
+        }
+      }
+    }
+  }
+}
+
+// Assistive text
+.assistive-text,
+.site .screen-reader-text {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+}

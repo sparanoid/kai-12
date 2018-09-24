@@ -303,7 +303,7 @@ label {
 // Mainly copied from my AMSF project
 // I moved this out of the #main above to avoid deep nesting
 article {
-  padding: var(--gutter) var(--gutter);
+  padding: calc(var(--space-sm) / 1.25) var(--gutter);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -978,7 +978,7 @@ a {
     .reply {
       display: none;
       position: absolute;
-      top: var(--space-xs);
+      top: calc(var(--space-sm) / 1.25);
       right: var(--gutter);
       font-size: .9rem;
       color: var(--text-color-50);
@@ -1042,7 +1042,7 @@ a {
     }
 
     .searchform {
-      margin-top: 1rem;
+      margin-top: 1em;
 
       > div {
         display: flex;

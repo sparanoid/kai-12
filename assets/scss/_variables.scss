@@ -1,0 +1,108 @@
+//
+// Variables
+// -----------------------------------------------------------------------------
+
+// TODO: We're in the process of transfering Sass variables to CSS native
+// variables, since CSS variables still don't support media query and color
+// manipulation, I still need some Sass variables here.
+
+// Layout
+$breakpoint-lg: 1600px !default;
+$breakpoint-md: 1080px !default;
+$breakpoint-sm: 640px !default;
+$breakpoint-xs: 400px !default;
+
+// Colors
+$link-color: #4f3fbb !default;
+$background-color: #fff !default;
+$text-color: #080c1b !default;
+$code-color: #f77123 !default;
+
+:root {
+  // Typography
+  --fontstack-prefix: -apple-system, BlinkMacSystemFont,; // Notice that ending comma?
+  --fontstack-sans-serif: "Helvetica Neue", Arial, sans-serif;
+  --fontstack-serif: Georgia, serif;
+  --fontstack-monospace: Menlo, Consolas, monospace;
+  --fontstack-default: var(--fontstack-prefix) var(--fontstack-sans-serif);
+  --fontstack-heading: var(--fontstack-prefix) var(--fontstack-sans-serif);
+  --font-size: 16px;
+  --font-features: "ss01", "ss02";
+  --line-height: calc(20 / 14); // ~ 1.428571429
+  --heading-letter-spacing: -.04em;
+
+  // Layout
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-xs: #{$breakpoint-xs};
+  --sidebar-width: 30%;
+
+  --space-lg: 240px;
+  --space-md: 80px;
+  --space-sm: 40px;
+  --space-xs: 20px;
+
+  --border-lg: 4px;
+  --border-md: 2px;
+  --border-sm: 1px;
+
+  // Colors
+  --link-color: #{$link-color};
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --code-color: #{$code-color};
+
+  --text-color-hue: #{unitlessness(hue($text-color))};
+  --text-color-sat: #{saturation($text-color)};
+  --text-color-light: #{lightness($text-color)};
+  --text-color-hsl: var(--text-color-hue), var(--text-color-sat), var(--text-color-light);
+
+  --text-color-5: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .05);
+  --text-color-7: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .07);
+  --text-color-10: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .1);
+  --text-color-20: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .2);
+  --text-color-30: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .3);
+  --text-color-40: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .4);
+  --text-color-50: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .5);
+  --text-color-60: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .6);
+  --text-color-70: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .7);
+  --text-color-80: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .8);
+  --text-color-90: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .9);
+  --border-color: var(--text-color-7);
+
+  --link-color-hue: #{unitlessness(hue($link-color))};
+  --link-color-sat: #{saturation($link-color)};
+  --link-color-light: #{lightness($link-color)};
+  --link-color-hsl: var(--link-color-hue), var(--link-color-sat), var(--link-color-light);
+
+  --link-color-5: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .05);
+  --link-color-7: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .07);
+  --link-color-10: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .1);
+  --link-color-20: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .2);
+  --link-color-30: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .3);
+  --link-color-40: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .4);
+  --link-color-50: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .5);
+  --link-color-60: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .6);
+  --link-color-70: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .7);
+  --link-color-80: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .8);
+  --link-color-90: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .9);
+
+  --code-color-hue: #{unitlessness(hue($code-color))};
+  --code-color-sat: #{saturation($code-color)};
+  --code-color-light: #{lightness($code-color)};
+  --code-color-hsl: var(--code-color-hue), var(--code-color-sat), var(--code-color-light);
+
+  --code-color-5: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .05);
+  --code-color-7: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .07);
+  --code-color-10: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .1);
+  --code-color-20: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .2);
+  --code-color-30: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .3);
+  --code-color-40: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .4);
+  --code-color-50: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .5);
+  --code-color-60: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .6);
+  --code-color-70: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .7);
+  --code-color-80: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .8);
+  --code-color-90: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .9);
+
+}

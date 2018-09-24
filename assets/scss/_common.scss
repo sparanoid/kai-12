@@ -931,6 +931,10 @@ a {
     }
   }
 
+  .nocomments {
+    padding: var(--gutter-v) var(--gutter);
+  }
+
   article {
     position: relative;
 
@@ -990,6 +994,18 @@ a {
 
       .reply {
         display: block;
+      }
+    }
+  }
+
+  .pingback {
+
+    > p {
+      padding: var(--space-xs) var(--gutter);
+      border-bottom: 1px solid var(--border-color);
+
+      .edit-link {
+        float: right;
       }
     }
   }

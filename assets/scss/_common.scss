@@ -728,16 +728,31 @@ article {
 
 // Post navigator (prev/next) in post.php
 .nav-single {
-  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  line-height: var(--line-height);
+  // A simple trick to avoid doble bottom border
+  margin-bottom: -1px;
+
+  @media (max-width: $breakpoint-sm) {
+    display: block;
+  }
+
+  > span {
+    display: block;
+    flex: 1;
+  }
 
   .nav-previous {
-    float: left;
   }
 
   .nav-next {
-    float: right;
-  }
+    text-align: right;
 
+    @media (max-width: $breakpoint-sm) {
+      text-align: left;
+    }
+  }
 }
 
 // General meta nav arrow animation

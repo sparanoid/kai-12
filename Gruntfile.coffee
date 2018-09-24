@@ -82,6 +82,12 @@ module.exports = (grunt) ->
         ]
 
     copy:
+      prepare:
+        files: [
+          src: ".tmp/<%= core.pkg.name %>.zip"
+          dest: ".tmp/<%= core.pkg.name %>-<%= core.pkg.version %>.zip"
+        ]
+
       dist:
         files: [
           expand: true
@@ -93,14 +99,6 @@ module.exports = (grunt) ->
           cwd: "templates/"
           src: ["<%= core.pkg.name %>.html"]
           dest: "/Users/sparanoid/Git/sparanoid.com-prod/site/lab/wordpress/"
-        ]
-
-    # TODO: `cwd` doesn't work here.
-    rename:
-      dist:
-        files: [
-          src: [".tmp/<%= core.pkg.name %>.zip"]
-          dest: ".tmp/<%= core.pkg.name %>-<%= core.pkg.version %>.zip"
         ]
 
     replace:
@@ -124,5 +122,5 @@ module.exports = (grunt) ->
   grunt.registerTask "serve", ["clean", "test", "less:server", "autoprefixer", "watch"]
   grunt.registerTask "test", ["coffeelint"]
   grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "cssmin"]
-  grunt.registerTask "deploy", ["build", "compress", "copy", "rename", "copy", "replace", "clean"]
+  grunt.registerTask "deploy", ["build", "compress", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

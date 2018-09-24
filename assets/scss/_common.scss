@@ -53,7 +53,7 @@ button {
   border-radius: 4px;
 
   &:focus {
-    background: var(--text-color-3);
+    background-color: var(--text-color-3);
   }
 }
 
@@ -253,7 +253,7 @@ label {
     border-bottom: 1px solid var(--border-color);
 
     h1 {
-      opacity: .5;
+      color: var(--text-color-50);
       font-size: .8rem;
       text-transform: uppercase;
       font-weight: normal;
@@ -303,7 +303,7 @@ label {
 // Mainly copied from my AMSF project
 // I moved this out of the #main above to avoid deep nesting
 article {
-  padding: var(--space-xs) var(--gutter);
+  padding: var(--gutter) var(--gutter);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -313,8 +313,8 @@ article {
   .entry-title {
     font-weight: bold;
     font-size: 1.8rem;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    line-height: calc(var(--line-height) * .9);
+    letter-spacing: -.02em;
     margin-top: 0;
     margin-bottom: .4em;
   }
@@ -536,7 +536,6 @@ article {
 
       // Now reset default margin button from global define
       margin-bottom: 0;
-      opacity: .6;
 
       // Remove extra padding for the last element, re-apply margin
       &:last-of-type {
@@ -850,7 +849,7 @@ a {
   .entry-content > p > a {
     font-size: 1.8rem;
     font-weight: bold;
-    line-height: 1.15;
+    line-height: calc(var(--line-height) * .9);
     color: var(--text-color);
 
     &:hover,

@@ -1,5 +1,6 @@
 body {
   --gutter: var(--space-sm);
+  --gutter-v: calc(var(--space-sm) / 1.25);
   background: var(--text-color-5);
   padding: var(--gutter) 0;
 
@@ -276,7 +277,7 @@ label {
 #secondary {
   flex: 1;
   width: var(--sidebar-width);
-  padding: var(--space-xs) var(--gutter);
+  padding: var(--gutter-v) var(--gutter);
 
   @media (max-width: $breakpoint-sm) {
     width: 100%;
@@ -303,7 +304,7 @@ label {
 // Mainly copied from my AMSF project
 // I moved this out of the #main above to avoid deep nesting
 article {
-  padding: calc(var(--space-sm) / 1.25) var(--gutter);
+  padding: var(--gutter-v) var(--gutter);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -909,7 +910,7 @@ a {
 .comments-area {
 
   .comments-title {
-    padding: var(--space-xs) var(--gutter) 0;
+    padding: var(--gutter-v) var(--gutter) 0;
   }
 
   .commentlist {
@@ -978,7 +979,7 @@ a {
     .reply {
       display: none;
       position: absolute;
-      top: calc(var(--space-sm) / 1.25);
+      top: var(--gutter-v);
       right: var(--gutter);
       font-size: .9rem;
       color: var(--text-color-50);

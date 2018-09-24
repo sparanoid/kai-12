@@ -24,3 +24,9 @@ body {
     backdrop-filter: blur(10px);
   }
 }
+
+.hljs {
+  overflow: initial !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}

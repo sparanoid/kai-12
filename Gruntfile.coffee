@@ -1,6 +1,9 @@
 "use strict"
 module.exports = (grunt) ->
 
+  # Load Sass deps
+  sass = require('node-sass')
+
   # Load all grunt tasks
   require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
 
@@ -39,6 +42,10 @@ module.exports = (grunt) ->
         files: ["<%= core.app %>/assets/less/**/*.less"]
         tasks: ["less:server", "autoprefixer"]
 
+      sass:
+        files: ["<%= core.app %>/assets/scss/**/*.scss"]
+        tasks: ["sass:server", "autoprefixer"]
+
     less:
       server:
         options:
@@ -51,6 +58,31 @@ module.exports = (grunt) ->
       dist:
         src: ["<%= less.server.src %>"]
         dest: "<%= less.server.dest %>"
+
+    sass:
+      options:
+        implementation: sass
+        precision: 10
+
+      serve:
+        options:
+          outputStyle: "nested"
+          sourceMapContents: true
+          sourceMapEmbed: true
+
+        files: [
+          expand: true
+          cwd: "<%= core.app %>/assets/scss/"
+          src: ["**/app*.scss"]
+          dest: "<%= core.dist %>/"
+          ext: ".css"
+        ]
+
+      dist:
+        options:
+          outputStyle: "compressed"
+
+        files: "<%= sass.serve.files %>"
 
     autoprefixer:
       dist:
@@ -77,7 +109,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: "<%= core.app %>/"
-          src: ["**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.less"]
+          src: ["**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.scss", "!*.less"]
           dest: "<%= core.pkg.name %>"
         ]
 
@@ -119,8 +151,8 @@ module.exports = (grunt) ->
 
     clean: [".tmp"]
 
-  grunt.registerTask "serve", ["clean", "test", "less:server", "autoprefixer", "watch"]
+  grunt.registerTask "serve", ["clean", "test", "sass:server", "autoprefixer", "watch"]
   grunt.registerTask "test", ["coffeelint"]
-  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "cssmin"]
+  grunt.registerTask "build", ["clean", "test", "sass:dist", "autoprefixer", "cssmin"]
   grunt.registerTask "deploy", ["build", "compress", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

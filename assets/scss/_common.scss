@@ -644,14 +644,6 @@ article {
     // Bouncing scroll fix for iOS
     -webkit-overflow-scrolling: touch;
 
-    // @media (max-width: $breakpoint-md) {
-    //   --space-code: var(--space-md);
-    // }
-
-    // @media (max-width: $breakpoint-sm) {
-    //   --space-code: var(--space-sm);
-    // }
-
     // Reset overflow for code in code blocks
     code {
       overflow-wrap: normal;
@@ -659,11 +651,11 @@ article {
   }
 
   table {
-    --space-table: var(--space-xs);
+    --space-table: var(--gutter);
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 90%;
-    width: 100%;
+    width: calc(100% + var(--space-table) * 2);
     @include margin-offset(calc(var(--space-table) * -1));
     margin-bottom: 1.8rem;
 
@@ -672,36 +664,16 @@ article {
     // overflow-x: auto;
     // white-space: nowrap;
 
-    // TODO: responsive table support
-    @media (max-width: $breakpoint-md) {
-      --space-table: var(--space-md);
-      width: calc(100% + var(--space-table) * 2);
-    }
-
-    @media (max-width: $breakpoint-sm) {
-      --space-table: var(--space-sm);
-      width: calc(100% + var(--space-table) * 2);
-    }
-
     th,
     td {
-      --space-table-cell: var(--space-xs);
       padding: .6em var(--space-xs);
 
       &:first-child {
-        padding-left: var(--space-table-cell);
+        padding-left: var(--space-table);
       }
 
       &:last-child {
-        padding-right: var(--space-table-cell);
-      }
-
-      @media (max-width: $breakpoint-md) {
-        --space-table-cell: var(--space-md);
-      }
-
-      @media (max-width: $breakpoint-sm) {
-        --space-table-cell: var(--space-sm);
+        padding-right: var(--space-table);
       }
     }
 

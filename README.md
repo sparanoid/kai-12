@@ -1,4 +1,6 @@
 # Kai 12
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sparanoid/kai-12.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/sparanoid/kai-12.svg)](https://travis-ci.org/sparanoid/kai-12)
 [![devDependency Status](https://david-dm.org/sparanoid/kai-12/dev-status.svg)](https://david-dm.org/sparanoid/kai-12#info=devDependencies)
 

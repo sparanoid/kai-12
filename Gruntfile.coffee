@@ -30,31 +30,14 @@ module.exports = (grunt) ->
         files:
           src: ["Gruntfile.coffee"]
 
-    lesslint:
-      options:
-        csslint:
-          csslintrc: "<%= core.app %>/assets/less/.csslintrc"
-
-      test:
-        src: ["<%= core.app %>/assets/less/app*.less"]
-
-    phplint:
-      test:
-        files:
-          src: ["<%= core.app %>/{,*/}*.php"]
-
     watch:
       coffee:
         files: ["<%= coffeelint.test.files.src %>"]
         tasks: ["coffeelint"]
 
-      phplint:
-        files: ["<%= phplint.test.files.src %>"]
-        tasks: ["phplint"]
-
       less:
         files: ["<%= core.app %>/assets/less/**/*.less"]
-        tasks: ["lesslint", "less:server", "autoprefixer"]
+        tasks: ["less:server", "autoprefixer"]
 
     less:
       server:
@@ -70,14 +53,6 @@ module.exports = (grunt) ->
         dest: "<%= less.server.dest %>"
 
     autoprefixer:
-      dist:
-        src: ["<%= less.server.dest %>"]
-        dest: "<%= less.server.dest %>"
-
-    csscomb:
-      options:
-        config: "<%= core.app %>/assets/less/.csscomb.json"
-
       dist:
         src: ["<%= less.server.dest %>"]
         dest: "<%= less.server.dest %>"
@@ -156,7 +131,7 @@ module.exports = (grunt) ->
     clean: [".tmp"]
 
   grunt.registerTask "serve", ["clean", "test", "less:server", "autoprefixer", "watch"]
-  grunt.registerTask "test", ["coffeelint", "lesslint"]
-  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "csscomb", "cssmin", "usebanner"]
+  grunt.registerTask "test", ["coffeelint"]
+  grunt.registerTask "build", ["clean", "test", "less:dist", "autoprefixer", "cssmin", "usebanner"]
   grunt.registerTask "deploy", ["build", "compress", "copy", "rename", "copy", "replace", "clean"]
   grunt.registerTask "default", ["build"]

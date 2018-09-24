@@ -58,6 +58,7 @@ $code-color: #f77123 !default;
   --text-color-light: #{lightness($text-color)};
   --text-color-hsl: var(--text-color-hue), var(--text-color-sat), var(--text-color-light);
 
+  --text-color-3: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .03);
   --text-color-5: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .05);
   --text-color-7: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .07);
   --text-color-10: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .1);
@@ -76,6 +77,7 @@ $code-color: #f77123 !default;
   --link-color-light: #{lightness($link-color)};
   --link-color-hsl: var(--link-color-hue), var(--link-color-sat), var(--link-color-light);
 
+  --link-color-3: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .03);
   --link-color-5: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .05);
   --link-color-7: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .07);
   --link-color-10: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .1);
@@ -93,6 +95,7 @@ $code-color: #f77123 !default;
   --code-color-light: #{lightness($code-color)};
   --code-color-hsl: var(--code-color-hue), var(--code-color-sat), var(--code-color-light);
 
+  --code-color-3: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .03);
   --code-color-5: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .05);
   --code-color-7: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .07);
   --code-color-10: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .1);

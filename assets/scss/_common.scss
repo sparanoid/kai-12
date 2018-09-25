@@ -799,8 +799,9 @@ article {
 a {
 
   .meta-nav {
+    display: inline-block;
     opacity: .5;
-    transition: opacity .2s ease;
+    transition: opacity .2s ease, transform .2s ease;
   }
 
   &:hover,
@@ -808,6 +809,20 @@ a {
 
     .meta-nav {
       opacity: 1;
+    }
+
+    &[rel=prev] {
+
+      .meta-nav {
+        transform: translateX(-2px);
+      }
+    }
+
+    &[rel=next] {
+
+      .meta-nav {
+        transform: translateX(2px);
+      }
     }
   }
 }
@@ -1088,22 +1103,30 @@ a {
       text-transform: uppercase;
       margin-bottom: 1.4rem;
     }
+  }
+}
 
-    .searchform {
+// General search form
+.searchform {
 
-      > div {
-        display: flex;
+  > div {
+    display: flex;
 
-        input[type=text] {
-          border-radius: 4px 0 0 4px;
-          min-width: 0;
-        }
-
-        input[type=submit] {
-          border-radius: 0 4px 4px 0;
-        }
-      }
+    input[type=text] {
+      border-radius: 4px 0 0 4px;
+      min-width: 0;
     }
+
+    input[type=submit] {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+.post-password-form {
+
+  input[type=password] {
+    margin-bottom: 1em;
   }
 }
 

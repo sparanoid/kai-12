@@ -4,7 +4,8 @@
 
 body { // wrap it in body to avoid abusing !important
 
-  // Set correct padding bottom for Jetpack Infinite Scrolling
+  // Infinite Scrolling by Jetpack
+  // Set correct padding bottom
   &.infinite-scroll:not(.infinity-end) {
     padding-bottom: 0;
   }
@@ -51,10 +52,22 @@ body { // wrap it in body to avoid abusing !important
       font-family: var(--fontstack-heading);
     }
   }
-}
 
-.hljs {
-  overflow: initial !important;
-  background-color: transparent !important;
-  padding: 0 !important;
+  // Contact Form by jetpck
+  .contact-form {
+
+    label {
+
+      span {
+        color: var(--text-color-50);
+      }
+    }
+  }
+
+  // WP Code Highlight.js
+  .hljs {
+    overflow: initial !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
 }

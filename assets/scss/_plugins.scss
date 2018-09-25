@@ -25,6 +25,19 @@ body {
   }
 }
 
+.infinite-scroll #infinite-handle {
+  padding-bottom: 0 !important;
+
+  span {
+    padding: var(--gutter-v) var(--gutter);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: var(--text-color-5);
+    font-family: var(--fontstack-heading);
+  }
+}
+
 .hljs {
   overflow: initial !important;
   background-color: transparent !important;

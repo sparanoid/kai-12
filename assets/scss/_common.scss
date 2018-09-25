@@ -480,7 +480,7 @@ article {
     }
   }
 
-  img:not(.avatar),
+  img:not(.avatar):not([src*="wp-content/plugins"]),
   video,
   .embed-youtube,
   .browser {

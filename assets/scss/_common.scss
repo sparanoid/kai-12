@@ -9,7 +9,7 @@ body {
   }
 
   @media (max-width: $breakpoint-sm) {
-    --gutter: 12px;
+    --gutter: 10px;
   }
 }
 
@@ -457,7 +457,7 @@ article {
 
   img:not(.avatar),
   video,
-  iframe,
+  .embed-youtube,
   .browser {
     --space-deco: var(--gutter);
     display: block;
@@ -530,6 +530,24 @@ article {
         margin-left: auto;
         margin-bottom: auto;
       }
+    }
+  }
+
+  // Special cases for YouTube embeded
+  // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+  .embed-youtube {
+    display: block;
+    position: relative;
+    // 16:9
+    padding-bottom: calc(56.25% + var(--gutter) * 2 * .5625);
+    height: 0;
+
+    > iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 

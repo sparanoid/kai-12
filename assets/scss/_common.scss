@@ -10,6 +10,8 @@ body {
 
   @media (max-width: $breakpoint-sm) {
     --gutter: 10px;
+    --gutter-v: var(--space-xs);
+    padding: 0;
   }
 }
 
@@ -119,6 +121,8 @@ label {
   // Site navigation
   .main-navigation {
     padding: 0 var(--gutter);
+    // Visual padding
+    padding-top: 2px;
     border-bottom: 1px solid var(--border-color);
 
     // Menu toggle for mobile
@@ -135,7 +139,7 @@ label {
       li {
         position: relative;
         font-size: .8rem;
-        margin-right: 2.6em;
+        margin-right: 3vmax;
         font-weight: bold;
 
         &:first-child {

@@ -9,7 +9,7 @@ body {
   }
 
   @media (max-width: $breakpoint-sm) {
-    --gutter: 10px;
+    --gutter: 12px;
     --gutter-v: var(--space-xs);
     padding: 0;
   }
@@ -70,6 +70,7 @@ input[type=submit] {
   &:hover,
   &:focus {
     background: var(--text-color-5);
+    text-decoration: none;
   }
 }
 
@@ -1077,6 +1078,10 @@ a {
   .widget {
     margin-bottom: 3.5rem;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     h3 {
       color: var(--text-color-30);
       font-size: .8rem;
@@ -1085,7 +1090,6 @@ a {
     }
 
     .searchform {
-      margin-top: 1em;
 
       > div {
         display: flex;

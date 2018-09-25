@@ -8,7 +8,7 @@ html {
 body {
   --gutter: var(--space-sm);
   --gutter-v: calc(var(--space-sm) / 1.25);
-  background: var(--text-color-5);
+  background: var(--body-color);
   padding: var(--gutter) 0;
 
   @media (max-width: $breakpoint-md) {
@@ -191,7 +191,7 @@ label {
           box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 8px 20px 0 rgba(0, 0, 0, .1);
 
           li {
-            background: var(--background-color);
+            background: var(--submenu-color);
             margin-right: 0;
             font-weight: normal;
 
@@ -347,6 +347,15 @@ article {
     letter-spacing: -.02em;
     margin-top: 0;
     margin-bottom: .4em;
+
+    a {
+      color: var(--heading-color);
+
+      &:hover,
+      &:focus {
+        color: var(--heading-color-hover);
+      }
+    }
   }
 
   .comments-link {
@@ -373,7 +382,7 @@ article {
 
     &:hover,
     &:focus {
-      color: var(--link-color-70);
+      color: var(--link-color-hover);
     }
   }
 }

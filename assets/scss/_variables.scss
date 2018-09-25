@@ -108,4 +108,11 @@ $code-color: #f77123 !default;
   --code-color-80: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .8);
   --code-color-90: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .9);
 
+  --link-color-hover: var(--link-color-70);
+
+  --heading-color: var(--text-color);
+  --heading-color-hover: var(--link-color);
+
+  --body-color: var(--text-color-5);
+  --submenu-color: var(--background-color);
 }

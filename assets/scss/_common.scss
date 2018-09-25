@@ -1,3 +1,10 @@
+html {
+
+  &[lang=zh-CN] { --fontstack-sans-serif: "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
+  &[lang=zh-TW] { --fontstack-sans-serif: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+  &[lang=zh-HK] { --fontstack-sans-serif: "PingFang HK", "Helvetica Neue", Arial, sans-serif; }
+}
+
 body {
   --gutter: var(--space-sm);
   --gutter-v: calc(var(--space-sm) / 1.25);

@@ -121,6 +121,16 @@ $code-color: #f77123 !default;
   --heading-color: var(--text-color);
   --heading-color-hover: var(--link-color);
 
+  --input-color: var(--text-color-60);
+  --input-color-hover: var(--text-color);
+  --input-bg-color: var(--text-color-5);
+  --input-bg-color-hover: var(--text-color-3);
+
+  --button-color: var(--text-color-60);
+  --button-color-hover: var(--text-color);
+  --button-bg-color: var(--text-color-10);
+  --button-bg-color-hover: var(--text-color-7);
+
   --body-color: var(--text-color-5);
   --submenu-color: var(--background-color);
 }

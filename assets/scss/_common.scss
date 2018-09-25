@@ -56,27 +56,31 @@ button {
   display: block;
   appearance: none;
   -webkit-appearance: none;
-  background: var(--text-color-5);
+  color: var(--input-color);
+  background: var(--input-bg-color);
   outline: none;
   border: none;
   padding: .4em .6em;
   border-radius: 4px;
 
   &:focus {
-    background-color: var(--text-color-3);
+    color: var(--input-color-hover);
+    background-color: var(--input-bg-color-hover);
   }
 }
 
 button,
 input[type=submit] {
-  background: var(--text-color-10);
+  color: var(--button-color);
+  background: var(--button-bg-color);
   cursor: pointer;
   padding-left: 1.2em;
   padding-right: 1.2em;
 
   &:hover,
   &:focus {
-    background: var(--text-color-5);
+    color: var(--button-color-hover);
+    background: var(--button-bg-color-hover);
     text-decoration: none;
   }
 }

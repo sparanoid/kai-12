@@ -158,6 +158,14 @@ label {
           }
         }
 
+        &.current-menu-item,
+        &.current-menu-ancestor {
+
+          > a {
+            color: var(--link-color);
+          }
+        }
+
         // Submenus
         ul {
           display: block;
@@ -200,6 +208,15 @@ label {
             width: inherit;
           }
         }
+      }
+    }
+
+    // Highlight topmost menu item with link color
+    .nav-menu > li.current-menu-item,
+    .nav-menu > li.current-menu-ancestor {
+
+      > a {
+        box-shadow: 0 1px 0;
       }
     }
   }

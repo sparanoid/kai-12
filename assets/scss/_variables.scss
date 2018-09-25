@@ -13,9 +13,9 @@ $breakpoint-sm: 640px !default;
 $breakpoint-xs: 400px !default;
 
 // Colors
+$text-color: #080c1b !default;
 $link-color: #4f3fbb !default;
 $background-color: #fff !default;
-$text-color: #080c1b !default;
 $code-color: #f77123 !default;
 
 :root {
@@ -48,9 +48,9 @@ $code-color: #f77123 !default;
   --border-sm: 1px;
 
   // Colors
+  --text-color: #{$text-color};
   --link-color: #{$link-color};
   --background-color: #{$background-color};
-  --text-color: #{$text-color};
   --code-color: #{$code-color};
 
   --text-color-hue: #{unitlessness(hue($text-color))};
@@ -107,6 +107,14 @@ $code-color: #f77123 !default;
   --code-color-70: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .7);
   --code-color-80: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .8);
   --code-color-90: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .9);
+
+  --background-color-hue: #{unitlessness(hue($background-color))};
+  --background-color-sat: #{saturation($background-color)};
+  --background-color-light: #{lightness($background-color)};
+  --background-color-hsl: var(--background-color-hue), var(--background-color-sat), var(--background-color-light);
+
+  --background-color-80: hsla(var(--background-color-hue), var(--background-color-sat), var(--background-color-light), .8);
+  --background-color-90: hsla(var(--background-color-hue), var(--background-color-sat), var(--background-color-light), .9);
 
   --link-color-hover: var(--link-color-70);
 

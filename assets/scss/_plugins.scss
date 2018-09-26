@@ -40,7 +40,7 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
-  .infinite-scroll #infinite-handle {
+  &.infinite-scroll #infinite-handle {
     padding-bottom: 0 !important;
 
     span {

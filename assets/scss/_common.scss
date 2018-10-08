@@ -493,6 +493,7 @@ article {
     --space-deco: var(--gutter);
     display: block;
     width: calc(100% + var(--space-deco) * 2);
+    max-width: none;
     height: auto;
     @include margin-offset(calc(var(--space-deco) * -1));
     margin-bottom: 1.8rem;

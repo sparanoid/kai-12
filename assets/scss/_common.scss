@@ -250,16 +250,90 @@ label {
   }
 }
 
-// Navigation (page navigator)
-.navigation {
-  padding: var(--space-xs) var(--gutter);
-}
-
+// Navigation (prev/next) in post, search, etc.
 #nav-above {
   display: none;
 
   .paged & {
+    display: flex;
+  }
+}
+
+.nav-single,
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-xs) var(--gutter);
+  border-bottom: 1px solid var(--border-color);
+  line-height: var(--line-height);
+  // A simple trick to avoid doble bottom border
+  margin-bottom: -1px;
+
+  @media (max-width: $breakpoint-sm) {
     display: block;
+  }
+
+  > span {
+    display: block;
+    flex: 1;
+  }
+
+  .nav-previous {
+  }
+
+  .nav-next {
+    text-align: right;
+
+    @media (max-width: $breakpoint-sm) {
+      text-align: left;
+    }
+  }
+}
+
+// General meta nav arrow animation
+nav {
+
+  .nav-previous,
+  .nav-next {
+
+    a {
+
+      .meta-nav {
+        display: inline-block;
+        opacity: .5;
+        transition: opacity .2s ease, transform .2s ease;
+      }
+    }
+  }
+
+  .nav-previous {
+
+    a {
+
+      &:hover,
+      &:focus {
+
+        .meta-nav {
+          opacity: 1;
+          transform: translateX(-2px);
+        }
+      }
+    }
+  }
+
+  .nav-next {
+
+    a {
+
+      &:hover,
+      &:focus {
+
+        .meta-nav {
+          opacity: 1;
+          transform: translateX(2px);
+        }
+      }
+    }
   }
 }
 
@@ -296,13 +370,6 @@ label {
         font-weight: bold;
       }
     }
-  }
-
-
-  // Post nav (next, prev)
-  .nav-single {
-    padding: var(--space-xs) var(--gutter);
-    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -521,6 +588,7 @@ article {
     position: relative;
     margin-bottom: 2rem;
     margin-left: calc(var(--gutter) * -1);
+    color: var(--text-color-60);
 
     @media (max-width: $breakpoint-sm) {
       margin-left: 0;
@@ -724,67 +792,6 @@ article {
 
   .author-info {
     padding-top: var(--space-xs);
-  }
-}
-
-// Post navigator (prev/next) in post.php
-.nav-single {
-  display: flex;
-  justify-content: space-between;
-  line-height: var(--line-height);
-  // A simple trick to avoid doble bottom border
-  margin-bottom: -1px;
-
-  @media (max-width: $breakpoint-sm) {
-    display: block;
-  }
-
-  > span {
-    display: block;
-    flex: 1;
-  }
-
-  .nav-previous {
-  }
-
-  .nav-next {
-    text-align: right;
-
-    @media (max-width: $breakpoint-sm) {
-      text-align: left;
-    }
-  }
-}
-
-// General meta nav arrow animation
-a {
-
-  .meta-nav {
-    display: inline-block;
-    opacity: .5;
-    transition: opacity .2s ease, transform .2s ease;
-  }
-
-  &:hover,
-  &:focus {
-
-    .meta-nav {
-      opacity: 1;
-    }
-
-    &[rel=prev] {
-
-      .meta-nav {
-        transform: translateX(-2px);
-      }
-    }
-
-    &[rel=next] {
-
-      .meta-nav {
-        transform: translateX(2px);
-      }
-    }
   }
 }
 

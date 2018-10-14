@@ -1061,6 +1061,13 @@ article {
   .widget {
     margin-bottom: 3.5rem;
 
+    &:first-child {
+
+      .widget-title {
+        margin-top: 0;
+      }
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

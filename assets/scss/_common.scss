@@ -857,15 +857,23 @@ article {
     font-weight: bold;
   }
 
-  .entry-content > p > a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: calc(var(--line-height) * .9);
-    color: var(--text-color);
+  .entry-content > p {
 
-    &:hover,
-    &:focus {
-      color: var(--link-color);
+    // Target last link (heading)
+    &:last-child {
+
+      > a {
+        font-size: 1.8rem;
+        font-family: var(--fontstack-heading);
+        font-weight: bold;
+        line-height: calc(var(--line-height) * .9);
+        color: var(--text-color);
+
+        &:hover,
+        &:focus {
+          color: var(--link-color);
+        }
+      }
     }
   }
 }

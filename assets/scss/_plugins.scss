@@ -4,7 +4,7 @@
 
 body { // wrap it in body to avoid abusing !important
 
-  // Infinite Scrolling by Jetpack
+  // Jetpack: Infinite Scrolling
   // Set correct padding bottom
   &.infinite-scroll:not(.infinity-end) {
     padding-bottom: 0;
@@ -53,7 +53,7 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
-  // Contact Form by Jetpack
+  // Jetpack: Contact Form
   .contact-form {
 
     label {
@@ -64,12 +64,23 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
-  // Gallery for Jetpack
+  // Jetpack: Gallery
   .gallery {
 
     img {
       margin: auto !important;
       max-width: 100% !important;
+    }
+  }
+
+  // Jetpack: Sharedaddy
+  .sharedaddy {
+
+    li {
+
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -86,4 +97,5 @@ body { // wrap it in body to avoid abusing !important
     width: auto !important;
     text-align: left !important;
   }
+
 }

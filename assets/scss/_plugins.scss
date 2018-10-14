@@ -98,4 +98,169 @@ body { // wrap it in body to avoid abusing !important
     text-align: left !important;
   }
 
+  // Algolia Search
+  // https://github.com/algolia/algoliasearch-wordpress/
+  --k12-algolia-font-size: calc(var(--font-size) * .9);
+  --k12-algolia-menu-background: var(--background-color);
+  --k12-algolia-highlight-background: var(--link-color-20);
+  .aa-dropdown-menu {
+    font-family: inherit;
+    background-color: var(--k12-algolia-menu-background);
+
+    &,
+    a {
+      color: var(--text-color);
+      font-size: var(--k12-algolia-font-size);
+    }
+
+    .aa-hint {
+      color: var(--text-color-40);
+    }
+
+    .autocomplete-header-title {
+      color: var(--text-color-40);
+    }
+
+    .autocomplete-header-more {
+
+      a {
+        color: var(--text-color-30);
+
+        &:hover {
+          color: var(--text-color-40);
+        }
+      }
+    }
+
+    .aa-suggestion {
+      padding: .5em 0;
+
+      em {
+        color: var(--link-color);
+        background: var(--k12-algolia-highlight-background);
+      }
+
+      .suggestion-post-content {
+        color: var(--text-color-40);
+
+        em {
+          box-shadow: inset 0 -2px 0 0 var(--link-color-50);
+        }
+      }
+
+      &.aa-cursor {
+        background-color: var(--text-color-5);
+      }
+    }
+
+    a.suggestion-link {
+
+      svg {
+        fill: var(--text-color-30);
+      }
+    }
+
+    .autocomplete-footer-branding {
+      color: var(--text-color-30);
+    }
+  }
+
+  #ais-wrapper {
+    width: 100%;
+    // margin fix for infinite scroll
+    margin-bottom: 30px;
+  }
+
+  #ais-main {
+    padding: 0;
+  }
+
+  #algolia-search-box {
+    padding: var(--gutter-v) var(--gutter);
+    padding-bottom: calc(var(--gutter-v) + 1em);
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color);
+
+    input {
+      border-bottom: 1px solid var(--text-color-10);
+      border-radius: 0;
+      font-weight: normal;
+    }
+
+    .search-icon {
+      left: var(--gutter);
+      top: calc(var(--gutter-v) + 14px);
+      fill: var(--text-color-10);
+    }
+
+    .ais-stats,
+    .ais-search-box--powered-by {
+      color: var(--text-color-40);
+      top: calc(var(--gutter-v) + 60px);
+    }
+
+    .ais-search-box--powered-by {
+      right: var(--gutter);
+    }
+  }
+
+  .ais-hits--item {
+    margin-bottom: 0;
+
+    em,
+    a em {
+      background: var(--k12-algolia-highlight-background);
+    }
+  }
+
+  #algolia-pagination {
+    padding: var(--gutter-v) var(--gutter);
+  }
+
+  // Sidebar
+  #ais-facets {
+    padding: var(--gutter-v) var(--gutter);
+
+    .ais-facets {
+      margin-bottom: 3.5rem;
+    }
+
+    .ais-menu,
+    .ais-hierarchical-menu,
+    .ais-refinement-list {
+
+      &--header {
+
+        h3 {
+          // Copied from sidebar heading appearance
+          color: var(--text-color-30);
+          font-size: .8rem;
+          text-transform: uppercase;
+          margin-bottom: 1.4rem;
+        }
+      }
+
+      &--item {
+        line-height: calc(var(--line-height) * 1.2);
+
+        &__active {
+          font-weight: bold;
+
+          a {
+            color: var(--link-color);
+          }
+        }
+      }
+
+      &--count {
+        float: right;
+        opacity: .4;
+      }
+
+      &--label {
+        margin-top: 0;
+        margin-bottom: .2em;
+      }
+    }
+  }
 }

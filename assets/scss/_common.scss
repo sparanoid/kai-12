@@ -179,6 +179,7 @@ label {
           &:hover,
           &:focus {
             color: var(--text-color);
+            outline: none;
           }
         }
 
@@ -223,7 +224,8 @@ label {
         }
 
         &:hover,
-        &:focus {
+        &:focus,
+        &:focus-within {
 
           > ul {
             clip: inherit;

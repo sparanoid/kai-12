@@ -5,6 +5,10 @@ html {
   &[lang=zh-HK] { --fontstack-sans-serif: "PingFang HK", "Helvetica Neue", Arial, sans-serif; }
 }
 
+:root {
+  background: var(--body-color);
+}
+
 body {
   --gutter: var(--space-sm);
   --gutter-v: calc(var(--space-sm) / 1.25);
@@ -19,6 +23,10 @@ body {
     --gutter: 12px;
     --gutter-v: var(--space-xs);
     padding: 0;
+  }
+
+  &.custom-background-white {
+    --border-color: #fff;
   }
 }
 

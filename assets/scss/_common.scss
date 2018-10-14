@@ -523,7 +523,7 @@ article {
     padding-right: .3em;
   }
 
-  dl {
+  dl:not(.gallery-item) {
     line-height: calc(var(--line-height) * 1.2);
 
     @media (max-width: $breakpoint-sm) {

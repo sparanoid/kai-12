@@ -79,4 +79,11 @@ body { // wrap it in body to avoid abusing !important
     background-color: transparent !important;
     padding: 0 !important;
   }
+
+  // TagCloudShortCode
+  div#tagcloud {
+    margin-bottom: auto !important;
+    width: auto !important;
+    text-align: left !important;
+  }
 }

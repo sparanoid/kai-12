@@ -53,7 +53,7 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
-  // Contact Form by jetpck
+  // Contact Form by Jetpack
   .contact-form {
 
     label {
@@ -61,6 +61,15 @@ body { // wrap it in body to avoid abusing !important
       span {
         color: var(--text-color-50);
       }
+    }
+  }
+
+  // Gallery for Jetpack
+  .gallery {
+
+    img {
+      margin: auto !important;
+      max-width: 100% !important;
     }
   }
 

@@ -57,7 +57,7 @@ a {
   }
 }
 
-input,
+input:not([type=checkbox]),
 textarea,
 select,
 button {

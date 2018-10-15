@@ -204,12 +204,19 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
-  .ais-hits--item {
-    margin-bottom: 0;
+  .ais-hits {
 
-    em,
-    a em {
-      background: var(--k12-algolia-highlight-background);
+    &--item {
+      margin-bottom: 0;
+
+      em,
+      a em {
+        background: var(--k12-algolia-highlight-background);
+      }
+    }
+
+    &__empty {
+      padding: var(--gutter-v) var(--gutter);
     }
   }
 

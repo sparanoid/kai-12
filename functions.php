@@ -13,7 +13,7 @@
  * @since Kai 12 1.0
  */
 function add_kai_12_credits() {
-  echo '<a href="http://sparanoid.com/work/kai/">Kai 12</a><span class="sep"> - </span> ';
+  echo '<a href="https://sparanoid.com/work/kai/">Kai 12</a><span class="sep"> - </span> ';
 }
 
 add_action('twentytwelve_credits', 'add_kai_12_credits');
@@ -56,7 +56,7 @@ add_filter( 'excerpt_length', 'kai_12_custom_excerpt_length', 999 );
  * @since Kai 12 1.1.6
  */
 function kai_12_infinite_scroll_credit() {
-  return '<a href="http://sparanoid.com/work/kai/">Kai 12</a>';
+  return '<a href="https://sparanoid.com/work/kai/">Kai 12</a>';
 }
 
 add_filter( 'infinite_scroll_credit', 'kai_12_infinite_scroll_credit' );

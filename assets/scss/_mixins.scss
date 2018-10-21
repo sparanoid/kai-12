@@ -54,6 +54,16 @@
   }
 }
 
+@mixin badge {
+  display: inline-block;
+  color: var(--link-color);
+  background: var(--link-color-10);
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
 // Remove output unit
 @function unitlessness($input) {
   @if type-of($input) == 'number' and not unitless($input) {

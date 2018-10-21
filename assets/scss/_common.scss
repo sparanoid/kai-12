@@ -40,6 +40,7 @@ h5,
 h6 {
   font-family: var(--fontstack-heading);
   font-weight: bold;
+  letter-spacing: -.02em;
 }
 
 h1 { font-size: 1.6em; }
@@ -130,7 +131,7 @@ label {
     border-bottom: 1px solid var(--border-color);
 
     .site-title {
-
+      font-size: 2.4rem;
     }
 
     .site-description {
@@ -427,7 +428,6 @@ article {
     font-weight: bold;
     font-size: 1.8rem;
     line-height: calc(var(--line-height) * .9);
-    letter-spacing: -.02em;
     margin-top: 0;
     margin-bottom: .4em;
 

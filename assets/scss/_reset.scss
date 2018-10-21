@@ -22,7 +22,7 @@ html {
   //       make `-webkit-filter` work
   // Link: https://bugs.chromium.org/p/chromium/issues/detail?id=591015
   // Date: Mar 1, 2016, 5:41 PM
-  background: var(--background-color);
+  background: var(--container-color);
 }
 
 body {
@@ -36,7 +36,7 @@ body {
   font-feature-settings: var(--font-features);
   line-height: var(--line-height);
   color: var(--text-color);
-  background: var(--background-color);
+  background: var(--container-color);
   transition: all .2s ease;
 
   @media (max-width: $breakpoint-md) {

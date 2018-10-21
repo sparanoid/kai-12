@@ -18,7 +18,7 @@ body { // wrap it in body to avoid abusing !important
   #infinite-footer {
 
     .container {
-      background-color: var(--background-color-80);
+      background-color: var(--container-color-80);
       border: none !important;
       box-shadow: 0 -1px 0 0 var(--border-color);
       -webkit-backdrop-filter: blur(10px);
@@ -131,7 +131,7 @@ body { // wrap it in body to avoid abusing !important
   // Algolia Search
   // https://github.com/algolia/algoliasearch-wordpress/
   --k12-algolia-font-size: calc(var(--font-size) * .9);
-  --k12-algolia-menu-background: var(--background-color);
+  --k12-algolia-menu-background: var(--container-color);
   --k12-algolia-highlight-background: var(--link-color-20);
   .aa-dropdown-menu {
     font-family: inherit;

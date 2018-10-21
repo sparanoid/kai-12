@@ -6,7 +6,7 @@ html {
 }
 
 :root {
-  background: var(--body-color);
+  background: var(--background-color);
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   --gutter-v: calc(var(--space-sm) / 1.25);
   // Used by images/video offsetting
   --space-deco: var(--gutter);
-  background: var(--body-color);
+  background: var(--background-color);
   padding: var(--gutter) 0;
 
   @media (max-width: $breakpoint-md) {
@@ -25,6 +25,10 @@ body {
     --gutter: 12px;
     --gutter-v: var(--space-xs);
     padding: 0;
+  }
+
+  &.custom-background {
+    background: var(--background-color);
   }
 
   &.custom-background-white {
@@ -119,7 +123,7 @@ label {
   margin: 0 auto;
   max-width: var(--breakpoint-md);
   overflow: hidden;
-  background-color: var(--background-color);
+  background-color: var(--container-color);
 }
 
 // Header
@@ -362,6 +366,10 @@ nav {
 // Left main content (#primary.site-content)
 #primary {
   width: calc(100% - var(--sidebar-width));
+
+  body.full-width & {
+    width: 100%;
+  }
 
   @media (max-width: $breakpoint-sm) {
     width: 100%;

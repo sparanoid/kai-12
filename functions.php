@@ -98,14 +98,21 @@ function kai_12_infinite_scroll_init() {
 add_action( 'after_setup_theme', 'kai_12_infinite_scroll_init' );
 
 /**
+ * Unregister default ugly gallery inline styles injected into the body
+ *
+ * @since Kai 12 1.2.13
+ */
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/**
  * Initialize the update checker
  *
  * @since Kai 12 1.2.1
  */
-require 'includes/theme-update-checker.php';
-$kai_12_update_checker = new ThemeUpdateChecker(
-  'kai-12',
-  'https://sparanoid.com/lab/wordpress/kai-12.json'
-);
-
-?>
+if (file_exists('includes/theme-update-checker.php')) {
+  require 'includes/theme-update-checker.php';
+  $kai_12_update_checker = new ThemeUpdateChecker(
+    'kai-12',
+    'https://sparanoid.com/lab/wordpress/kai-12.json'
+  );
+}

@@ -563,11 +563,11 @@ article {
     height: auto;
   }
 
+  --space-deco: var(--gutter);
   img:not(.no-resize):not(.avatar):not([src*="wp-content/plugins"]),
   video:not(.no-resize),
   .embed-youtube,
   .browser {
-    --space-deco: var(--gutter);
     display: block;
     width: calc(100% + var(--space-deco) * 2);
     max-width: none;
@@ -591,6 +591,62 @@ article {
       left: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .alignleft {
+    float: left;
+    margin-right: calc(var(--space-deco) + 1em);
+  }
+
+  .alignright {
+    float: right;
+    margin-left: calc(var(--space-deco) + 1em);
+  }
+
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .gallery {
+    display: grid;
+    grid-gap: 1em .5em;
+    grid-template-columns: repeat(4, 1fr);
+    width: calc(100% + var(--space-deco) * 2);
+    @include margin-offset(calc(var(--space-deco) * -1));
+    margin-bottom: 1.8rem;
+
+    &-columns-1 { grid-template-columns: repeat(1, 1fr); }
+    &-columns-2 { grid-template-columns: repeat(2, 1fr); }
+    &-columns-3 { grid-template-columns: repeat(3, 1fr); }
+    &-columns-4 { grid-template-columns: repeat(4, 1fr); }
+    &-columns-5 { grid-template-columns: repeat(5, 1fr); }
+    &-columns-6 { grid-template-columns: repeat(6, 1fr); }
+    &-columns-7 { grid-template-columns: repeat(7, 1fr); }
+    &-columns-8 { grid-template-columns: repeat(8, 1fr); }
+    &-columns-9 { grid-template-columns: repeat(9, 1fr); }
+
+    // Hide WordPress auto-generated force newline br
+    br {
+      display: none;
+    }
+
+    // Reset `use_default_gallery_style`
+    img {
+      border: none !important;
+    }
+
+    // Reset `use_default_gallery_style`
+    .gallery-item {
+      width: unset !important;
+    }
+
+    .gallery-caption {
+      color: var(--text-color-50);
+      margin-left: 1em;
+      margin-right: 1em;
     }
   }
 
@@ -765,6 +821,25 @@ article {
       border-top: var(--border-sm) solid var(--border-color);
     }
   }
+
+  // Image with captions
+  .wp-caption {
+    max-width: 100%;
+
+    img {
+      margin-bottom: .5em !important;
+    }
+
+  }
+
+  .wp-caption-text {
+    color: var(--text-color-50);
+  }
+}
+
+// To bypass stupid WP.org theme guidelines
+.bypostauthor {
+  font-weight: normal;
 }
 
 // Authoer info block
@@ -802,6 +877,15 @@ article {
 
   .author-info {
     padding-top: var(--space-xs);
+  }
+}
+
+// Post type: featured post
+.sticky {
+
+  .featured-post {
+    @include badge;
+    text-transform: capitalize;
   }
 }
 
@@ -858,13 +942,7 @@ article {
 .format-link {
 
   header {
-    display: inline-block;
-    color: var(--link-color);
-    background: var(--link-color-10);
-    border-radius: 4px;
-    padding: 4px 10px;
-    margin-bottom: 1em;
-    font-weight: bold;
+    @include badge;
   }
 
   .entry-content > p {

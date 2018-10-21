@@ -3,7 +3,7 @@
  * Kai 12 functions and definitions
  *
  * @package WordPress
- * @subpackage Kai_12
+ * @subpackage Kai12
  * @since Kai 12 1.0
  */
 
@@ -12,70 +12,70 @@
  *
  * @since Kai 12 1.0
  */
-function add_kai_12_credits() {
+function add_kai12_credits() {
   echo '<a href="https://sparanoid.com/work/kai/">Kai 12</a><span class="sep"> - </span> ';
 }
 
-add_action('twentytwelve_credits', 'add_kai_12_credits');
+add_action('twentytwelve_credits', 'add_kai12_credits');
 
 /**
  * Override Twenty Twelve stylesheet loading behavier and load Kai 12 stylesheet
  *
  * @since Kai 12 1.1
  */
-function kai_12_scripts_styles_override() {
+function kai12_scripts_styles_override() {
   wp_enqueue_style( 'kai-12-style', get_stylesheet_directory_uri() . '/app.css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'kai_12_scripts_styles_override' );
+add_action( 'wp_enqueue_scripts', 'kai12_scripts_styles_override' );
 
 /**
  * Disable custom web font from Google, it's slow and it sucks
  *
  * @since Kai 12 1.2.10
  */
-function kai_12_remove_custom_fonts() {
+function kai12_remove_custom_fonts() {
   wp_dequeue_style( 'twentytwelve-fonts' );
 }
-add_action( 'wp_enqueue_scripts', 'kai_12_remove_custom_fonts', 11 );
+add_action( 'wp_enqueue_scripts', 'kai12_remove_custom_fonts', 11 );
 
 /**
  * Override default excerpt length
  *
  * @since Kai 12 1.1.2
  */
-function kai_12_custom_excerpt_length( $length ) {
+function kai12_custom_excerpt_length( $length ) {
   return 360;
 }
 
-add_filter( 'excerpt_length', 'kai_12_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'kai12_custom_excerpt_length', 999 );
 
 /**
  * Override default Jetpack Infinite Scroll footer
  *
  * @since Kai 12 1.1.6
  */
-function kai_12_infinite_scroll_credit() {
+function kai12_infinite_scroll_credit() {
   return '<a href="https://sparanoid.com/work/kai/">Kai 12</a>';
 }
 
-add_filter( 'infinite_scroll_credit', 'kai_12_infinite_scroll_credit' );
+add_filter( 'infinite_scroll_credit', 'kai12_infinite_scroll_credit' );
 
 /**
  * Override default header settings when header text is hidden
  *
  * @since Kai 12 1.2.5
  */
-function kai_12_custom_header_setup() {
+function kai12_custom_header_setup() {
   $args = array(
-    'wp-head-callback' => 'kai_12_header_style',
+    'wp-head-callback' => 'kai12_header_style',
   );
 
   add_theme_support( 'custom-header', $args );
 }
-add_action( 'after_setup_theme', 'kai_12_custom_header_setup' );
+add_action( 'after_setup_theme', 'kai12_custom_header_setup' );
 
-function kai_12_header_style() {
+function kai12_header_style() {
   if ( ! display_header_text() ) : ?>
   <style type="text/css" id="kai-12-header-css">
     .site-header hgroup {
@@ -90,12 +90,12 @@ function kai_12_header_style() {
  *
  * @since Kai 12 1.2.13
  */
-function kai_12_infinite_scroll_init() {
+function kai12_infinite_scroll_init() {
   add_theme_support( 'infinite-scroll', array(
     'container'      => 'content',
   ) );
 }
-add_action( 'after_setup_theme', 'kai_12_infinite_scroll_init' );
+add_action( 'after_setup_theme', 'kai12_infinite_scroll_init' );
 
 /**
  * Unregister default ugly gallery inline styles injected into the body
@@ -111,7 +111,7 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  */
 if (file_exists('includes/theme-update-checker.php')) {
   require 'includes/theme-update-checker.php';
-  $kai_12_update_checker = new ThemeUpdateChecker(
+  $kai12_update_checker = new ThemeUpdateChecker(
     'kai-12',
     'https://sparanoid.com/lab/wordpress/kai-12.json'
   );
@@ -133,7 +133,7 @@ add_action( 'after_setup_theme', 'remove_custom_background_from_parent_theme', 1
  * @link http://codex.wordpress.org/Theme_Customization_API
  * @since Kai 1.2.14
  */
-class Kai_12_Customize {
+class Kai12_Customize {
   /**
    * This hooks into 'customize_register' (available as of WP 3.4) and allows
    * you to add new sections and controls to the Theme Customize screen.
@@ -148,7 +148,7 @@ class Kai_12_Customize {
    */
   public static function register ( $wp_customize ) {
     // 1. Define a new section (if desired) to the Theme Customizer
-    $wp_customize->add_section( 'kai_12_options',
+    $wp_customize->add_section( 'kai12_options',
       array(
         'title'       => __( 'Kai 12 Options', 'kai-12' ), // Visible title of section
         'priority'    => 35, // Determines what order this appears in
@@ -202,7 +202,7 @@ class Kai_12_Customize {
     // 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
     $wp_customize->add_control( new WP_Customize_Color_Control( // Instantiate the color control class
       $wp_customize, // Pass the $wp_customize object (required)
-      'kai_12_text_color', // Set a unique ID for the control
+      'kai12_text_color', // Set a unique ID for the control
       array(
         'label'     => __( 'Text Color', 'kai-12' ), // Admin-visible name of the control
         'settings'  => 'text_color', // Which setting to load and manipulate (serialized is okay)
@@ -212,7 +212,7 @@ class Kai_12_Customize {
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control(
       $wp_customize,
-      'kai_12_link_color',
+      'kai12_link_color',
       array(
         'label'     => __( 'Link Color', 'kai-12' ),
         'settings'  => 'link_color',
@@ -222,7 +222,7 @@ class Kai_12_Customize {
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control(
       $wp_customize,
-      'kai_12_code_color',
+      'kai12_code_color',
       array(
         'label'     => __( 'Code Color', 'kai-12' ),
         'settings'  => 'code_color',
@@ -232,7 +232,7 @@ class Kai_12_Customize {
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control(
       $wp_customize,
-      'kai_12_background_color',
+      'kai12_background_color',
       array(
         'label'     => __( 'Background Color', 'kai-12' ),
         'settings'  => 'background_color',
@@ -242,7 +242,7 @@ class Kai_12_Customize {
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control(
       $wp_customize,
-      'kai_12_container_color',
+      'kai12_container_color',
       array(
         'label'     => __( 'Container Color', 'kai-12' ),
         'settings'  => 'container_color',
@@ -383,10 +383,10 @@ class Kai_12_Customize {
 }
 
 // Setup the Theme Customizer settings and controls...
-add_action( 'customize_register' , array( 'Kai_12_Customize' , 'register' ) );
+add_action( 'customize_register' , array( 'Kai12_Customize' , 'register' ) );
 
 // Output custom CSS to live site
-add_action( 'wp_head' , array( 'Kai_12_Customize' , 'header_output' ) );
+add_action( 'wp_head' , array( 'Kai12_Customize' , 'header_output' ) );
 
 // Enqueue live preview javascript in Theme Customizer admin screen
-add_action( 'customize_preview_init' , array( 'Kai_12_Customize' , 'live_preview' ) );
+add_action( 'customize_preview_init' , array( 'Kai12_Customize' , 'live_preview' ) );

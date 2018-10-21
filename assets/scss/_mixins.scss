@@ -58,8 +58,10 @@
   display: inline-block;
   color: var(--link-color);
   background: var(--link-color-10);
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   padding: 4px 10px;
+  padding-left: var(--space-deco);
+  margin-left: calc(var(--space-deco) * -1);
   margin-bottom: 1em;
   font-weight: bold;
 }

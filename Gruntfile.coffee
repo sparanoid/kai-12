@@ -80,25 +80,36 @@ module.exports = (grunt) ->
         ]
 
     compress:
-      dist:
+      sparanoid:
         options:
           archive: ".tmp/<%= core.pkg.name %>.zip"
 
         files: [
           expand: true
           cwd: "<%= core.app %>/"
-          src: ["**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.scss"]
+          src: ["**", "!builds/**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.scss"]
+          dest: "<%= core.pkg.name %>"
+        ]
+
+      wporg:
+        options:
+          archive: ".tmp/<%= core.pkg.name %>-wporg.zip"
+
+        files: [
+          expand: true
+          cwd: "<%= core.app %>/"
+          src: ["**", "!**/theme-update-checker.php", "!builds/**", "!node_modules/**", "!templates/**", "!assets/**", "!*.coffee", "!*.json", "!*.scss"]
           dest: "<%= core.pkg.name %>"
         ]
 
     copy:
-      prepare:
+      sparanoid_prepare:
         files: [
           src: ".tmp/<%= core.pkg.name %>.zip"
           dest: ".tmp/<%= core.pkg.name %>-<%= core.pkg.version %>.zip"
         ]
 
-      dist:
+      sparanoid:
         files: [
           expand: true
           cwd: ".tmp/"
@@ -109,6 +120,20 @@ module.exports = (grunt) ->
           cwd: "templates/"
           src: ["<%= core.pkg.name %>.html"]
           dest: "/Users/sparanoid/Git/sparanoid.com-prod/site/lab/wordpress/"
+        ]
+
+      wporg_prepare:
+        files: [
+          src: ".tmp/<%= core.pkg.name %>-wporg.zip"
+          dest: ".tmp/<%= core.pkg.name %>-wporg-<%= core.pkg.version %>.zip"
+        ]
+
+      wporg:
+        files: [
+          expand: true
+          cwd: ".tmp/"
+          src: ["<%= core.pkg.name %>*.zip"]
+          dest: "builds/"
         ]
 
     replace:
@@ -132,5 +157,6 @@ module.exports = (grunt) ->
   grunt.registerTask "serve", ["clean", "test", "sass:serve", "watch"]
   grunt.registerTask "test", ["coffeelint"]
   grunt.registerTask "build", ["clean", "test", "sass:dist", "cssmin"]
-  grunt.registerTask "deploy", ["build", "compress", "copy", "replace", "clean"]
+  grunt.registerTask "deploy", ["build", "compress:sparanoid", "copy:sparanoid_prepare", "copy:sparanoid", "replace", "clean"]
+  grunt.registerTask "deploy_wporg", ["build", "compress:wporg", "copy:wporg_prepare", "copy:wporg", "clean"]
   grunt.registerTask "default", ["build"]

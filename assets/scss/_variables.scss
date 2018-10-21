@@ -15,7 +15,7 @@ $breakpoint-xs: 400px !default;
 // Colors
 $text-color: #080c1b !default;
 $link-color: #4f3fbb !default;
-$background-color: #fff !default;
+$container-color: #fff !default;
 $code-color: #f77123 !default;
 
 :root {
@@ -50,8 +50,8 @@ $code-color: #f77123 !default;
   // Colors
   --text-color: #{$text-color};
   --link-color: #{$link-color};
-  --background-color: #{$background-color};
   --code-color: #{$code-color};
+  --container-color: #{$container-color};
 
   --text-color-hue: #{unitlessness(hue($text-color))};
   --text-color-sat: #{saturation($text-color)};
@@ -108,13 +108,13 @@ $code-color: #f77123 !default;
   --code-color-80: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .8);
   --code-color-90: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .9);
 
-  --background-color-hue: #{unitlessness(hue($background-color))};
-  --background-color-sat: #{saturation($background-color)};
-  --background-color-light: #{lightness($background-color)};
-  --background-color-hsl: var(--background-color-hue), var(--background-color-sat), var(--background-color-light);
+  --container-color-hue: #{unitlessness(hue($container-color))};
+  --container-color-sat: #{saturation($container-color)};
+  --container-color-light: #{lightness($container-color)};
+  --container-color-hsl: var(--container-color-hue), var(--container-color-sat), var(--container-color-light);
 
-  --background-color-80: hsla(var(--background-color-hue), var(--background-color-sat), var(--background-color-light), .8);
-  --background-color-90: hsla(var(--background-color-hue), var(--background-color-sat), var(--background-color-light), .9);
+  --container-color-80: hsla(var(--container-color-hue), var(--container-color-sat), var(--container-color-light), .8);
+  --container-color-90: hsla(var(--container-color-hue), var(--container-color-sat), var(--container-color-light), .9);
 
   --link-color-hover: var(--link-color-70);
 
@@ -131,6 +131,11 @@ $code-color: #f77123 !default;
   --button-bg-color: var(--text-color-10);
   --button-bg-color-hover: var(--text-color-7);
 
-  --body-color: var(--text-color-5);
-  --submenu-color: var(--background-color);
+  // Actually, in an ideal situation, the background color (html body color)
+  // should use the following value to get a auto-calced color, however,
+  // WordPress Customizer doesn't support setting css varaible as default value.
+  // So in `functions.php`, I defined an option for users to manually choose the
+  // background color they want.
+  --background-color: var(--text-color-5);
+  --submenu-color: var(--container-color);
 }

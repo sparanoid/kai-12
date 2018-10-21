@@ -12,6 +12,8 @@ html {
 body {
   --gutter: var(--space-sm);
   --gutter-v: calc(var(--space-sm) / 1.25);
+  // Used by images/video offsetting
+  --space-deco: var(--gutter);
   background: var(--body-color);
   padding: var(--gutter) 0;
 
@@ -563,7 +565,6 @@ article {
     height: auto;
   }
 
-  --space-deco: var(--gutter);
   img:not(.no-resize):not(.avatar):not([src*="wp-content/plugins"]),
   video:not(.no-resize),
   .embed-youtube,

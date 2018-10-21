@@ -98,6 +98,36 @@ body { // wrap it in body to avoid abusing !important
     text-align: left !important;
   }
 
+  .widget_tag_cloud {
+
+    li {
+      display: inline-block;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    a {
+      border: 1px solid var(--text-color-20);
+      border-radius: 4px;
+      display: inline-block;
+      font-size: inherit !important;
+      padding: 0 .4em;
+      margin-right: .2em;
+      margin-bottom: 0.5em;
+
+      &:hover,
+      &:focus {
+        border-color: var(--text-color);
+      }
+
+      .tag-link-count {
+        opacity: .4;
+      }
+    }
+  }
+
   // Algolia Search
   // https://github.com/algolia/algoliasearch-wordpress/
   --k12-algolia-font-size: calc(var(--font-size) * .9);

@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/sparanoid/kai-12.svg)](https://travis-ci.org/sparanoid/kai-12)
 [![devDependency Status](https://david-dm.org/sparanoid/kai-12/dev-status.svg)](https://david-dm.org/sparanoid/kai-12#info=devDependencies)
 
-The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve, No need to change the default theme, no database option strings will be created. Install and go.
+The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve with native CSS variables support for color scheme customization. No need to change the default theme.
 
 ## Demo
 

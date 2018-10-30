@@ -311,11 +311,9 @@ body { // wrap it in body to avoid abusing !important
 .clean-my-archives {
 	--archives-font-size: 1rem;
 	--archives-grid-gap: .5rem;
-	--archives-day-width: calc(var(--archives-font-size) * 1.8);
-	--archives-month-offset: calc(var(--archives-day-width) + var(--archives-grid-gap));
+	--archives-day-width: 2ch;
 
 	.month-year {
-		margin-left: var(--archives-month-offset);
 
 		a {
 			color: var(--text-color);
@@ -343,7 +341,6 @@ body { // wrap it in body to avoid abusing !important
 
 			.day {
 				color: var(--text-color-40);
-				font-feature-settings: "case";
 			}
 
 			.comments-number {

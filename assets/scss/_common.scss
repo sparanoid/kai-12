@@ -392,6 +392,14 @@ nav {
       }
     }
   }
+
+  #content {
+
+    // Remove additional border of last elements inside main content container
+    > *:last-child {
+      border-bottom: none !important;
+    }
+  }
 }
 
 // Right sidebar content

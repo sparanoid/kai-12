@@ -796,8 +796,9 @@ article {
     // Bouncing scroll fix for iOS
     -webkit-overflow-scrolling: touch;
 
-    // Reset overflow for code in code blocks
     code {
+      display: unset;
+      // Reset overflow for code in code blocks
       overflow-wrap: normal;
     }
   }

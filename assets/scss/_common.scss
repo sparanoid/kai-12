@@ -542,13 +542,13 @@ article {
 
   ul li::before {
     content: "-";
-    padding-right: .6em;
+    padding-right: .5em;
   }
 
   ol li::before {
     counter-increment: list;
     content: counter(list) ".";
-    padding-right: .3em;
+    padding-right: .25em;
   }
 
   dl:not(.gallery-item) {
@@ -740,10 +740,10 @@ article {
         position: absolute;
         display: flex;
         justify-content: center;
-        width: 1em;
-        left: -.3em;
+        width: 1ex;
+        left: -.5em;
         margin-top: 0;
-        margin-left: -1em;
+        margin-left: -1ex;
         text-align: right;
         opacity: .4;
         transition: opacity .2s ease, transform .2s ease;

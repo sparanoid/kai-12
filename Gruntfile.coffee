@@ -63,7 +63,7 @@ module.exports = (grunt) ->
 
       dist:
         options:
-          outputStyle: "compressed"
+          outputStyle: "nested"
 
         files: "<%= sass.serve.files %>"
 
@@ -156,7 +156,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask "serve", ["clean", "test", "sass:serve", "watch"]
   grunt.registerTask "test", ["coffeelint"]
-  grunt.registerTask "build", ["clean", "test", "sass:dist", "cssmin"]
+  grunt.registerTask "build", ["clean", "test", "sass:dist"]
   grunt.registerTask "deploy", ["build", "compress:sparanoid", "copy:sparanoid_prepare", "copy:sparanoid", "replace", "clean"]
   grunt.registerTask "deploy_wporg", ["build", "compress:wporg", "copy:wporg_prepare", "copy:wporg", "clean"]
   grunt.registerTask "default", ["build"]

@@ -50,7 +50,7 @@ function kai12_customize_register ( $wp_customize ) {
       'transport'  => 'refresh',
     )
   );
-  $wp_customize->add_setting( 'background_color',
+  $wp_customize->add_setting( 'bg_color',
     array(
       'default'    => '#e6e7e8',
       'type'       => 'theme_mod',
@@ -102,10 +102,10 @@ function kai12_customize_register ( $wp_customize ) {
   ) );
   $wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize,
-    'kai12_background_color',
+    'kai12_bg_color',
     array(
       'label'     => __( 'Background Color', 'kai-12' ),
-      'settings'  => 'background_color',
+      'settings'  => 'bg_color',
       'priority'  => 10,
       'section'   => 'colors',
     )
@@ -139,7 +139,7 @@ function kai12_customize_header_output() {
       <?php kai12_generate_css('--link-color', 'link_color'); ?>
       <?php kai12_generate_css('--code-color', 'code_color'); ?>
       <?php kai12_generate_css('--container-color', 'container_color'); ?>
-      <?php kai12_generate_css('--background-color', 'background_color', '#'); ?>
+      <?php kai12_generate_css('--background-color', 'bg_color'); ?>
     }
   </style>
   <?php
@@ -232,7 +232,7 @@ function kai12_generate_css( $style, $mod_name, $prefix='', $postfix='', $echo=t
       {$style}-light: {$color_light};
     ";
     if ( $echo ) {
-      echo $return;
+      echo esc_html($return);
     }
   }
   return $return;

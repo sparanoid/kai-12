@@ -2,7 +2,7 @@
 Contributors: Sparanoid
 Requires at least: WordPress 3.5
 Tested up to: 5.0-trunk
-Stable tag: 1.2.16
+Stable tag: 1.2.17
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -14,6 +14,9 @@ For more information about Kai 12 please go to https://sparanoid.com/work/kai/.
 
 == Changelog ==
 
+= 1.2.17 =
+* Generates nested styles
+
 = 1.2.16 =
 * CSS and structure tweaks
 
@@ -22,6 +25,9 @@ For more information about Kai 12 please go to https://sparanoid.com/work/kai/.
 * Add readme for new requirement
 
 == Upgrade Notice ==
+
+= 1.2.17 =
+* Generates nested styles
 
 = 1.2.16 =
 * CSS and structure tweaks

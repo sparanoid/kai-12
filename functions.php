@@ -12,11 +12,11 @@
  *
  * @since Kai 12 1.0
  */
-function add_kai12_credits() {
+function kai12_update_credits() {
   echo '<a href="https://sparanoid.com/work/kai/">Kai 12</a><span class="sep"> - </span> ';
 }
 
-add_action('twentytwelve_credits', 'add_kai12_credits');
+add_action('twentytwelve_credits', 'kai12_update_credits');
 
 /**
  * Override Twenty Twelve stylesheet loading behavier and load Kai 12 stylesheet
@@ -109,10 +109,10 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  *
  * @since Kai 12 1.2.14
  */
-function remove_custom_background_from_parent_theme() {
+function kai12_remove_custom_background_from_parent_theme() {
   remove_theme_support( 'custom-background' );
 }
-add_action( 'after_setup_theme', 'remove_custom_background_from_parent_theme', 11 );
+add_action( 'after_setup_theme', 'kai12_remove_custom_background_from_parent_theme', 11 );
 
 /**
  * Initialize theme customizer

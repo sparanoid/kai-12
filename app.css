@@ -1817,11 +1817,6 @@ body .woocommerce .input-text,
 body.woocommerce .input-text {
   border: none !important; }
 
-body .woocommerce #payment ul.payment_methods li img,
-body.woocommerce #payment ul.payment_methods li img {
-  display: inline-block;
-  width: auto; }
-
 .clean-my-archives {
   --archives-font-size: 1rem;
   --archives-grid-gap: .5rem;

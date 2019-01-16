@@ -439,6 +439,7 @@ article {
   position: relative;
   padding-top: var(--gutter-v);
   padding-bottom: var(--gutter-v);
+  margin-bottom: -1px;
   @include splitter();
 }
 

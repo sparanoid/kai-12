@@ -38,7 +38,21 @@
   margin-right: $margin-right;
 }
 
-@mixin spliter {
+@mixin splitter {
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--gutter) * -1);
+    display: block;
+    content: "";
+    width: calc(100% + var(--gutter) * 2);
+    height: 1px;
+    background-color: var(--border-color);
+  }
+}
+
+@mixin splitter-dot {
   $size: 3px;
   $color: var(--text-color);
 

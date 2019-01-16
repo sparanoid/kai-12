@@ -11,7 +11,6 @@ body { // wrap it in body to avoid abusing !important
   }
 
   .infinite-loader {
-    padding: 0 var(--space-sm);
     margin-top: var(--space-xs);
   }
 
@@ -203,13 +202,15 @@ body { // wrap it in body to avoid abusing !important
 
   #ais-main {
     padding: 0;
+    @include padding-offset(var(--gutter));
   }
 
   #algolia-search-box {
-    padding: var(--gutter-v) var(--gutter);
+    position: relative;
+    padding: var(--gutter-v) 0;
     padding-bottom: calc(var(--gutter-v) + 1em);
     margin-bottom: 0;
-    border-bottom: 1px solid var(--border-color);
+    @include splitter();
 
     input {
       border-bottom: 1px solid var(--text-color-10);
@@ -218,7 +219,6 @@ body { // wrap it in body to avoid abusing !important
     }
 
     .search-icon {
-      left: var(--gutter);
       top: calc(var(--gutter-v) + 14px);
       fill: var(--text-color-10);
     }
@@ -251,12 +251,12 @@ body { // wrap it in body to avoid abusing !important
     }
 
     &__empty {
-      padding: var(--gutter-v) var(--gutter);
+      padding: var(--gutter-v) 0;
     }
   }
 
   #algolia-pagination {
-    padding: var(--gutter-v) var(--gutter);
+    padding: var(--gutter-v) 0;
   }
 
   // Sidebar
@@ -304,6 +304,11 @@ body { // wrap it in body to avoid abusing !important
         margin-bottom: .2em;
       }
     }
+  }
+
+  // WooCommerce
+  &.woocommerce {
+
   }
 }
 
@@ -362,5 +367,5 @@ body { // wrap it in body to avoid abusing !important
 				}
 			}
 		}
-	}
+  }
 }

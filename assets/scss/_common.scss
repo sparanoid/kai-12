@@ -278,13 +278,14 @@ label {
 
 .nav-single,
 .navigation {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  padding: var(--space-xs) var(--gutter);
-  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-xs) 0;
   line-height: var(--line-height);
   // A simple trick to avoid doble bottom border
   margin-bottom: -1px;
+  @include splitter();
 
   @media (max-width: $breakpoint-sm) {
     display: block;
@@ -378,8 +379,9 @@ nav {
   // Archive/page header (heading)
   .archive-header,
   .page-header {
-    padding: var(--space-xs) var(--gutter);
-    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding: var(--space-xs) 0;
+    @include splitter();
 
     h1 {
       color: var(--text-color-50);
@@ -390,14 +392,6 @@ nav {
       span {
         font-weight: bold;
       }
-    }
-  }
-
-  #content {
-
-    // Remove additional border of last elements inside main content container
-    > *:last-child {
-      border-bottom: none !important;
     }
   }
 }
@@ -432,9 +426,20 @@ nav {
 // Post content appearance
 // Mainly copied from my AMSF project
 // I moved this out of the #main above to avoid deep nesting
+#content {
+  @include padding-offset(var(--gutter));
+
+  // Remove additional border of last elements inside main content container
+  > *:last-child {
+    border-bottom: none !important;
+  }
+}
+
 article {
-  padding: var(--gutter-v) var(--gutter);
-  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-top: var(--gutter-v);
+  padding-bottom: var(--gutter-v);
+  @include splitter();
 }
 
 // Post content
@@ -759,7 +764,7 @@ article {
   }
 
   hr {
-    @include spliter();
+    @include splitter-dot();
   }
 
   sup {
@@ -874,8 +879,13 @@ article {
   }
 
   #content > & {
-    padding: var(--space-xs) var(--gutter);
-    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding: var(--space-xs) 0;
+    @include splitter();
+  }
+
+  .entry-meta & {
+    padding-top: var(--space-xs);
   }
 }
 
@@ -891,10 +901,6 @@ article {
     &:focus {
       color: var(--text-color);
     }
-  }
-
-  .author-info {
-    padding-top: var(--space-xs);
   }
 }
 
@@ -1034,13 +1040,14 @@ article {
 .comments-area {
 
   .comments-title {
-    padding: var(--gutter-v) var(--gutter) 0;
+    padding: var(--gutter-v) 0 0;
   }
 
   .commentlist {
     list-style: none;
 
     .children {
+      list-style: none;
 
       .depth-2 article { padding-left: calc(2em + var(--gutter)); }
       .depth-3 article { padding-left: calc(4em + var(--gutter)); }
@@ -1056,7 +1063,7 @@ article {
   }
 
   .nocomments {
-    padding: var(--gutter-v) var(--gutter);
+    padding: var(--gutter-v) 0;
   }
 
   article {
@@ -1125,8 +1132,9 @@ article {
   .pingback {
 
     > p {
-      padding: var(--space-xs) var(--gutter);
-      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      padding: var(--space-xs) 0;
+      @include splitter();
 
       .edit-link {
         float: right;
@@ -1137,7 +1145,7 @@ article {
 
 // Comment reply (#respond)
 .comment-respond {
-  padding: var(--space-xs) var(--gutter);
+  padding: var(--space-xs) 0;
   line-height: calc(var(--line-height) * 1.2);
 
   #cancel-comment-reply-link {

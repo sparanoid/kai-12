@@ -305,10 +305,106 @@ body { // wrap it in body to avoid abusing !important
       }
     }
   }
+}
 
-  // WooCommerce
-  &.woocommerce {
+// WooCommerce
+body .woocommerce,
+body.woocommerce {
 
+  .woocommerce-breadcrumb {
+    padding: var(--space-xs) 0;
+    margin-bottom: 0;
+  }
+
+  span.onsale {
+    line-height: 2.836;
+  }
+
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message {
+    background-color: var(--input-bg-color);
+  }
+
+  // product page
+  div.product {
+
+    .woocommerce-tabs {
+
+      ul.tabs {
+
+        &::before {
+          border-bottom-color: var(--border-color);
+        }
+
+        li {
+          background-color: var(--input-bg-color);
+          border-color: var(--border-color);
+          border-bottom-color: var(--container-color);
+
+          &::before,
+          &::after {
+            display: none;
+          }
+
+          &.active {
+            background-color: var(--container-color);
+            border-color: var(--text-color-10);
+            border-bottom-color: var(--container-color);
+
+            &::before {
+              box-shadow: 2px 2px 0 var(--container-color);
+            }
+
+            &::after {
+              box-shadow: -2px 2px 0 var(--container-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button,
+  button.button {
+    color: var(--button-color);
+    background: var(--button-bg-color);
+
+    &:hover,
+    &:focus {
+      color: var(--button-color-hover);
+      background: var(--button-bg-color-hover);
+    }
+
+    &:disabled {
+
+      &,
+      &[disabled] {
+
+        &,
+        &:hover {
+          background: var(--button-bg-color);
+        }
+      }
+    }
+  }
+
+  form {
+
+    &.checkout_coupon,
+    &.login,
+    &.register {
+      border-color: var(--border-color);
+    }
+  }
+
+  .input-text {
+    border: none !important;
+  }
+
+  #payment ul.payment_methods li img {
+    display: inline-block;
+    width: auto;
   }
 }
 

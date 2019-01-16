@@ -586,34 +586,13 @@ article {
     height: auto;
   }
 
-  img:not(.no-resize):not(.avatar):not([src*="wp-content/plugins"]),
-  video:not(.no-resize),
-  .embed-youtube,
+  .wp-block-image,
+  .wp-block-embed,
   .browser {
-    display: block;
     width: calc(100% + var(--space-deco) * 2);
     max-width: none;
-    height: auto;
     @include margin-offset(calc(var(--space-deco) * -1));
     margin-bottom: 1.8rem;
-  }
-
-  // Special cases for YouTube embeded
-  // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-  .embed-youtube {
-    display: block;
-    position: relative;
-    // 16:9
-    padding-bottom: calc(56.25% + var(--gutter) * 2 * .5625);
-    height: 0;
-
-    > iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .alignleft {
@@ -632,13 +611,13 @@ article {
     text-align: center;
   }
 
-  .gallery {
-    display: grid;
-    grid-gap: 1em .5em;
-    grid-template-columns: repeat(4, 1fr);
+  .gallery,
+  .wp-block-gallery,
+  .wp-block-jetpack-tiled-gallery {
     width: calc(100% + var(--space-deco) * 2);
     @include margin-offset(calc(var(--space-deco) * -1));
     margin-bottom: 1.8rem;
+    list-style: none;
 
     &-columns-1 { grid-template-columns: repeat(1, 1fr); }
     &-columns-2 { grid-template-columns: repeat(2, 1fr); }
@@ -658,6 +637,11 @@ article {
     // Reset `use_default_gallery_style`
     img {
       border: none !important;
+    }
+
+    // Remove list decoration
+    li::before {
+      display: none;
     }
 
     // Reset `use_default_gallery_style`

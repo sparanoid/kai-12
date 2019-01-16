@@ -727,6 +727,23 @@ article {
   margin-left: calc(var(--space-deco) * -1);
   margin-right: calc(var(--space-deco) * -1);
   margin-bottom: 1.8rem; }
+  .entry-header .wp-block-image figcaption,
+  .entry-header .wp-block-embed figcaption,
+  .entry-header .browser figcaption,
+  .entry-content .wp-block-image figcaption,
+  .entry-content .wp-block-embed figcaption,
+  .entry-content .browser figcaption,
+  .entry-summary .wp-block-image figcaption,
+  .entry-summary .wp-block-embed figcaption,
+  .entry-summary .browser figcaption,
+  .comment-content .wp-block-image figcaption,
+  .comment-content .wp-block-embed figcaption,
+  .comment-content .browser figcaption,
+  .widget .wp-block-image figcaption,
+  .widget .wp-block-embed figcaption,
+  .widget .browser figcaption {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter); }
 
 .entry-header .alignleft,
 .entry-content .alignleft,

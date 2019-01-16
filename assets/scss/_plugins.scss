@@ -398,6 +398,24 @@ body.woocommerce {
     }
   }
 
+  fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: .6em 1em;
+    margin: 1em 0;
+
+    > legend {
+      padding: 0 .5em;
+    }
+
+    > .woocommerce-form-row:first-child {
+
+      label {
+        margin-top: 0;
+      }
+    }
+  }
+
   .input-text {
     border: none !important;
   }

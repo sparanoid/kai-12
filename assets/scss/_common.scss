@@ -368,7 +368,8 @@ nav {
 #primary {
   width: calc(100% - var(--sidebar-width));
 
-  body.full-width & {
+  body.full-width &,
+  body.woocommerce & {
     width: 100%;
   }
 

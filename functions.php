@@ -120,3 +120,17 @@ add_action( 'after_setup_theme', 'kai12_remove_custom_background_from_parent_the
  * @since Kai 12 1.2.14
  */
 require get_stylesheet_directory() . '/includes/customizer.php';
+
+/**
+ * Unhook sidebar for WooCommerce
+ *
+ * @since Kai 12 1.2.18
+ */
+if ( function_exists( 'is_shop' ) && function_exists( 'is_product_category' ) && function_exists( 'is_product_tag' ) && function_exists( 'is_product' ) ) {
+  function penci_woocommerce_add_sidebar_custom() {
+    if ( is_shop() || is_product_category() || is_product_tag() || is_product()  ):
+      remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+    endif;
+  }
+  add_action( 'template_redirect', 'penci_woocommerce_add_sidebar_custom' );
+}

@@ -430,7 +430,8 @@ nav .nav-next a:hover .meta-nav, nav .nav-next a:focus .meta-nav {
 
 #primary {
   width: calc(100% - var(--sidebar-width)); }
-  body.full-width #primary {
+  body.full-width #primary,
+  body.woocommerce #primary {
     width: 100%; }
   @media (max-width: 640px) {
     #primary {
@@ -1812,6 +1813,19 @@ body.woocommerce form.checkout_coupon,
 body.woocommerce form.login,
 body.woocommerce form.register {
   border-color: var(--border-color); }
+
+body .woocommerce fieldset,
+body.woocommerce fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: .6em 1em;
+  margin: 1em 0; }
+  body .woocommerce fieldset > legend,
+  body.woocommerce fieldset > legend {
+    padding: 0 .5em; }
+  body .woocommerce fieldset > .woocommerce-form-row:first-child label,
+  body.woocommerce fieldset > .woocommerce-form-row:first-child label {
+    margin-top: 0; }
 
 body .woocommerce .input-text,
 body.woocommerce .input-text {

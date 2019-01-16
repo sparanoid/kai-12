@@ -485,7 +485,8 @@ nav .nav-next a:hover .meta-nav, nav .nav-next a:focus .meta-nav {
 article {
   position: relative;
   padding-top: var(--gutter-v);
-  padding-bottom: var(--gutter-v); }
+  padding-bottom: var(--gutter-v);
+  margin-bottom: -1px; }
   article::after {
     position: absolute;
     bottom: 0;

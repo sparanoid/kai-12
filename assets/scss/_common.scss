@@ -594,6 +594,10 @@ article {
     max-width: none;
     @include margin-offset(calc(var(--space-deco) * -1));
     margin-bottom: 1.8rem;
+
+    figcaption {
+      @include padding-offset(var(--gutter));
+    }
   }
 
   .alignleft {

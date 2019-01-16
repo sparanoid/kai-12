@@ -778,15 +778,17 @@ article {
   }
 
   pre {
+    font-size: 1em; // Override WP Block editor
     background: var(--code-color-5);
   }
 
   code {
-    font-size: .92em;
+    font-size: 1em; // Override WP Block editor
     overflow-wrap: break-word;
   }
 
   pre,
+  pre.wp-block-code, // Override WP Block editor
   .highlight > pre,
   .highlighter-rouge pre.highlight {
     --space-code: var(--gutter);

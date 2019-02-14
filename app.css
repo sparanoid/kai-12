@@ -91,7 +91,7 @@
   --button-color-hover: var(--text-color);
   --button-bg-color: var(--text-color-10);
   --button-bg-color-hover: var(--text-color-7);
-  --background-color: var(--text-color-5);
+  --background-color: hsla(var(--container-color-hue), var(--container-color-sat), calc(var(--container-color-light) * .95), 1);
   --submenu-color: var(--container-color); }
 
 *,

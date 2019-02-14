@@ -136,6 +136,6 @@ $code-color: #f77123 !default;
   // WordPress Customizer doesn't support setting css varaible as default value.
   // So in `functions.php`, I defined an option for users to manually choose the
   // background color they want.
-  --background-color: var(--text-color-5);
+  --background-color: hsla(var(--container-color-hue), var(--container-color-sat), calc(var(--container-color-light) * .95), 1);
   --submenu-color: var(--container-color);
 }

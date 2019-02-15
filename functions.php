@@ -13,7 +13,7 @@
  * @since Kai 12 1.0
  */
 function kai12_update_credits() {
-  echo '<a href="https://sparanoid.com/work/kai/">Kai 12</a><span class="sep"> - </span> ';
+  echo '<a href="https://sparanoid.com/work/kai/" title="Kai 12 WordPress theme by Sparanoid. ' . get_num_queries() .  ' queries in ' . timer_stop(0, 5) . ' seconds.">Kai 12</a><span class="sep"> - </span> ';
 }
 
 add_action('twentytwelve_credits', 'kai12_update_credits');

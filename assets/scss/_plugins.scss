@@ -132,9 +132,13 @@ body { // wrap it in body to avoid abusing !important
   --k12-algolia-font-size: calc(var(--font-size) * .9);
   --k12-algolia-menu-background: var(--container-color);
   --k12-algolia-highlight-background: var(--link-color-20);
+  --k12-algolia-autocomplete-height: 400px;
+
   .aa-dropdown-menu {
     font-family: inherit;
     background-color: var(--k12-algolia-menu-background);
+		max-height: var(--k12-algolia-autocomplete-height);
+		overflow-y: scroll;
 
     &,
     a {
@@ -145,6 +149,15 @@ body { // wrap it in body to avoid abusing !important
     .aa-hint {
       color: var(--text-color-40);
     }
+
+    .autocomplete-header {
+			position: sticky;
+			top: 0;
+			padding: 0 14px;
+			// reset from default
+			margin: 0;
+			background-color: var(--k12-algolia-menu-background);
+		}
 
     .autocomplete-header-title {
       color: var(--text-color-40);

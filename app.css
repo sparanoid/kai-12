@@ -1566,7 +1566,8 @@ article {
 body {
   --k12-algolia-font-size: calc(var(--font-size) * .9);
   --k12-algolia-menu-background: var(--container-color);
-  --k12-algolia-highlight-background: var(--link-color-20); }
+  --k12-algolia-highlight-background: var(--link-color-20);
+  --k12-algolia-autocomplete-height: 400px; }
   body.infinite-scroll:not(.infinity-end) {
     padding-bottom: 0; }
   body .infinite-loader {
@@ -1627,13 +1628,21 @@ body {
       opacity: .4; }
   body .aa-dropdown-menu {
     font-family: inherit;
-    background-color: var(--k12-algolia-menu-background); }
+    background-color: var(--k12-algolia-menu-background);
+    max-height: var(--k12-algolia-autocomplete-height);
+    overflow-y: scroll; }
     body .aa-dropdown-menu,
     body .aa-dropdown-menu a {
       color: var(--text-color);
       font-size: var(--k12-algolia-font-size); }
     body .aa-dropdown-menu .aa-hint {
       color: var(--text-color-40); }
+    body .aa-dropdown-menu .autocomplete-header {
+      position: sticky;
+      top: 0;
+      padding: 0 14px;
+      margin: 0;
+      background-color: var(--k12-algolia-menu-background); }
     body .aa-dropdown-menu .autocomplete-header-title {
       color: var(--text-color-40); }
     body .aa-dropdown-menu .autocomplete-header-more a {

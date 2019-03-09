@@ -137,8 +137,8 @@ body { // wrap it in body to avoid abusing !important
   .aa-dropdown-menu {
     font-family: inherit;
     background-color: var(--k12-algolia-menu-background);
-		max-height: var(--k12-algolia-autocomplete-height);
-		overflow-y: scroll;
+    max-height: var(--k12-algolia-autocomplete-height);
+    overflow-y: scroll;
 
     &,
     a {
@@ -151,13 +151,13 @@ body { // wrap it in body to avoid abusing !important
     }
 
     .autocomplete-header {
-			position: sticky;
-			top: 0;
-			padding: 0 14px;
-			// reset from default
-			margin: 0;
-			background-color: var(--k12-algolia-menu-background);
-		}
+      position: sticky;
+      top: 0;
+      padding: 0 14px;
+      // reset from default
+      margin: 0;
+      background-color: var(--k12-algolia-menu-background);
+    }
 
     .autocomplete-header-title {
       color: var(--text-color-40);
@@ -436,58 +436,58 @@ body.woocommerce {
 
 // Clean My Archives
 .clean-my-archives {
-	--archives-font-size: 1rem;
-	--archives-grid-gap: .5rem;
-	--archives-day-width: 2ch;
+  --archives-font-size: 1rem;
+  --archives-grid-gap: .5rem;
+  --archives-day-width: 2ch;
 
-	.month-year {
+  .month-year {
 
-		a {
-			color: var(--text-color);
+    a {
+      color: var(--text-color);
 
-			&:hover,
-			&:focus {
-				color: var(--link-color);
-			}
-		}
-	}
+      &:hover,
+      &:focus {
+        color: var(--link-color);
+      }
+    }
+  }
 
-	ul {
+  ul {
 
-		@media (max-width: 640px) {
-			margin-left: 0;
-		}
+    @media (max-width: 640px) {
+      margin-left: 0;
+    }
 
-		li {
-			display: grid;
-		  grid-template-columns: var(--archives-day-width) 1fr auto;
-			grid-gap: var(--archives-grid-gap);
-			font-size: var(--archives-font-size);
-			line-height: 1.4;
-			margin-bottom: .6em;
+    li {
+      display: grid;
+      grid-template-columns: var(--archives-day-width) 1fr auto;
+      grid-gap: var(--archives-grid-gap);
+      font-size: var(--archives-font-size);
+      line-height: 1.4;
+      margin-bottom: .6em;
 
-			.day {
-				color: var(--text-color-40);
-			}
+      .day {
+        color: var(--text-color-40);
+      }
 
-			.comments-number {
-				color: var(--text-color-40);
-			}
+      .comments-number {
+        color: var(--text-color-40);
+      }
 
-			a {
+      a {
 
-			}
+      }
 
-			&::before {
-				display: none;
-			}
+      &::before {
+        display: none;
+      }
 
-			&.day-duplicate {
+      &.day-duplicate {
 
-				.day {
-					opacity: 0;
-				}
-			}
-		}
+        .day {
+          opacity: 0;
+        }
+      }
+    }
   }
 }

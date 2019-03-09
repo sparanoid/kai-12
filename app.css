@@ -1630,7 +1630,8 @@ body {
     font-family: inherit;
     background-color: var(--k12-algolia-menu-background);
     max-height: var(--k12-algolia-autocomplete-height);
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
     body .aa-dropdown-menu,
     body .aa-dropdown-menu a {
       color: var(--text-color);

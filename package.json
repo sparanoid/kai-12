@@ -15,17 +15,17 @@
   "license": "GPL-2.0",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.0.4",
     "grunt-coffeelint": "0.0.16",
     "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-compress": "^1.5.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-replace": "^1.0.1",
-    "grunt-sass": "^3.0.1",
+    "grunt-sass": "^3.0.2",
     "matchdep": "^2.0.0",
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.12.0"
   }
 }

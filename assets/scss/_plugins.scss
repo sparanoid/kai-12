@@ -20,8 +20,8 @@ body { // wrap it in body to avoid abusing !important
       background-color: var(--container-color-80);
       border: none !important;
       box-shadow: 0 -1px 0 0 var(--border-color);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
     }
 
     .blog-info,

@@ -4,13 +4,13 @@ Donate link: https://sparanoid.com/donate/
 Requires at least: WordPress 3.5
 Tested up to: 5.0
 Requires PHP: 7.3
-Stable tag: 1.2.20
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 
 == Description ==
-The missing child theme of Twenty Twelve, A better interface based on Twenty Twelve with native CSS variables support for color scheme customization. No need to change the default theme.
+The missing child theme of Twenty Twelve that passes all Theme Unit Test. It provides a better UI based on Twenty Twelve with native CSS variables support for color scheme customization. No need to change the default theme.
 
 For more information about Kai 12 please go to https://sparanoid.com/work/kai/.
 
@@ -40,6 +40,10 @@ Source: https://github.com/aFarkas/html5shiv
 
 == Changelog ==
 
+= 1.3.0 =
+* Update appearance for latest blocks
+* Many CSS tweaks
+
 = 1.2.20 =
 * Background variable tweak
 * Update license for theme reviewing
@@ -61,6 +65,9 @@ Source: https://github.com/aFarkas/html5shiv
 * Add readme for new requirement
 
 == Upgrade Notice ==
+
+= 1.3.0 =
+* Update appearance for latest blocks
 
 = 1.2.20 =
 * Background variable tweak and update license

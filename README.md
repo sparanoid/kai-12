@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/sparanoid/kai-12.svg)](https://travis-ci.org/sparanoid/kai-12)
 [![devDependency Status](https://david-dm.org/sparanoid/kai-12/dev-status.svg)](https://david-dm.org/sparanoid/kai-12#info=devDependencies)
 
-The missing child theme of Twenty Twelve that passes all [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test), It provides a better UI based on Twenty Twelve with native CSS variables support for color scheme customization. No need to change the default theme.
+The missing child theme of Twenty Twelve that passes all [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test). It provides a better UI based on Twenty Twelve with native CSS variables support for color scheme customization. No need to change the default theme.
 
 ## Demo
 

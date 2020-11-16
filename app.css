@@ -173,13 +173,13 @@ del {
   opacity: .2; }
 
 html[lang=zh-CN] {
-  --fontstack-sans-serif: "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
+  --fontstack-sans-serif: "PingFang SC", "Helvetica Neue", "Segoe UI", sans-serif; }
 
 html[lang=zh-TW] {
-  --fontstack-sans-serif: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+  --fontstack-sans-serif: "PingFang TC", "Helvetica Neue", "Segoe UI", sans-serif; }
 
 html[lang=zh-HK] {
-  --fontstack-sans-serif: "PingFang HK", "Helvetica Neue", Arial, sans-serif; }
+  --fontstack-sans-serif: "PingFang HK", "Helvetica Neue", "Segoe UI", sans-serif; }
 
 :root {
   background: var(--background-color); }

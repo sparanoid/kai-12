@@ -4,7 +4,7 @@ Donate link: https://sparanoid.com/donate/
 Requires at least: WordPress 3.5
 Tested up to: 5.0
 Requires PHP: 7.3
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -40,6 +40,9 @@ Source: https://github.com/aFarkas/html5shiv
 
 == Changelog ==
 
+= 1.3.1 =
+* Fix font stack
+
 = 1.3.0 =
 * Update appearance for latest blocks
 * Many CSS tweaks
@@ -65,6 +68,9 @@ Source: https://github.com/aFarkas/html5shiv
 * Add readme for new requirement
 
 == Upgrade Notice ==
+
+= 1.3.1 =
+* Fix font stack
 
 = 1.3.0 =
 * Update appearance for latest blocks

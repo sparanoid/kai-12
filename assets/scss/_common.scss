@@ -1,8 +1,8 @@
 html {
 
-  &[lang=zh-CN] { --fontstack-sans-serif: "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
-  &[lang=zh-TW] { --fontstack-sans-serif: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
-  &[lang=zh-HK] { --fontstack-sans-serif: "PingFang HK", "Helvetica Neue", Arial, sans-serif; }
+  &[lang=zh-CN] { --fontstack-sans-serif: "PingFang SC", "Helvetica Neue", "Segoe UI", sans-serif; }
+  &[lang=zh-TW] { --fontstack-sans-serif: "PingFang TC", "Helvetica Neue", "Segoe UI", sans-serif; }
+  &[lang=zh-HK] { --fontstack-sans-serif: "PingFang HK", "Helvetica Neue", "Segoe UI", sans-serif; }
 }
 
 :root {

@@ -27,7 +27,7 @@ function kai12_scripts_styles_override() {
   wp_enqueue_style( 'kai-12-style', get_stylesheet_directory_uri() . '/app.css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'kai12_scripts_styles_override' );
+add_action( 'wp_enqueue_scripts', 'kai12_scripts_styles_override', 999 );
 
 /**
  * Disable custom web font from Google, it's slow and it sucks

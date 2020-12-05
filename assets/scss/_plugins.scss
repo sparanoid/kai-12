@@ -39,11 +39,15 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
+  // Mobile version
   &.infinite-scroll #infinite-handle {
     padding-bottom: 0 !important;
 
     span {
-      padding: var(--gutter-v) var(--gutter);
+      padding-top: var(--gutter-v);
+      padding-bottom: var(--gutter-v);
+      @include padding-offset(var(--gutter));
+      @include margin-offset(calc(var(--gutter) * -1));
       color: var(--text-color);
       font-size: 1.2rem;
       font-weight: bold;

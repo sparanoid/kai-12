@@ -66,8 +66,7 @@ a {
 
 input:not([type=checkbox]),
 textarea,
-select,
-button {
+select {
   display: block;
   appearance: none;
   -webkit-appearance: none;
@@ -90,20 +89,67 @@ input[type=submit],
 .faux-button,
 .wp-block-button__link,
 .wp-block-file__button {
-  color: var(--button-color) !important;
-  background: var(--button-bg-color) !important;
+  color: var(--button-color);
+  background: var(--button-bg-color);
   cursor: pointer;
-  padding-left: 1.2em !important;
-  padding-right: 1.2em !important;
-  border: none !important;
-  box-shadow: none !important;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  border: none;
+  box-shadow: none;
   border-radius: 4px;
 
   &:hover,
   &:focus {
-    color: var(--button-color-hover) !important;
-    background: var(--button-bg-color-hover) !important;
+    color: var(--button-color-hover);
+    background: var(--button-bg-color-hover);
     text-decoration: none;
+  }
+}
+
+.wp-block-button {
+
+	.wp-block-button__link {
+    color: var(--button-color);
+    background: var(--button-bg-color);
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: var(--button-color-hover);
+      background: var(--button-bg-color-hover);
+    }
+
+    &:not(.has-text-color) {
+      box-shadow: none;
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+
+    &:not(.has-background) {
+
+      &:hover,
+      &:focus {
+        background: var(--button-bg-color-hover);
+        background-image: none;
+      }
+
+      &:active {
+        background: var(--button-bg-color);
+        background-image: none;
+      }
+    }
+  }
+
+	&:not(.is-style-outline) {
+
+		.wp-block-button__link {
+
+			&:not(.has-background) {
+        background-image: none;
+			}
+		}
   }
 }
 
@@ -283,6 +329,7 @@ label {
 
     .header-image {
       max-width: 100%;
+      height: auto;
     }
   }
 }
@@ -634,6 +681,7 @@ article {
   .wp-block-embed,
   .wp-block-cover,
   .wp-block-gallery,
+  .wp-block-media-text,
   .wp-post-image,
   .browser {
     max-width: none;
@@ -679,12 +727,12 @@ article {
 
   .alignleft {
     float: left;
-    margin-right: calc(var(--space-deco) + 1em);
+    margin-right: 1em;
   }
 
   .alignright {
     float: right;
-    margin-left: calc(var(--space-deco) + 1em);
+    margin-left: 1em;
   }
 
   .aligncenter {
@@ -993,6 +1041,19 @@ article {
   .wp-caption-text {
     color: var(--text-color-50);
   }
+}
+
+// More button and pagination for posts
+.more-link {
+  display: inline-block;
+  padding: .4em 1em;
+  margin: 1em 0;
+  border: 1px solid currentColor;
+  border-radius: 66px;
+}
+
+.page-links {
+  margin-bottom: 1em;
 }
 
 // To bypass stupid WP.org theme guidelines

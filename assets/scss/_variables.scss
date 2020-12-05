@@ -21,13 +21,13 @@ $code-color: #f77123 !default;
 :root {
   // Typography
   --fontstack-prefix: -apple-system, BlinkMacSystemFont,; // Notice that ending comma?
-  --fontstack-sans-serif: "Helvetica Neue", "Segoe UI", sans-serif;
+  --fontstack-sans-serif: "Helvetica Neue", Arial, sans-serif;
   --fontstack-serif: Georgia, serif;
   --fontstack-monospace: Menlo, Consolas, monospace;
   --fontstack-default: var(--fontstack-prefix) var(--fontstack-sans-serif);
   --fontstack-heading: var(--fontstack-prefix) var(--fontstack-sans-serif);
   --font-size: 16px;
-  --font-features: "ss01", "ss02";
+  --font-features: "halt", "cv01", "cv02", "cv03";
   --line-height: calc(20 / 14); // ~ 1.428571429
   --heading-letter-spacing: -.04em;
 

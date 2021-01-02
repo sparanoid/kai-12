@@ -2,9 +2,9 @@
 Contributors: Sparanoid
 Donate link: https://sparanoid.com/donate/
 Requires at least: WordPress 3.5
-Tested up to: 5.0
+Tested up to: 5.6
 Requires PHP: 7.3
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -40,6 +40,11 @@ Source: https://github.com/aFarkas/html5shiv
 
 == Changelog ==
 
+= 1.3.3 =
+* Add highlight.js with [Randomized](https://sparanoid.com/lab/randomized/) support. Recommended syntax highlight plugin: [Prismatic](https://perishablepress.com/prismatic/).
+* Refine appearance for Algolia search highlighted text
+* Fix wrong appearance for search input cancel buttons
+
 = 1.3.2 =
 * Refine appearance of built-in block elements
 * Better font stack for Windows
@@ -73,6 +78,9 @@ Source: https://github.com/aFarkas/html5shiv
 * Add readme for new requirement
 
 == Upgrade Notice ==
+
+= 1.3.3 =
+* Add highlight.js with Randomized.
 
 = 1.3.2 =
 * refine block elements and font stack for windows

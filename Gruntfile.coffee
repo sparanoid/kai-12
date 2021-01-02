@@ -1,9 +1,6 @@
 "use strict"
 module.exports = (grunt) ->
 
-  # Load Sass deps
-  sass = require('node-sass')
-
   # Load all grunt tasks
   require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
 
@@ -37,47 +34,6 @@ module.exports = (grunt) ->
       coffee:
         files: ["<%= coffeelint.test.files.src %>"]
         tasks: ["coffeelint"]
-
-      sass:
-        files: ["<%= core.app %>/assets/scss/**/*.scss"]
-        tasks: ["sass:serve"]
-
-    sass:
-      options:
-        implementation: sass
-        precision: 10
-
-      serve:
-        options:
-          outputStyle: "nested"
-          sourceMapContents: true
-          sourceMapEmbed: true
-
-        files: [
-          expand: true
-          cwd: "<%= core.app %>/assets/scss/"
-          src: ["**/app*.scss"]
-          dest: "<%= core.dist %>/"
-          ext: ".css"
-        ]
-
-      dist:
-        options:
-          outputStyle: "nested"
-
-        files: "<%= sass.serve.files %>"
-
-    cssmin:
-      dist:
-        options:
-          report: "gzip"
-
-        files: [
-          expand: true
-          cwd: "<%= core.dist %>"
-          src: ["app*.css", "!*.min.css"]
-          dest: "<%= core.dist %>/"
-        ]
 
     compress:
       sparanoid:
@@ -154,9 +110,7 @@ module.exports = (grunt) ->
 
     clean: [".tmp"]
 
-  grunt.registerTask "serve", ["clean", "test", "sass:serve", "watch"]
   grunt.registerTask "test", ["coffeelint"]
-  grunt.registerTask "build", ["clean", "test", "sass:dist"]
-  grunt.registerTask "deploy", ["build", "compress:sparanoid", "copy:sparanoid_prepare", "copy:sparanoid", "replace", "clean"]
-  grunt.registerTask "deploy_wporg", ["build", "compress:wporg", "copy:wporg_prepare", "copy:wporg", "clean"]
-  grunt.registerTask "default", ["build"]
+  grunt.registerTask "deploy", ["compress:sparanoid", "copy:sparanoid_prepare", "copy:sparanoid", "replace", "clean"]
+  grunt.registerTask "deploy_wporg", ["compress:wporg", "copy:wporg_prepare", "copy:wporg", "clean"]
+  grunt.registerTask "default", ["deploy"]

@@ -16,7 +16,7 @@ $breakpoint-xs: 400px !default;
 $text-color: #080c1b !default;
 $link-color: #4f3fbb !default;
 $container-color: #fff !default;
-$code-color: #f77123 !default;
+$code-color: #ce621a !default;
 
 :root {
   // Typography
@@ -53,68 +53,68 @@ $code-color: #f77123 !default;
   --code-color: #{$code-color};
   --container-color: #{$container-color};
 
-  --text-color-hue: #{unitlessness(hue($text-color))};
-  --text-color-sat: #{saturation($text-color)};
-  --text-color-light: #{lightness($text-color)};
-  --text-color-hsl: var(--text-color-hue), var(--text-color-sat), var(--text-color-light);
+  --text-color-h: #{unitlessness(hue($text-color))};
+  --text-color-s: #{saturation($text-color)};
+  --text-color-l: #{lightness($text-color)};
+  --text-color-hsl: var(--text-color-h), var(--text-color-s), var(--text-color-l);
 
-  --text-color-3: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .03);
-  --text-color-5: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .05);
-  --text-color-7: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .07);
-  --text-color-10: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .1);
-  --text-color-20: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .2);
-  --text-color-30: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .3);
-  --text-color-40: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .4);
-  --text-color-50: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .5);
-  --text-color-60: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .6);
-  --text-color-70: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .7);
-  --text-color-80: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .8);
-  --text-color-90: hsla(var(--text-color-hue), var(--text-color-sat), var(--text-color-light), .9);
+  --text-color-3: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .03);
+  --text-color-5: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .05);
+  --text-color-7: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .07);
+  --text-color-10: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .1);
+  --text-color-20: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .2);
+  --text-color-30: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .3);
+  --text-color-40: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .4);
+  --text-color-50: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .5);
+  --text-color-60: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .6);
+  --text-color-70: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .7);
+  --text-color-80: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .8);
+  --text-color-90: hsla(var(--text-color-h), var(--text-color-s), var(--text-color-l), .9);
   --border-color: var(--text-color-10);
 
-  --link-color-hue: #{unitlessness(hue($link-color))};
-  --link-color-sat: #{saturation($link-color)};
-  --link-color-light: #{lightness($link-color)};
-  --link-color-hsl: var(--link-color-hue), var(--link-color-sat), var(--link-color-light);
+  --link-color-h: #{unitlessness(hue($link-color))};
+  --link-color-s: #{saturation($link-color)};
+  --link-color-l: #{lightness($link-color)};
+  --link-color-hsl: var(--link-color-h), var(--link-color-s), var(--link-color-l);
 
-  --link-color-3: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .03);
-  --link-color-5: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .05);
-  --link-color-7: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .07);
-  --link-color-10: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .1);
-  --link-color-20: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .2);
-  --link-color-30: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .3);
-  --link-color-40: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .4);
-  --link-color-50: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .5);
-  --link-color-60: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .6);
-  --link-color-70: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .7);
-  --link-color-80: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .8);
-  --link-color-90: hsla(var(--link-color-hue), var(--link-color-sat), var(--link-color-light), .9);
+  --link-color-3: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .03);
+  --link-color-5: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .05);
+  --link-color-7: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .07);
+  --link-color-10: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .1);
+  --link-color-20: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .2);
+  --link-color-30: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .3);
+  --link-color-40: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .4);
+  --link-color-50: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .5);
+  --link-color-60: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .6);
+  --link-color-70: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .7);
+  --link-color-80: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .8);
+  --link-color-90: hsla(var(--link-color-h), var(--link-color-s), var(--link-color-l), .9);
 
-  --code-color-hue: #{unitlessness(hue($code-color))};
-  --code-color-sat: #{saturation($code-color)};
-  --code-color-light: #{lightness($code-color)};
-  --code-color-hsl: var(--code-color-hue), var(--code-color-sat), var(--code-color-light);
+  --code-color-h: #{unitlessness(hue($code-color))};
+  --code-color-s: #{saturation($code-color)};
+  --code-color-l: #{lightness($code-color)};
+  --code-color-hsl: var(--code-color-h), var(--code-color-s), var(--code-color-l);
 
-  --code-color-3: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .03);
-  --code-color-5: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .05);
-  --code-color-7: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .07);
-  --code-color-10: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .1);
-  --code-color-20: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .2);
-  --code-color-30: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .3);
-  --code-color-40: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .4);
-  --code-color-50: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .5);
-  --code-color-60: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .6);
-  --code-color-70: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .7);
-  --code-color-80: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .8);
-  --code-color-90: hsla(var(--code-color-hue), var(--code-color-sat), var(--code-color-light), .9);
+  --code-color-3: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .03);
+  --code-color-5: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .05);
+  --code-color-7: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .07);
+  --code-color-10: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .1);
+  --code-color-20: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .2);
+  --code-color-30: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .3);
+  --code-color-40: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .4);
+  --code-color-50: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .5);
+  --code-color-60: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .6);
+  --code-color-70: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .7);
+  --code-color-80: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .8);
+  --code-color-90: hsla(var(--code-color-h), var(--code-color-s), var(--code-color-l), .9);
 
-  --container-color-hue: #{unitlessness(hue($container-color))};
-  --container-color-sat: #{saturation($container-color)};
-  --container-color-light: #{lightness($container-color)};
-  --container-color-hsl: var(--container-color-hue), var(--container-color-sat), var(--container-color-light);
+  --container-color-h: #{unitlessness(hue($container-color))};
+  --container-color-s: #{saturation($container-color)};
+  --container-color-l: #{lightness($container-color)};
+  --container-color-hsl: var(--container-color-h), var(--container-color-s), var(--container-color-l);
 
-  --container-color-80: hsla(var(--container-color-hue), var(--container-color-sat), var(--container-color-light), .8);
-  --container-color-90: hsla(var(--container-color-hue), var(--container-color-sat), var(--container-color-light), .9);
+  --container-color-80: hsla(var(--container-color-h), var(--container-color-s), var(--container-color-l), .8);
+  --container-color-90: hsla(var(--container-color-h), var(--container-color-s), var(--container-color-l), .9);
 
   --link-color-hover: var(--link-color-70);
 
@@ -136,6 +136,6 @@ $code-color: #f77123 !default;
   // WordPress Customizer doesn't support setting css varaible as default value.
   // So in `functions.php`, I defined an option for users to manually choose the
   // background color they want.
-  --background-color: hsla(var(--container-color-hue), var(--container-color-sat), calc(var(--container-color-light) * .95), 1);
+  --background-color: hsla(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * .95), 1);
   --submenu-color: var(--container-color);
 }

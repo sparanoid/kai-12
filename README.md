@@ -21,6 +21,7 @@ You can get the latest version from [official WordPress.org][dl-wp] or from [my 
 ## What's the Difference?
 
 - Better, flat navigation style
+- Full dynamic color scheme with WordPress Customizer support based on CSS variables
 - [Randomized](https://sparanoid.com/lab/randomized/) powered highlight.js support. Recommended syntax highlight plugin: [Prismatic](https://perishablepress.com/prismatic/).
 - Better form, dropdown list style
 - `.well` and `.well.dark` class borrowed from Bootstrap

@@ -43,7 +43,7 @@ function kai12_customize_register ( $wp_customize ) {
   );
   $wp_customize->add_setting( 'code_color',
     array(
-      'default'    => '#f77123',
+      'default'    => '#ce621a',
       'type'       => 'theme_mod',
       'capability' => 'edit_theme_options',
       'sanitize_callback' => 'sanitize_hex_color',
@@ -227,9 +227,9 @@ function kai12_generate_css( $style, $mod_name, $prefix='', $postfix='', $echo=t
     // $return = sprintf("%s: %s;\n", $style, $prefix.$mod.$postfix);
     $return = "
       {$style}: {$prefix}{$mod}{$postfix};
-      {$style}-hue: {$color_hue};
-      {$style}-sat: {$color_sat};
-      {$style}-light: {$color_light};
+      {$style}-h: {$color_hue};
+      {$style}-s: {$color_sat};
+      {$style}-l: {$color_light};
     ";
     if ( $echo ) {
       echo esc_html($return);

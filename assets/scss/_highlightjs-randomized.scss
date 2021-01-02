@@ -1,0 +1,98 @@
+/* highlight.js theme empowered by randomized */
+/* @author: sparanoid */
+:root {
+  --rdmz-h: var(--code-color-h, 381);
+  --rdmz-s: var(--code-color-s, 60%);
+  --rdmz-l: var(--code-color-l, 50%);
+  --rdmz-a: 1;
+}
+
+.hljs,
+.hljs span {
+  --rdmz-hsl: var(--rdmz-h), var(--rdmz-s), var(--rdmz-l);
+  // Uppercase to workaround node-sass misinterpret
+  // https://github.com/sass/node-sass/issues/2251
+  color: HSLA(var(--rdmz-hsl), var(--rdmz-a));
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background-color: HSLA(var(--rdmz-hsl), .1);
+  padding: .5em;
+}
+
+/* General, default plain text */
+.hljs-ln-code,
+.hljs.plaintext {
+  color: var(--text-color);
+}
+
+.hljs.plaintext {
+  padding: .2em;
+}
+
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+  --rdmz-a: .5;
+  --rdmz-s: calc(var(--code-color-s) * .6);
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  --rdmz-h: calc(var(--code-color-h) - 90);
+}
+
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  --rdmz-h: calc(var(--code-color-h) + 30);
+}
+
+/* Yellow */
+.hljs-attr,
+.hljs-attribute {
+  --rdmz-h: calc(var(--code-color-h) - 30);
+}
+
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  --rdmz-h: calc(var(--code-color-h) + -60);
+}
+
+/* Blue */
+.hljs-title,
+.hljs-section {
+  --rdmz-h: calc(var(--code-color-h) + 180);
+}
+
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  --rdmz-h: calc(var(--code-color-h) + 240);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

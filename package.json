@@ -4,7 +4,15 @@
   "description": "The missing child theme of Twenty Twelve that passes all Theme Unit Test. It provides a better UI based on Twenty Twelve with native CSS variables support for color scheme customization. No need to change the default theme.",
   "main": "style.css",
   "scripts": {
-    "test": "grunt test"
+    "test": "npm-run-all --parallel test:*",
+    "test:js": "eslint js/**",
+    "build": "npm-run-all --parallel build:*",
+    "build:css": "npm-run-all build:sass build:css-prefix",
+    "build:sass": "node-sass assets/scss/app.scss --output . --output-style compressed",
+    "build:css-prefix": "postcss app.css --use autoprefixer -o app.css",
+    "watch:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm-run-all build:css\"",
+    "watch:js": "nodemon --watch js/app.js --exec \"yarn test:js\"",
+    "watch": "npm-run-all --parallel watch:*"
   },
   "repository": {
     "type": "git",
@@ -15,7 +23,14 @@
   "license": "GPL-2.0",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.1.0",
+    "babel-preset-minify": "^0.5.1",
     "coffeescript": "^2.5.1",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "grunt": "^1.0.4",
     "grunt-coffeelint": "0.0.16",
     "grunt-contrib-clean": "^2.0.0",
@@ -27,6 +42,11 @@
     "grunt-replace": "^1.0.1",
     "grunt-sass": "^3.0.2",
     "matchdep": "^2.0.0",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.2",
+    "postcss-cli": "^8.3.1",
+    "terser": "^5.5.1"
   }
 }

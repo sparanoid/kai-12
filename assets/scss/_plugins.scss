@@ -135,7 +135,6 @@ body { // wrap it in body to avoid abusing !important
   // https://github.com/algolia/algoliasearch-wordpress/
   --k12-algolia-font-size: calc(var(--font-size) * .9);
   --k12-algolia-menu-background: var(--container-color);
-  --k12-algolia-highlight-background: var(--link-color-20);
   --k12-algolia-autocomplete-height: 400px;
 
   .aa-dropdown-menu {
@@ -184,7 +183,7 @@ body { // wrap it in body to avoid abusing !important
 
       em {
         color: var(--link-color);
-        background: var(--k12-algolia-highlight-background);
+        background: var(--link-color-20);
       }
 
       .suggestion-post-content {
@@ -259,7 +258,8 @@ body { // wrap it in body to avoid abusing !important
 
       em,
       a em {
-        background: var(--k12-algolia-highlight-background);
+        color: var(--link-color);
+        background: var(--link-color-20);
       }
 
       @media only screen and (max-width: 1000px) {

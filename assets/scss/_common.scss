@@ -39,11 +39,12 @@ body {
   --container-color-l: var(--bg-color-l);
   --container-color-hsl: var(--container-color-h), var(--container-color-s), var(--container-color-l);
 
-  --container-color: hsl(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * 1.2));
-  --container-color-80: hsla(var(--container-color-hsl), .8);
-  --container-color-90: hsla(var(--container-color-hsl), .9);
+  --container-color-factor: 1.2;
+  --container-color: hsl(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * var(--container-color-factor)));
+  --container-color-80: hsla(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * var(--container-color-factor)), .8);
+  --container-color-90: hsla(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * var(--container-color-factor)), .9);
 
-  --submenu-color: hsl(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * 1.1));
+  --submenu-color: hsl(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * calc(var(--container-color-factor) * .95)));
 
   background: var(--bg-color);
   padding: var(--gutter) 0;

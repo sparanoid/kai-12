@@ -12,6 +12,13 @@
  * @since Kai 12 1.2.14
  */
 function kai12_customize_register ( $wp_customize ) {
+  /**
+   * Unregister custom header text color from parent theme
+   *
+   * @since Kai 12 1.3.3
+   */
+  $wp_customize->remove_control('header_textcolor');
+
   // 1. Define a new section (if desired) to the Theme Customizer
   $wp_customize->add_section( 'kai12_options',
     array(

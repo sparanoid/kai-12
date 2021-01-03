@@ -119,7 +119,7 @@ add_action( 'after_setup_theme', 'kai12_remove_custom_background_from_parent_the
  *
  * @since Kai 12 1.2.14
  */
-require get_stylesheet_directory() . '/includes/customizer.php';
+require get_stylesheet_directory() . '/inc/customizer.php';
 
 /**
  * Unhook sidebar for WooCommerce

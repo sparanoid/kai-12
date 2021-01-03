@@ -6,15 +6,46 @@ html {
 }
 
 :root {
-  background: var(--background-color);
+  background: var(--bg-color);
 }
 
 body {
+  // WordPress-specific variables
   --gutter: var(--space-sm);
   --gutter-v: calc(var(--space-sm) / 1.25);
   // Used by images/video offsetting
   --space-deco: var(--gutter);
-  background: var(--background-color);
+  --container-width: var(--breakpoint-md);
+  --sidebar-width: 30%;
+  --header-image-padding: var(--gutter-v) var(--gutter);
+
+  --link-color-hover: var(--link-color-70);
+
+  --heading-color: var(--text-color);
+  --heading-color-hover: var(--link-color);
+
+  --input-color: var(--text-color-60);
+  --input-color-hover: var(--text-color);
+  --input-bg-color: var(--text-color-5);
+  --input-bg-color-hover: var(--text-color-3);
+
+  --button-color: var(--text-color-60);
+  --button-color-hover: var(--text-color);
+  --button-bg-color: var(--text-color-10);
+  --button-bg-color-hover: var(--text-color-7);
+
+  --container-color-h: var(--bg-color-h);
+  --container-color-s: var(--bg-color-s);
+  --container-color-l: var(--bg-color-l);
+  --container-color-hsl: var(--container-color-h), var(--container-color-s), var(--container-color-l);
+
+  --container-color: hsl(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * 1.2));
+  --container-color-80: hsla(var(--container-color-hsl), .8);
+  --container-color-90: hsla(var(--container-color-hsl), .9);
+
+  --submenu-color: hsl(var(--container-color-h), var(--container-color-s), calc(var(--container-color-l) * 1.1));
+
+  background: var(--bg-color);
   padding: var(--gutter) 0;
 
   @media (max-width: $breakpoint-md) {
@@ -28,7 +59,7 @@ body {
   }
 
   &.custom-background {
-    background: var(--background-color);
+    background: var(--bg-color);
   }
 
   &.custom-background-white {
@@ -69,7 +100,6 @@ textarea,
 select {
   display: block;
   appearance: none;
-  -webkit-appearance: none;
   color: var(--input-color);
   background: var(--input-bg-color);
   outline: none;
@@ -192,12 +222,14 @@ label {
 // Global wrapper
 .site {
   margin: 0 auto;
-  max-width: var(--breakpoint-md);
+  max-width: var(--container-width);
   background-color: var(--container-color);
 }
 
 // Header
 .site-header {
+  display: flex;
+  flex-direction: column;
 
   // Header text
   hgroup {
@@ -341,11 +373,12 @@ label {
   // Header image link
   > a {
     display: block;
-    padding: var(--space-sm) var(--gutter);
+    padding: var(--header-image-padding);
     border-bottom: 1px solid var(--border-color);
     line-height: 1;
 
     .header-image {
+      display: block;
       max-width: 100%;
       height: auto;
     }

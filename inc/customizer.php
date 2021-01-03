@@ -25,7 +25,7 @@ function kai12_customize_register ( $wp_customize ) {
       'title'       => __( 'Kai 12 Options', 'kai-12' ), // Visible title of section
       'priority'    => 35, // Determines what order this appears in
       'capability'  => 'edit_theme_options', // Capability needed to tweak
-      'description' => __('Allows you to customize some example settings for Kai 12.', 'kai-12'), // Descriptive tooltip
+      'description' => __('Allows you to customize additional settings for Kai 12.', 'kai-12'), // Descriptive tooltip
     )
   );
 
@@ -169,7 +169,7 @@ function kai12_customize_register ( $wp_customize ) {
       'type'    => 'checkbox',
       'section' => 'colors',
       'label'   => esc_html__( 'Use Custom Container Color', 'kai-12' ),
-      'description' => __( 'By default Kai 12 generates container color based on your Background Color. Check this option and define a Container Color if you\'d like to other color.', 'kai-12' ),
+      'description' => __( 'By default Kai 12 generates container color based on your Background Color. Check this option and define a Container Color if you’d like to other color.', 'kai-12' ),
     )
   );
 

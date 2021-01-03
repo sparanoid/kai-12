@@ -90,6 +90,29 @@ function kai12_customize_register ( $wp_customize ) {
       'section'   => 'colors',
     )
   ) );
+
+  /**
+   * Option to use link color for post titles
+   */
+  $wp_customize->add_setting(
+    'link_color_for_post_titles',
+    array(
+      'capability'        => 'edit_theme_options',
+      'default'           => false,
+      'sanitize_callback' => 'sanitize_checkbox',
+    )
+  );
+
+  $wp_customize->add_control(
+    'link_color_for_post_titles',
+    array(
+      'type'    => 'checkbox',
+      'section' => 'colors',
+      'label'   => esc_html__( 'Use link color for post titles', 'kai-12' ),
+      'description' => __( 'Recommended for dark theme', 'kai-12' ),
+    )
+  );
+
   $wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize,
     'kai12_code_color',
@@ -120,6 +143,93 @@ function kai12_customize_register ( $wp_customize ) {
       'section'   => 'colors',
     )
   ) );
+
+  /**
+   * Option to use custom container color
+   */
+  $wp_customize->add_setting(
+    'use_custom_container_color',
+    array(
+      'capability'        => 'edit_theme_options',
+      'default'           => false,
+      'sanitize_callback' => 'sanitize_checkbox',
+    )
+  );
+
+  $wp_customize->add_control(
+    'use_custom_container_color',
+    array(
+      'type'    => 'checkbox',
+      'section' => 'colors',
+      'label'   => esc_html__( 'Use Custom Container Color', 'kai-12' ),
+      'description' => __( 'By default Kai 12 generates container color based on your Background Color. Check this option and define a Container Color if you\'d like to other color.', 'kai-12' ),
+    )
+  );
+
+  /**
+   * Option to force hiding sidebar
+   */
+  $wp_customize->add_setting(
+    'force_hiding_sidebar',
+    array(
+      'capability'        => 'edit_theme_options',
+      'default'           => false,
+      'sanitize_callback' => 'sanitize_checkbox',
+    )
+  );
+
+  $wp_customize->add_control(
+    'force_hiding_sidebar',
+    array(
+      'type'    => 'checkbox',
+      'section' => 'kai12_options',
+      'label'   => esc_html__( 'Force Hiding Sidebar', 'kai-12' ),
+      'description' => __( 'Force hidding sidebar by CSS. This option only hides the sidebar visually. The content is still in DOM. Remove your sidebar widgets after enabling this option.', 'kai-12' ),
+    )
+  );
+
+  /**
+   * Option to display borderless header image
+   */
+  $wp_customize->add_setting(
+    'borderless_header_image',
+    array(
+      'capability'        => 'edit_theme_options',
+      'default'           => false,
+      'sanitize_callback' => 'sanitize_checkbox',
+    )
+  );
+
+  $wp_customize->add_control(
+    'borderless_header_image',
+    array(
+      'type'    => 'checkbox',
+      'section' => 'header_image',
+      'label'   => esc_html__( 'Borderless Header Image', 'kai-12' ),
+    )
+  );
+
+  /**
+   * Option to display header image at the top (above Navigation)
+   */
+  $wp_customize->add_setting(
+    'header_image_att',
+    array(
+      'capability'        => 'edit_theme_options',
+      'default'           => false,
+      'sanitize_callback' => 'sanitize_checkbox',
+    )
+  );
+
+  $wp_customize->add_control(
+    'header_image_att',
+    array(
+      'type'    => 'checkbox',
+      'section' => 'header_image',
+      'label'   => esc_html__( 'Display Header Image Above Navigation', 'kai-12' ),
+      'description' => __( 'Put header image at the top of your page', 'kai-12' ),
+    )
+  );
 }
 add_action( 'customize_register' , 'kai12_customize_register' );
 
@@ -133,14 +243,46 @@ add_action( 'customize_register' , 'kai12_customize_register' );
  */
 function kai12_customize_header_output() {
   ?>
-  <style type="text/css" id="kai-12-customizer-colors">
-    :root {
+  <style type="text/css" id="kai-12-customizer">
+    body {
       <?php kai12_generate_css('--text-color', 'text_color'); ?>
       <?php kai12_generate_css('--link-color', 'link_color'); ?>
       <?php kai12_generate_css('--code-color', 'code_color'); ?>
-      <?php kai12_generate_css('--container-color', 'container_color'); ?>
-      <?php kai12_generate_css('--background-color', 'bg_color'); ?>
+      <?php kai12_generate_css('--bg-color', 'bg_color'); ?>
+      <?php if ( get_theme_mod( 'use_custom_container_color' ) ) {
+        kai12_generate_css('--container-color', 'container_color');
+      } ?>
     }
+
+    <?php if ( get_theme_mod( 'force_hiding_sidebar' ) ) : ?>
+      body {
+        --container-width: var(--breakpoint-sm);
+        --sidebar-width: 0px;
+      }
+
+      #secondary {
+        display: none;
+      }
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'borderless_header_image' ) ) : ?>
+      body {
+        --header-image-padding: 0px;
+      }
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'header_image_att' ) ) : ?>
+      .main-navigation {
+        order: 2;
+      }
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'link_color_for_post_titles' ) ) : ?>
+      body {
+        --heading-color: var(--link-color);
+        --heading-color-hover: var(--link-color-hover);
+      }
+    <?php endif; ?>
   </style>
   <?php
 }
@@ -167,6 +309,21 @@ function kai12_customize_live_preview() {
   );
 }
 add_action( 'customize_preview_init' , 'kai12_customize_live_preview' );
+
+/**
+ * Sanitize boolean for checkbox.
+ *
+ * @access public
+ *
+ * @since Kai 12 1.3.4
+ *
+ * @param bool $checked Whether or not a box is checked.
+ *
+ * @return bool
+ */
+function sanitize_checkbox( $checked = null ) {
+  return (bool) isset( $checked ) && true === $checked;
+}
 
 function kai12_hex2hsl($hex) {
   $hex = str_split(ltrim($hex, '#'), 2);

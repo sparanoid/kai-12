@@ -118,7 +118,7 @@ input[type=submit],
 .button,
 .faux-button,
 .wp-block-button__link,
-.wp-block-file__button {
+.wp-block-file .wp-block-file__button {
   color: var(--button-color);
   background: var(--button-bg-color);
   cursor: pointer;
@@ -695,6 +695,10 @@ article {
           display: none;
         }
       }
+
+      .wp-block-latest-comments__comment-date {
+        color: var(--text-color-50);
+      }
     }
   }
 
@@ -906,6 +910,11 @@ article {
         font-weight: bolder;
         border: none;
       }
+
+      cite,
+      footer {
+        color: var(--text-color-60);
+      }
     }
   }
 
@@ -1058,6 +1067,7 @@ article {
     border-spacing: 0;
     font-size: 90%;
     margin-bottom: 1.8rem;
+    border-color: var(--border-color);
 
     // TODO: responsive table support
     // display: inline-block;
@@ -1076,6 +1086,51 @@ article {
 
     td {
       border-top: var(--border-sm) solid var(--border-color);
+    }
+
+    &.is-style-stripes {
+
+      tbody {
+
+        tr {
+
+          &:nth-child(odd) {
+            background-color: var(--bg-color-5);
+          }
+        }
+      }
+    }
+  }
+
+  .wp-block-calendar {
+
+    table {
+
+      caption,
+      tbody {
+        color: var(--text-color);
+      }
+
+      th {
+        background-color: var(--bg-color-5);
+      }
+    }
+
+    tbody td,
+    th {
+      border-color: var(--border-color);
+    }
+  }
+
+  .wp-block-latest-posts__post-author,
+  .wp-block-latest-posts__post-date {
+    color: var(--text-color-50);
+  }
+
+  .wp-block-search {
+
+    .wp-block-search__input {
+      border-color: var(--border-color);
     }
   }
 

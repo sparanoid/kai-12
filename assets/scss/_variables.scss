@@ -80,9 +80,9 @@ body {
   --link-color-80: hsla(var(--link-color-hsl), .8);
   --link-color-90: hsla(var(--link-color-hsl), .9);
 
-  --bg-color-h: 0;
-  --bg-color-s: 0%;
-  --bg-color-l: 100%;
+  --bg-color-h: 210;
+  --bg-color-s: 5%;
+  --bg-color-l: 90%;
   --bg-color-hsl: var(--bg-color-h), var(--bg-color-s), var(--bg-color-l);
 
   --bg-color: hsl(var(--bg-color-hsl));

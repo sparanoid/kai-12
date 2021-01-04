@@ -83,7 +83,7 @@ body {
   --bg-color-h: 0;
   --bg-color-s: 0%;
   --bg-color-l: 100%;
-  --bg-color-hsl: var(--code-color-h), var(--code-color-s), var(--code-color-l);
+  --bg-color-hsl: var(--bg-color-h), var(--bg-color-s), var(--bg-color-l);
 
   --bg-color: hsl(var(--bg-color-hsl));
   --bg-color-3: hsla(var(--bg-color-hsl), .03);

@@ -19,3 +19,4 @@ builds
 .tmp
 .sass-cache
 app/components
+*.map

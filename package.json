@@ -8,11 +8,12 @@
     "test:js": "eslint js/**",
     "build": "npm-run-all --parallel build:*",
     "build:css": "npm-run-all build:sass build:css-prefix",
-    "build:sass": "node-sass assets/scss/app.scss --output . --output-style compressed",
+    "build:sass": "sass assets/scss/app.scss app.css --style compressed --no-source-map",
     "build:css-prefix": "postcss app.css --use autoprefixer -o app.css",
-    "watch:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm-run-all build:css\"",
-    "watch:js": "nodemon --watch js/app.js --exec \"yarn test:js\"",
-    "watch": "npm-run-all --parallel watch:*"
+    "serve:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm-run-all serve:sass build:css-prefix\"",
+    "serve:sass": "sass assets/scss/app.scss app.css",
+    "serve:js": "nodemon --watch js/app.js --exec \"yarn test:js\"",
+    "serve": "npm-run-all --parallel serve:*"
   },
   "repository": {
     "type": "git",
@@ -39,11 +40,11 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-replace": "^1.0.1",
     "matchdep": "^2.0.0",
-    "node-sass": "^5.0.0",
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.2",
     "postcss-cli": "^8.3.1",
+    "sass": "^1.32.12",
     "terser": "^5.5.1"
   }
 }

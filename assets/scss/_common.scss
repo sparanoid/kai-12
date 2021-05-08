@@ -856,7 +856,7 @@ article {
     }
 
     > p {
-      padding-left: var(--gutter);
+      padding-left: calc(var(--gutter) - var(--border-md));
       border-left: var(--border-md) solid var(--link-color);
 
       // TODO: Need better solution

@@ -29,10 +29,6 @@ You can get the latest version from [official WordPress.org][dl-wp] or from [my 
 - Compatible with Jetpack for WordPress, and many style fixes for it
 - Many other minor tweaks
 
-## “Why not submit these themes to WordPress.org official repository?”
-
-Answer: Their theme reviewer thinks my theme “just offer a few minor CSS tweaks and adds new footer credit links.” [#](http://themes.trac.wordpress.org/ticket/10728)
-
 ## License
 
 GPLv2

@@ -1,0 +1,195 @@
+body { // wrap it in body to avoid abusing !important
+
+  // Algolia Search
+  // https://github.com/algolia/algoliasearch-wordpress/
+  --k12-algolia-font-size: calc(var(--font-size) * .9);
+  --k12-algolia-menu-background: var(--container-color);
+  --k12-algolia-autocomplete-height: 400px;
+
+  .aa-dropdown-menu {
+    font-family: inherit;
+    background-color: var(--k12-algolia-menu-background);
+    max-height: var(--k12-algolia-autocomplete-height);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &,
+    a {
+      color: var(--text-color);
+      font-size: var(--k12-algolia-font-size);
+    }
+
+    .aa-hint {
+      color: var(--text-color-40);
+    }
+
+    .autocomplete-header {
+      position: sticky;
+      top: 0;
+      padding: 0 14px;
+      // reset from default
+      margin: 0;
+      background-color: var(--k12-algolia-menu-background);
+    }
+
+    .autocomplete-header-title {
+      color: var(--text-color-40);
+    }
+
+    .autocomplete-header-more {
+
+      a {
+        color: var(--text-color-30);
+
+        &:hover {
+          color: var(--text-color-40);
+        }
+      }
+    }
+
+    .aa-suggestion {
+      padding: .5em 0;
+
+      em {
+        color: var(--link-color);
+        background: var(--link-color-20);
+      }
+
+      .suggestion-post-content {
+        color: var(--text-color-40);
+
+        em {
+          box-shadow: inset 0 -2px 0 0 var(--link-color-50);
+        }
+      }
+
+      &.aa-cursor {
+        background-color: var(--text-color-5);
+      }
+    }
+
+    a.suggestion-link {
+
+      svg {
+        fill: var(--text-color-30);
+      }
+    }
+
+    .autocomplete-footer-branding {
+      color: var(--text-color-30);
+    }
+  }
+
+  #ais-wrapper {
+    width: 100%;
+    // margin fix for infinite scroll
+    margin-bottom: 30px;
+  }
+
+  #ais-main {
+    padding: 0;
+    @include padding-offset(var(--gutter));
+  }
+
+  #algolia-search-box {
+    position: relative;
+    padding: var(--gutter-v) 0;
+    padding-bottom: calc(var(--gutter-v) + 1em);
+    margin-bottom: 0;
+    @include splitter();
+
+    input {
+      border-bottom: 1px solid var(--text-color-10);
+      border-radius: 0;
+      font-weight: normal;
+    }
+
+    .search-icon {
+      top: calc(var(--gutter-v) + 14px);
+      fill: var(--text-color-10);
+    }
+
+    .ais-stats,
+    .ais-search-box--powered-by {
+      color: var(--text-color-40);
+      top: calc(var(--gutter-v) + 60px);
+    }
+
+    .ais-search-box--powered-by {
+      right: var(--gutter);
+    }
+  }
+
+  .ais-hits {
+
+    &--item {
+      margin-bottom: 0;
+
+      em,
+      a em {
+        color: var(--link-color);
+        background: var(--link-color-20);
+      }
+
+      @media only screen and (max-width: 1000px) {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+    &__empty {
+      padding: var(--gutter-v) 0;
+    }
+  }
+
+  #algolia-pagination {
+    padding: var(--gutter-v) 0;
+  }
+
+  // Sidebar
+  #ais-facets {
+    padding: var(--gutter-v) var(--gutter);
+
+    .ais-facets {
+      margin-bottom: 3.5rem;
+    }
+
+    .ais-menu,
+    .ais-hierarchical-menu,
+    .ais-refinement-list {
+
+      &--header {
+
+        h3 {
+          // Copied from sidebar heading appearance
+          color: var(--text-color-30);
+          font-size: .8rem;
+          text-transform: uppercase;
+          margin-bottom: 1.4rem;
+        }
+      }
+
+      &--item {
+        line-height: calc(var(--line-height) * 1.2);
+
+        &__active {
+          font-weight: bold;
+
+          a {
+            color: var(--link-color);
+          }
+        }
+      }
+
+      &--count {
+        float: right;
+        opacity: .4;
+      }
+
+      &--label {
+        margin-top: 0;
+        margin-bottom: .2em;
+      }
+    }
+  }
+}

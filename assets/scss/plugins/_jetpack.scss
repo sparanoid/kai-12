@@ -1,0 +1,84 @@
+body { // wrap it in body to avoid abusing !important
+
+  // Jetpack: Infinite Scrolling
+  // Set correct padding bottom
+  &.infinite-scroll:not(.infinity-end) {
+    padding-bottom: 0;
+  }
+
+  .infinite-loader {
+    margin-top: var(--space-xs);
+  }
+
+  #infinite-footer {
+
+    .container {
+      background-color: var(--container-color-80);
+      border: none !important;
+      box-shadow: 0 -1px 0 0 var(--border-color);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .blog-info,
+    .blog-credits {
+
+      a {
+        color: var(--text-color);
+
+        &:hover,
+        &:focus {
+          color: var(--link-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Mobile version
+  &.infinite-scroll #infinite-handle {
+    padding-bottom: 0 !important;
+
+    span {
+      padding-top: var(--gutter-v);
+      padding-bottom: var(--gutter-v);
+      @include padding-offset(var(--gutter));
+      @include margin-offset(calc(var(--gutter) * -1));
+      color: var(--text-color);
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: var(--text-color-5);
+      font-family: var(--fontstack-heading);
+    }
+  }
+
+  // Jetpack: Contact Form
+  .contact-form {
+
+    label {
+
+      span {
+        color: var(--text-color-50);
+      }
+    }
+  }
+
+  // Jetpack: Gallery
+  .gallery {
+
+    img {
+      margin: auto !important;
+      max-width: 100% !important;
+    }
+  }
+
+  // Jetpack: Sharedaddy
+  .sharedaddy {
+
+    li {
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

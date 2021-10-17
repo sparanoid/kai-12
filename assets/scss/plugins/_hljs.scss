@@ -1,0 +1,9 @@
+body { // wrap it in body to avoid abusing !important
+
+  // Prismatic and WP Code Highlight.js
+  .hljs {
+    overflow: initial !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+}

@@ -1,0 +1,60 @@
+body { // wrap it in body to avoid abusing !important
+
+  // Clean My Archives
+  .clean-my-archives {
+    --archives-font-size: 1rem;
+    --archives-grid-gap: .5rem;
+    --archives-day-width: 2ch;
+
+    .month-year {
+
+      a {
+        color: var(--text-color);
+
+        &:hover,
+        &:focus {
+          color: var(--link-color);
+        }
+      }
+    }
+
+    ul {
+
+      @media (max-width: 640px) {
+        margin-left: 0;
+      }
+
+      li {
+        display: grid;
+        grid-template-columns: var(--archives-day-width) 1fr auto;
+        grid-gap: var(--archives-grid-gap);
+        font-size: var(--archives-font-size);
+        line-height: 1.4;
+        margin-bottom: .6em;
+
+        .day {
+          color: var(--text-color-40);
+        }
+
+        .comments-number {
+          color: var(--text-color-40);
+        }
+
+        a {
+
+        }
+
+        &::before {
+          display: none;
+        }
+
+        &.day-duplicate {
+
+          .day {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

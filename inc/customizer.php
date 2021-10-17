@@ -267,9 +267,32 @@ function kai12_customize_header_output() {
         --sidebar-width: 0px;
       }
 
+      #ais-facets,
       #secondary {
         display: none;
       }
+
+      /* BEGIN refine search page with Algolia and sidebar hidden */
+      body.search #main {
+        display: grid;
+      }
+      body.search #primary {
+        order: 2;
+      }
+      body.search #secondary {
+        display: block;
+        width: 100%;
+      }
+      body.search #secondary > *:not(.widget_search) {
+        display: none;
+      }
+      body.search #secondary .widget_search {
+        margin-bottom: 0;
+      }
+      body.search #secondary .widget_search input[type=text] {
+        flex: 1;
+      }
+      /* END */
     <?php endif; ?>
 
     <?php if ( get_theme_mod( 'borderless_header_image' ) ) : ?>

@@ -6,6 +6,11 @@ body { // wrap it in body to avoid abusing !important
   --k12-algolia-menu-background: var(--container-color);
   --k12-algolia-autocomplete-height: 400px;
 
+  .algolia-search-highlight,
+  .ais-Hits-item mark {
+    background-color: var(--yellow-30);
+  }
+
   .aa-dropdown-menu {
     font-family: inherit;
     background-color: var(--k12-algolia-menu-background);
@@ -89,11 +94,11 @@ body { // wrap it in body to avoid abusing !important
   #ais-main {
     padding: 0;
     @include padding-offset(var(--gutter));
+    min-width: 0;
   }
 
   #algolia-search-box {
     position: relative;
-    padding: var(--gutter-v) 0;
     padding-bottom: calc(var(--gutter-v) + 1em);
     margin-bottom: 0;
     @include splitter();
@@ -120,6 +125,13 @@ body { // wrap it in body to avoid abusing !important
     }
   }
 
+  .algolia-search-box-wrapper {
+
+    .search-icon {
+      fill: var(--link-color-60);
+    }
+  }
+
   .ais-hits {
 
     &--item {
@@ -140,6 +152,34 @@ body { // wrap it in body to avoid abusing !important
     &__empty {
       padding: var(--gutter-v) 0;
     }
+  }
+
+  .ais-Menu-link,
+  .ais-HierarchicalMenu-link {
+    display: grid;
+    grid: auto / 1fr auto;
+    gap: .5rem;
+    word-break: break-word;
+  }
+
+  .ais-RefinementList-label {
+    display: grid;
+    grid: auto / auto 1fr auto;
+    gap: .5rem;
+    align-items: center;
+    word-break: break-word;
+    margin-top: 0;
+  }
+
+  .ais-Menu-count,
+  .ais-HierarchicalMenu-count,
+  .ais-RefinementList-count {
+    opacity: .5;
+  }
+
+  // https://github.com/WebDevStudios/wp-search-with-algolia/pull/188
+  .ais-HierarchicalMenu-item--selected {
+    font-weight: bold;
   }
 
   #algolia-pagination {

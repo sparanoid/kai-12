@@ -2,9 +2,9 @@
 Contributors: Sparanoid
 Donate link: https://sparanoid.com/donate/
 Requires at least: WordPress 3.5
-Tested up to: 5.6
+Tested up to: 5.8
 Requires PHP: 7.3
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -39,6 +39,9 @@ Licenses: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
 
 == Changelog ==
+
+= 1.3.8 =
+* Refine Algolia search appearance
 
 = 1.3.7 =
 * Refine default background color
@@ -91,6 +94,9 @@ Source: https://github.com/aFarkas/html5shiv
 * Add readme for new requirement
 
 == Upgrade Notice ==
+
+= 1.3.8 =
+* Refine Algolia search appearance
 
 = 1.3.7 =
 * Refine default background color

@@ -8,6 +8,7 @@ body { // wrap it in body to avoid abusing !important
 
   .algolia-search-highlight,
   .ais-Hits-item mark {
+    color: var(--link-color);
     background-color: var(--yellow-30);
   }
 

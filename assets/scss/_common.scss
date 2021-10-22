@@ -476,25 +476,25 @@ nav {
 
 // Content wrapper (main structure only, elemtn appearance are defined below)
 #main {
-  display: flex;
+  display: grid;
+  grid: auto / 1fr var(--sidebar-width);
+
+  body.full-width &,
+  body.single-attachment &,
+  body.woocommerce & {
+    --sidebar-width: 0;
+  }
 
   @media (max-width: $breakpoint-sm) {
+    --sidebar-width: 0;
     display: block;
   }
 }
 
 // Left main content (#primary.site-content)
 #primary {
-  width: calc(100% - var(--sidebar-width));
-
-  body.full-width &,
-  body.woocommerce & {
-    width: 100%;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    width: 100%;
-  }
+  // Make grid works with resizing window
+  min-width: 0;
 
   // Archive/page header (heading)
   .archive-header,
@@ -519,7 +519,6 @@ nav {
 // Right sidebar content
 #secondary {
   flex: 1;
-  width: var(--sidebar-width);
   padding: var(--gutter-v) var(--gutter);
 
   @media (max-width: $breakpoint-sm) {
@@ -732,6 +731,16 @@ article {
     max-width: 100%;
     height: auto;
   }
+
+  video,
+  iframe {
+    width: 100%;
+
+    p > * {
+      margin-bottom: 0;
+    }
+  }
+
 
   .wp-block-image,
   .wp-block-embed,
@@ -1148,6 +1157,19 @@ article {
   .wp-caption-text {
     color: var(--text-color-50);
   }
+
+  // Media post view
+  .entry-attachment {
+
+    .attachment {
+      margin-top: var(--gutter-v);
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 // More button and pagination for posts
@@ -1161,6 +1183,17 @@ article {
 
 .page-links {
   margin-bottom: 1em;
+}
+
+// Image nav links
+.nav-next,
+.next-image {
+  clear: both;
+  overflow: hidden;
+}
+
+.next-image {
+  text-align: right;
 }
 
 // To bypass stupid WP.org theme guidelines

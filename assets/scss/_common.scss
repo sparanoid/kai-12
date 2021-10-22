@@ -1154,7 +1154,8 @@ article {
 
   }
 
-  .wp-caption-text {
+  .wp-caption-text,
+  .entry-caption {
     color: var(--text-color-50);
   }
 
@@ -1167,6 +1168,10 @@ article {
       img {
         display: block;
         margin: 0 auto;
+      }
+
+      .entry-caption {
+        margin-top: .5rem;
       }
     }
   }

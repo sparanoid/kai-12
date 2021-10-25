@@ -96,7 +96,7 @@ a {
   }
 }
 
-input:not([type=checkbox]),
+input:not([type=checkbox]):not([type=radio]),
 textarea,
 select {
   display: block;
@@ -152,6 +152,17 @@ input {
       background-color: var(--text-color-50);
       background-repeat: no-repeat;
     }
+  }
+}
+
+fieldset {
+  padding: 1rem;
+  border: 1px solid var(--text-color-10);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+
+  legend {
+    color: var(--text-color-50);
   }
 }
 
@@ -476,17 +487,9 @@ nav {
 
 // Content wrapper (main structure only, elemtn appearance are defined below)
 #main {
-  display: grid;
-  grid: auto / 1fr var(--sidebar-width);
-
-  body.full-width &,
-  body.single-attachment &,
-  body.woocommerce & {
-    --sidebar-width: 0;
-  }
+  display: flex;
 
   @media (max-width: $breakpoint-sm) {
-    --sidebar-width: 0;
     display: block;
   }
 }
@@ -495,6 +498,17 @@ nav {
 #primary {
   // Make grid works with resizing window
   min-width: 0;
+  flex: auto;
+
+  body.full-width &,
+  body.single-attachment &,
+  body.woocommerce & {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
 
   // Archive/page header (heading)
   .archive-header,
@@ -519,6 +533,7 @@ nav {
 // Right sidebar content
 #secondary {
   flex: 1;
+  width: var(--sidebar-width);
   padding: var(--gutter-v) var(--gutter);
 
   @media (max-width: $breakpoint-sm) {

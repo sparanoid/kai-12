@@ -88,6 +88,7 @@ body { // wrap it in body to avoid abusing !important
 
   #ais-wrapper {
     width: 100%;
+    min-width: 0;
     // margin fix for infinite scroll
     margin-bottom: 30px;
   }

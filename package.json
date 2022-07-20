@@ -43,7 +43,7 @@
     "postcss": "^8.3.9",
     "postcss-cli": "^10.0.0",
     "sass": "^1.43.2",
-    "terser": "^5.9.0"
+    "terser": "^5.14.2"
   },
   "dependencies": {
     "kladenets": "^2.0.0-15"

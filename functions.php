@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Kai 12 functions and definitions
  *
@@ -12,7 +13,8 @@
  *
  * @since Kai 12 1.0
  */
-function kai12_update_credits() {
+function kai12_update_credits()
+{
   echo '<a href="https://sparanoid.com/work/kai/" title="Kai 12 WordPress theme by Sparanoid. ' . get_num_queries() .  ' queries in ' . timer_stop(0, 5) . ' seconds.">Kai 12</a><span class="sep"> - </span> ';
 }
 
@@ -23,65 +25,71 @@ add_action('twentytwelve_credits', 'kai12_update_credits');
  *
  * @since Kai 12 1.1
  */
-function kai12_scripts_styles_override() {
-  wp_enqueue_style( 'kai-12-style', get_stylesheet_directory_uri() . '/app.css' );
+function kai12_scripts_styles_override()
+{
+  wp_enqueue_style('kai-12-style', get_stylesheet_directory_uri() . '/app.css');
 }
 
-add_action( 'wp_enqueue_scripts', 'kai12_scripts_styles_override', 999 );
+add_action('wp_enqueue_scripts', 'kai12_scripts_styles_override', 999);
 
 /**
  * Disable custom web font from Google, it's slow and it sucks
  *
  * @since Kai 12 1.2.10
  */
-function kai12_remove_custom_fonts() {
-  wp_dequeue_style( 'twentytwelve-fonts' );
+function kai12_remove_custom_fonts()
+{
+  wp_dequeue_style('twentytwelve-fonts');
 }
-add_action( 'wp_enqueue_scripts', 'kai12_remove_custom_fonts', 11 );
+add_action('wp_enqueue_scripts', 'kai12_remove_custom_fonts', 11);
 
 /**
  * Override default excerpt length
  *
  * @since Kai 12 1.1.2
  */
-function kai12_custom_excerpt_length( $length ) {
+function kai12_custom_excerpt_length($length)
+{
   return 360;
 }
 
-add_filter( 'excerpt_length', 'kai12_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'kai12_custom_excerpt_length', 999);
 
 /**
  * Override default Jetpack Infinite Scroll footer
  *
  * @since Kai 12 1.1.6
  */
-function kai12_infinite_scroll_credit() {
+function kai12_infinite_scroll_credit()
+{
   return '<a href="https://sparanoid.com/work/kai/">Kai 12</a>';
 }
 
-add_filter( 'infinite_scroll_credit', 'kai12_infinite_scroll_credit' );
+add_filter('infinite_scroll_credit', 'kai12_infinite_scroll_credit');
 
 /**
  * Override default header settings when header text is hidden
  *
  * @since Kai 12 1.2.5
  */
-function kai12_custom_header_setup() {
+function kai12_custom_header_setup()
+{
   $args = array(
     'wp-head-callback' => 'kai12_header_style',
   );
 
-  add_theme_support( 'custom-header', $args );
+  add_theme_support('custom-header', $args);
 }
-add_action( 'after_setup_theme', 'kai12_custom_header_setup' );
+add_action('after_setup_theme', 'kai12_custom_header_setup');
 
-function kai12_header_style() {
-  if ( ! display_header_text() ) : ?>
-  <style type="text/css" id="kai-12-header-css">
-    .site-header hgroup {
-      display: none;
-    }
-  </style>
+function kai12_header_style()
+{
+  if (!display_header_text()) : ?>
+    <style type="text/css" id="kai-12-header-css">
+      .site-header hgroup {
+        display: none;
+      }
+    </style>
   <?php endif; ?>
 <?php }
 
@@ -90,29 +98,31 @@ function kai12_header_style() {
  *
  * @since Kai 12 1.2.13
  */
-function kai12_infinite_scroll_init() {
-  add_theme_support( 'infinite-scroll', array(
+function kai12_infinite_scroll_init()
+{
+  add_theme_support('infinite-scroll', array(
     'container'      => 'content',
-  ) );
+  ));
 }
-add_action( 'after_setup_theme', 'kai12_infinite_scroll_init' );
+add_action('after_setup_theme', 'kai12_infinite_scroll_init');
 
 /**
  * Unregister default ugly gallery inline styles injected into the body
  *
  * @since Kai 12 1.2.13
  */
-add_filter( 'use_default_gallery_style', '__return_false' );
+add_filter('use_default_gallery_style', '__return_false');
 
 /**
  * Remove custom background from parent theme
  *
  * @since Kai 12 1.2.14
  */
-function kai12_remove_custom_background_from_parent_theme() {
-  remove_theme_support( 'custom-background' );
+function kai12_remove_custom_background_from_parent_theme()
+{
+  remove_theme_support('custom-background');
 }
-add_action( 'after_setup_theme', 'kai12_remove_custom_background_from_parent_theme', 11 );
+add_action('after_setup_theme', 'kai12_remove_custom_background_from_parent_theme', 11);
 
 /**
  * Initialize theme customizer
@@ -126,11 +136,12 @@ require get_stylesheet_directory() . '/inc/customizer.php';
  *
  * @since Kai 12 1.2.18
  */
-if ( function_exists( 'is_shop' ) && function_exists( 'is_product_category' ) && function_exists( 'is_product_tag' ) && function_exists( 'is_product' ) ) {
-  function penci_woocommerce_add_sidebar_custom() {
-    if ( is_shop() || is_product_category() || is_product_tag() || is_product()  ):
-      remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+if (function_exists('is_shop') && function_exists('is_product_category') && function_exists('is_product_tag') && function_exists('is_product')) {
+  function penci_woocommerce_add_sidebar_custom()
+  {
+    if (is_shop() || is_product_category() || is_product_tag() || is_product()) :
+      remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
     endif;
   }
-  add_action( 'template_redirect', 'penci_woocommerce_add_sidebar_custom' );
+  add_action('template_redirect', 'penci_woocommerce_add_sidebar_custom');
 }

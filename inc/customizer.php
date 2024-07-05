@@ -375,24 +375,31 @@ function kai12_hex2hsl($hex)
 
   // calculate the luminace value by adding the max and min values and divide by 2
   $l = ($min + $max) / 2;
+
+  // initialize saturation to 0
+  $s = 0;
+
   if ($max === $min) {
-    $h = $s = 0;
+    $h = 0;  // Monochrome color, hue doesn't matter
   } else {
+    // Saturation calculation needs to be adjusted depending on the luminance
     if ($l < 0.5) {
       $s = ($max - $min) / ($max + $min);
-    } elseif ($l > 0.5) {
+    } else {
       $s = ($max - $min) / (2 - $max - $min);
     }
+
+    // Calculate hue based on which color is dominant
     if ($max === $rgb[0]) {
       $h = ($rgb[1] - $rgb[2]) / ($max - $min);
     } elseif ($max === $rgb[1]) {
       $h = 2 + ($rgb[2] - $rgb[0]) / ($max - $min);
-    } elseif ($max === $rgb[2]) {
+    } else {  // $max === $rgb[2]
       $h = 4 + ($rgb[0] - $rgb[1]) / ($max - $min);
     }
     $h = $h * 60;
     if ($h < 0) {
-      $h = $h + 360;
+      $h += 360;
     }
   }
   return array($h, $s, $l);
